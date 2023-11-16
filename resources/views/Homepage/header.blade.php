@@ -22,22 +22,18 @@
     </div>
 </div>
 
-<div class="lg:absolute bottom-[-10px] left-[100px]">
-            <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 lg:w-[1440px] mx-auto"> 
+<div class="lg:absolute bottom-[-150px] left-[100px]">
+            <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 "> 
     
-            <div class="p-10 border bg-[#f6a84b] rounded-xl text-white mx-2 mt-2">
+            <div class="p-10 w-[350px] border bg-[#f6a84b] rounded-xl text-white mx-2 mt-2">
                 <h1 class="text-2xl font-semibold text-center">Something</h1>
                 <p class="text-xl text-center mt-3">21 Awesome Things About Music at Smart</p>
             </div>
-            <div class="p-10 border bg-[#71b4e1] rounded-xl text-white mx-2">
+            <div class="p-10 w-[350px] border bg-[#71b4e1] rounded-xl text-white mx-2"> 
                 <h1 class="text-2xl font-semibold text-center">Something</h1>
                 <p class="text-xl text-center mt-3">21 Awesome Things About Music at Smart</p>
             </div>
-            <div class="p-10 border bg-[#bcbec0] rounded-xl text-white mx-2">
-                <h1 class="text-2xl font-semibold text-center">Something</h1>
-                <p class="text-xl text-center mt-3">21 Awesome Things About Music at Smart</p>
-            </div>
-            <div class="p-10 border bg-[#66bd6d] rounded-xl text-white mx-2">
+            <div class="p-10 w-[350px] border bg-[#bcbec0] rounded-xl text-white mx-2">
                 <h1 class="text-2xl font-semibold text-center">Something</h1>
                 <p class="text-xl text-center mt-3">21 Awesome Things About Music at Smart</p>
             </div>
