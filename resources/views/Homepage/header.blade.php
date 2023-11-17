@@ -21,7 +21,7 @@
       </div>
     </div>
 </div>
- <div class="absolute bottom-[-25%] mx-[10%]">
+ <div class="lg:absolute bottom-[-25%] lg:mx-[10%]">
             <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 "> 
     
             <div class="p-10 w-[350px] border bg-[#f6a84b] rounded-xl text-white mx-2 mt-2">
