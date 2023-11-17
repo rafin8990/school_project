@@ -1,12 +1,12 @@
 <div
     class="relative overflow-hidden bg-cover bg-no-repeat"
     style="
-      background-position: 50%;
+     
       background-image: url('https://cdn.britannica.com/35/230835-050-3D93A72A/School-children-wearing-school-uniforms.jpg');
       height: 600px;
     ">
     <div
-      class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed"
+      class=" h-full w-full overflow-hidden bg-fixed"
       style="background-color: rgba(0, 0, 0, 0.75)">
       <div class="flex h-full items-center justify-center">
         <div class="px-6 text-center text-white md:px-12">
@@ -21,8 +21,7 @@
       </div>
     </div>
 </div>
-
-<div class="lg:absolute bottom-[-150px] left-[100px]">
+ <div class="absolute bottom-[-25%] mx-[10%]">
             <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 "> 
     
             <div class="p-10 w-[350px] border bg-[#f6a84b] rounded-xl text-white mx-2 mt-2">
@@ -39,5 +38,7 @@
             </div>
 
         </div>
-    </div>
+</div>
+
+
 
