@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div class="flex justify-center items-center">
-                <div class=" grid grid-cols-1 md:grid-cols-2 gap-5 lg:w-[1000px] mx-auto">
+                <div class=" grid grid-cols-1 md:grid-cols-2 gap-5 md:w-[780px] lg:w-[1000px] mx-auto">
                     <div class="bg-white p-3 mt-5 flex items-center mx-5">
                         <div class=" border border-blue-900 p-4 w-[100px] ">
                             <h1 class="font text-4xl text-accent">12</h1>

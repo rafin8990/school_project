@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d703802588.js" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script
     
 
 </head>
@@ -73,6 +75,7 @@
     @include('/Homepage/header')
     @include('/Homepage/latestNews')
     @include('/Homepage/event')
+    @include('/Homepage/featured')
     @include('/shared/footer')
 
   

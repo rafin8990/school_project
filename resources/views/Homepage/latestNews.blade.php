@@ -26,8 +26,8 @@
                              <p class="text-xl ">Students take crash course in Japanese sword fighting</p>
                             <h4 class="text-md">August 31, 2016</h4>
                         </div>
-                </div>
-                <div class="mx-5">
+                    </div>
+                    <div class="mx-5">
                     <div class="flex items-center mt-5">
                             <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news1-95x95.jpg" alt="">
                             <a href="#">
@@ -59,6 +59,7 @@
                             </a>
                     </div>
                 </div>
+                
                 <div>
                 </div>
         
