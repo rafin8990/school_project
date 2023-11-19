@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d703802588.js" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     
 
@@ -71,6 +72,8 @@
     @include('/shared/navbar')
     @include('/Homepage/header')
     @include('/Homepage/latestNews')
+    @include('/Homepage/event')
+    @include('/shared/footer')
 
   
 </body>
