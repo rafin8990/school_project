@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
+    
 
 </head>
 <body>
@@ -72,6 +72,10 @@
     @include('/Homepage/header')
     @include('/Homepage/latestNews')
 
-  
+  <!-- dbhsbfhs -->
+  <!-- dbhsbfhs -->
+  <!-- dbhsbfhs -->
+  <!-- dbhsbfhs -->
+  <!-- dbhsbfhs -->
 </body>
 </html>
