@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [homeController::class, 'home']);
+Route::get('/about', [homeController::class, 'about']);
