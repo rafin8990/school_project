@@ -17,7 +17,7 @@
     <!-- button content  -->
     <div class="lg:flex items-center">
 
-        <div id="all" class="lg:flex mr-10 block ">
+        <div id="all" class="block lg:flex mr-10  ">
                 <div class="mt-10 mx-3 lg:mx-10">
                     <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news2-435x280.jpg" alt="">
                         <div class="mx-3 w-[440px] lg:ml-5">
@@ -63,7 +63,53 @@
         
 
         </div>
-        <div id="Academics" class="lg:flex mr-10 hidden ">
+        <div id="Academics" class="lg:hidden  lg:flex mr-10 ">
+                <div class="mt-10 mx-3 lg:mx-10">
+                    <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news1-435x280.jpg" alt="">
+                        <div class="mx-3 w-[440px] lg:ml-5">
+                            <h4  class="font text-accent mt-5">All</h4>
+                             <p class="text-xl ">Students take crash course in Japanese sword fighting</p>
+                            <h4 class="text-md">August 31, 2016</h4>
+                        </div>
+                </div>
+                <div>
+                    <div class="flex items-center mt-5">
+                            <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news1-95x95.jpg" alt="">
+                            <a href="#">
+                                <div class="ml-5">
+                                    <h3 class="text-md ">ACADEMICS</h3>
+                                    <h3 class="text-lg ">Faculty of Social Sciences and Humanities celebrates students success</h3>
+                                    <h3 class="text-md ">August 31, 2016</h3>
+                                </div>
+                            </a>
+                    </div>
+                    <div class="flex items-center mt-5">
+                                <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news1-95x95.jpg" alt="">
+                                <a href="#">
+                                    <div class="ml-5">
+                                        <h3 class="text-md ">ACADEMICS</h3>
+                                        <h3 class="text-lg ">Faculty of Social Sciences and Humanities celebrates students success</h3>
+                                        <h3 class="text-md ">August 31, 2016</h3>
+                                    </div>
+                                </a>
+                    </div>
+                    <div class="flex items-center mt-5">
+                            <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news1-95x95.jpg" alt="">
+                            <a href="#">
+                                <div class="ml-5">
+                                    <h3 class="text-md ">ACADEMICS</h3>
+                                     <h3 class="text-lg ">Faculty of Social Sciences and Humanities celebrates students success</h3>
+                                    <h3 class="text-md ">August 31, 2016</h3>
+                                </div>
+                            </a>
+                    </div>
+                </div>
+            <div>
+            </div>
+        
+
+        </div>
+        <div id="Schools" class="lg:hidden  lg:flex mr-10">
                 <div class="mt-10 mx-3 lg:mx-10">
                     <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news2-435x280.jpg" alt="">
                         <div class="mx-3 w-[440px] lg:ml-5">
@@ -109,9 +155,9 @@
         
 
         </div>
-        <div id="Schools" class=" lg:flex mr-10 hidden">
+        <div id="Athletics" class="lg:hidden lg:flex mr-10 ">
                 <div class="mt-10 mx-3 lg:mx-10">
-                    <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news2-435x280.jpg" alt="">
+                    <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news1-435x280.jpg" alt="">
                         <div class="mx-3 w-[440px] lg:ml-5">
                             <h4  class="font text-accent mt-5">All</h4>
                              <p class="text-xl ">Students take crash course in Japanese sword fighting</p>
@@ -155,53 +201,7 @@
         
 
         </div>
-        <div id="Athletics" class=" lg:flex mr-10 hidden">
-                <div class="mt-10 mx-3 lg:mx-10">
-                    <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news2-435x280.jpg" alt="">
-                        <div class="mx-3 w-[440px] lg:ml-5">
-                            <h4  class="font text-accent mt-5">All</h4>
-                             <p class="text-xl ">Students take crash course in Japanese sword fighting</p>
-                            <h4 class="text-md">August 31, 2016</h4>
-                        </div>
-                </div>
-                <div>
-                    <div class="flex items-center mt-5">
-                            <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news1-95x95.jpg" alt="">
-                            <a href="#">
-                                <div class="ml-5">
-                                    <h3 class="text-md ">ACADEMICS</h3>
-                                    <h3 class="text-lg ">Faculty of Social Sciences and Humanities celebrates students success</h3>
-                                    <h3 class="text-md ">August 31, 2016</h3>
-                                </div>
-                            </a>
-                    </div>
-                    <div class="flex items-center mt-5">
-                                <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news1-95x95.jpg" alt="">
-                                <a href="#">
-                                    <div class="ml-5">
-                                        <h3 class="text-md ">ACADEMICS</h3>
-                                        <h3 class="text-lg ">Faculty of Social Sciences and Humanities celebrates students success</h3>
-                                        <h3 class="text-md ">August 31, 2016</h3>
-                                    </div>
-                                </a>
-                    </div>
-                    <div class="flex items-center mt-5">
-                            <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news1-95x95.jpg" alt="">
-                            <a href="#">
-                                <div class="ml-5">
-                                    <h3 class="text-md ">ACADEMICS</h3>
-                                     <h3 class="text-lg ">Faculty of Social Sciences and Humanities celebrates students success</h3>
-                                    <h3 class="text-md ">August 31, 2016</h3>
-                                </div>
-                            </a>
-                    </div>
-                </div>
-            <div>
-            </div>
-        
-
-        </div>
-        <div id="campuslife" class=" lg:flex mr-10 hidden">
+        <div id="campuslife" class="lg:hidden lg:flex mr-10 ">
                 <div class="mt-10 mx-3 lg:mx-10">
                     <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news2-435x280.jpg" alt="">
                         <div class="mx-3 w-[440px] lg:ml-5">
