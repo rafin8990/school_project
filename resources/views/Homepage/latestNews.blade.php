@@ -1,17 +1,17 @@
 
 <div class=" md:mt-[10%]">
-    <div class="font w-[400px] ml-5 flex items-center justify-between ">
-        <h1 class="text:4xl lg:text-5xl font-bold text-accent">Latest News</h1>
+    <div class="font mx-5 md:w-[400px] ml-5 flex items-center justify-between ">
+        <h1 class="text-4xl lg:text-5xl font-bold text-accent">Latest News</h1>
         <button class="underline-animation mt-5"><h5 class="text-xl font font-semibold"><span class="">See </span>All News</h5></button>
     </div>
 
     <!-- button point  -->
-    <div class="font mt-10" >
-        <button onclick="showContent('all')" class="font fill-animation px-4 py-2 bg-accent  hover:text-white border-0 w-[100px] ml-5">ALL</button>
-        <button onclick="showContent('Academics')" class="font fill-animation px-4 py-2  hover:text-white border-0 w-[100px] ml-5">Academics</button>
-        <button onclick="showContent('Schools')" class="font fill-animation px-4 py-2  hover:text-white border-0 w-[100px] ml-5">Schools</button>
-        <button onclick="showContent('Athletics')" class="font fill-animation px-4 py-2  hover:text-white border-0 w-[100px] ml-5">Athletics</button>
-        <button onclick="showContent('campuslife')" class="font fill-animation px-4 py-2  hover:text-white border-0 w-[120px] ml-5">Campus life</button>
+    <div class="font mt-10 hidden md:block" >
+        <button onclick="showContent('all')" class="font fill-animation px-4 py-2 bg-accent  hover:text-white border-0 w-[100px] ml-5 mt-3">ALL</button>
+        <button onclick="showContent('Academics')" class="font fill-animation px-4 py-2  hover:text-white border-0 w-[100px] ml-5 mt-3">Academics</button>
+        <button onclick="showContent('Schools')" class="font fill-animation px-4 py-2  hover:text-white border-0 w-[100px] ml-5 mt-3">Schools</button>
+        <button onclick="showContent('Athletics')" class="font fill-animation px-4 py-2  hover:text-white border-0 w-[100px] ml-5 mt-3">Athletics</button>
+        <button onclick="showContent('campuslife')" class="font fill-animation px-4 py-2  hover:text-white border-0 w-[120px] ml-5 mt-3">Campus life</button>
         
     </div>
     <!-- button content  -->
@@ -20,13 +20,13 @@
         <div id="all" class=" content lg:flex mr-10  ">
                 <div class="mt-10 mx-3 lg:mx-10">
                     <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news2-435x280.jpg" alt="">
-                        <div class="mx-3 w-[440px] lg:ml-5">
+                        <div class="mx-3 md:w-[440px] lg:ml-5">
                             <h4  class="font text-accent mt-5">All</h4>
                              <p class="text-xl ">Students take crash course in Japanese sword fighting</p>
                             <h4 class="text-md">August 31, 2016</h4>
                         </div>
                 </div>
-                <div>
+                <div class="mx-5">
                     <div class="flex items-center mt-5">
                             <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news1-95x95.jpg" alt="">
                             <a href="#">
@@ -66,13 +66,13 @@
         <div id="Academics" class=" content  lg:flex lg:hidden  mr-10 ">
                 <div class="mt-10 mx-3 lg:mx-10">
                     <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news1-435x280.jpg" alt="">
-                        <div class="mx-3 w-[440px] lg:ml-5">
+                        <div class="mx-3 lg:w-[440px] lg:ml-5">
                             <h4  class="font text-accent mt-5">All</h4>
                              <p class="text-xl ">Students take crash course in Japanese sword fighting</p>
                             <h4 class="text-md">August 31, 2016</h4>
                         </div>
                 </div>
-                <div>
+                <div class="mx-5">
                     <div class="flex items-center mt-5">
                             <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news1-95x95.jpg" alt="">
                             <a href="#">
@@ -112,13 +112,13 @@
         <div id="Schools" class="content   lg:flex lg:hidden mr-10">
                 <div class="mt-10 mx-3 lg:mx-10">
                     <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news2-435x280.jpg" alt="">
-                        <div class="mx-3 w-[440px] lg:ml-5">
+                        <div class="mx-3 lg:w-[440px] lg:ml-5">
                             <h4  class="font text-accent mt-5">All</h4>
                              <p class="text-xl ">Students take crash course in Japanese sword fighting</p>
                             <h4 class="text-md">August 31, 2016</h4>
                         </div>
                 </div>
-                <div>
+                <div class="mx-5">
                     <div class="flex items-center mt-5">
                             <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news1-95x95.jpg" alt="">
                             <a href="#">
@@ -158,13 +158,13 @@
         <div id="Athletics" class="content lg:flex lg:hidden  mr-10 ">
                 <div class="mt-10 mx-3 lg:mx-10">
                     <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news1-435x280.jpg" alt="">
-                        <div class="mx-3 w-[440px] lg:ml-5">
+                        <div class="mx-3 lg:w-[440px] lg:ml-5">
                             <h4  class="font text-accent mt-5">All</h4>
                              <p class="text-xl ">Students take crash course in Japanese sword fighting</p>
                             <h4 class="text-md">August 31, 2016</h4>
                         </div>
                 </div>
-                <div>
+                <div class="mx-5">
                     <div class="flex items-center mt-5">
                             <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news1-95x95.jpg" alt="">
                             <a href="#">
@@ -204,13 +204,13 @@
         <div id="campuslife" class="content  lg:flex lg:hidden mr-10 ">
                 <div class="mt-10 mx-3 lg:mx-10">
                     <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news2-435x280.jpg" alt="">
-                        <div class="mx-3 w-[440px] lg:ml-5">
+                        <div class="mx-3 lg:w-[440px] lg:ml-5">
                             <h4  class="font text-accent mt-5">All</h4>
                              <p class="text-xl ">Students take crash course in Japanese sword fighting</p>
                             <h4 class="text-md">August 31, 2016</h4>
                         </div>
                 </div>
-                <div>
+                <div class="mx-5">
                     <div class="flex items-center mt-5">
                             <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news1-95x95.jpg" alt="">
                             <a href="#">
@@ -248,7 +248,7 @@
 
         </div>
 
-        <div class="bg-blue-900 p-10 w-[400px]">
+        <div class="bg-blue-900 p-10 my-5 mx-5 md:w-[400px]">
             
             <img src="https://smartyschool.stylemixthemes.com/university/wp-content/themes/smarty/assets/img/frontend-customizer/mailchimp-envelope.svg" alt="">
         
