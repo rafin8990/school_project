@@ -72,10 +72,6 @@
     @include('/Homepage/header')
     @include('/Homepage/latestNews')
 
-  <!-- dbhsbfhs -->
-  <!-- dbhsbfhs -->
-  <!-- dbhsbfhs -->
-  <!-- dbhsbfhs -->
-  <!-- dbhsbfhs -->
+  
 </body>
 </html>

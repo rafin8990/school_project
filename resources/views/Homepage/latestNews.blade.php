@@ -7,17 +7,17 @@
 
     <!-- button point  -->
     <div class="font mt-10" >
-        <button id="btn-all" class="font fill-animation px-4 py-2 bg-accent  hover:text-white border-0 w-[100px] ml-5">ALL</button>
-        <button id="btn-academics" class="font fill-animation px-4 py-2  hover:text-white border-0 w-[100px] ml-5">Academics</button>
-        <button id="btn-schools" class="font fill-animation px-4 py-2  hover:text-white border-0 w-[100px] ml-5">Schools</button>
-        <button id="btn-athletics" class="font fill-animation px-4 py-2  hover:text-white border-0 w-[100px] ml-5">Athletics</button>
-        <button id="btn-campus" class="font fill-animation px-4 py-2  hover:text-white border-0 w-[120px] ml-5">Campus life</button>
+        <button onclick="showContent('all')" class="font fill-animation px-4 py-2 bg-accent  hover:text-white border-0 w-[100px] ml-5">ALL</button>
+        <button onclick="showContent('Academics')" class="font fill-animation px-4 py-2  hover:text-white border-0 w-[100px] ml-5">Academics</button>
+        <button onclick="showContent('Schools')" class="font fill-animation px-4 py-2  hover:text-white border-0 w-[100px] ml-5">Schools</button>
+        <button onclick="showContent('Athletics')" class="font fill-animation px-4 py-2  hover:text-white border-0 w-[100px] ml-5">Athletics</button>
+        <button onclick="showContent('campuslife')" class="font fill-animation px-4 py-2  hover:text-white border-0 w-[120px] ml-5">Campus life</button>
         
     </div>
     <!-- button content  -->
     <div class="lg:flex items-center">
 
-        <div id="all" class="block lg:flex mr-10  ">
+        <div id="all" class=" content lg:flex mr-10  ">
                 <div class="mt-10 mx-3 lg:mx-10">
                     <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news2-435x280.jpg" alt="">
                         <div class="mx-3 w-[440px] lg:ml-5">
@@ -63,7 +63,7 @@
         
 
         </div>
-        <div id="Academics" class="lg:hidden  lg:flex mr-10 ">
+        <div id="Academics" class=" content  lg:flex lg:hidden  mr-10 ">
                 <div class="mt-10 mx-3 lg:mx-10">
                     <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news1-435x280.jpg" alt="">
                         <div class="mx-3 w-[440px] lg:ml-5">
@@ -109,7 +109,7 @@
         
 
         </div>
-        <div id="Schools" class="lg:hidden  lg:flex mr-10">
+        <div id="Schools" class="content   lg:flex lg:hidden mr-10">
                 <div class="mt-10 mx-3 lg:mx-10">
                     <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news2-435x280.jpg" alt="">
                         <div class="mx-3 w-[440px] lg:ml-5">
@@ -155,7 +155,7 @@
         
 
         </div>
-        <div id="Athletics" class="lg:hidden lg:flex mr-10 ">
+        <div id="Athletics" class="content lg:flex lg:hidden  mr-10 ">
                 <div class="mt-10 mx-3 lg:mx-10">
                     <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news1-435x280.jpg" alt="">
                         <div class="mx-3 w-[440px] lg:ml-5">
@@ -201,7 +201,7 @@
         
 
         </div>
-        <div id="campuslife" class="lg:hidden lg:flex mr-10 ">
+        <div id="campuslife" class="content  lg:flex lg:hidden mr-10 ">
                 <div class="mt-10 mx-3 lg:mx-10">
                     <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news2-435x280.jpg" alt="">
                         <div class="mx-3 w-[440px] lg:ml-5">
@@ -263,78 +263,15 @@
 
 
     <script>
-        document.getElementById('btn-all').addEventListener('click', function(){
-            const allSection=document.getElementById('all')
-            const athleticsSection=document.getElementById('Athletics')
-            const academicSection=document.getElementById('Academics')
-            const schoolSection=document.getElementById('Schools')
-            const campusSection=document.getElementById('campuslife')
+             function showContent(category) {
+        // Hide all content first
+        document.querySelectorAll('.content').forEach(function (content) {
+            content.classList.add('hidden');
+            content.classList.add('lg:hidden');
+        });
 
-            allSection.classList.add('block');
-            allSection.classList.remove('hidden');
-            athleticsSection.classList.add('hidden');
-            academicSection.classList.add('hidden');
-            schoolSection.classList.add('hidden');
-            campusSection.classList.add('hidden');
-        })
-        document.getElementById('btn-academics').addEventListener('click', function(){
-            const allSection=document.getElementById('all')
-            const athleticsSection=document.getElementById('Athletics')
-            const academicSection=document.getElementById('Academics')
-            const schoolSection=document.getElementById('Schools')
-            const campusSection=document.getElementById('campuslife')
-
-            allSection.classList.remove('block');
-            allSection.classList.add('hidden');
-            academicSection.classList.add('block');
-            academicSection.classList.remove('hidden');
-            schoolSection.classList.add('hidden');
-            athleticsSection.classList.add('hidden');
-            campusSection.classList.add('hidden');
-        })
-        document.getElementById('btn-schools').addEventListener('click', function(){
-            const allSection=document.getElementById('all')
-            const athleticsSection=document.getElementById('Athletics')
-            const academicSection=document.getElementById('Academics')
-            const schoolSection=document.getElementById('Schools')
-            const campusSection=document.getElementById('campuslife')
-
-            allSection.classList.add('hidden');
-            academicSection.classList.remove('block');
-            academicSection.classList.add('hidden');
-            schoolSection.classList.add('block');
-            schoolSection.classList.remove('hidden');
-            athleticsSection.classList.add('hidden');
-            campusSection.classList.add('hidden');
-        })
-        document.getElementById('btn-athletics').addEventListener('click', function(){
-            const allSection=document.getElementById('all')
-            const athleticsSection=document.getElementById('Athletics')
-            const academicSection=document.getElementById('Academics')
-            const schoolSection=document.getElementById('Schools')
-            const campusSection=document.getElementById('campuslife')
-
-            allSection.classList.add('hidden');
-            academicSection.classList.add('hidden');
-            schoolSection.classList.remove('block');
-            schoolSection.classList.add('hidden');
-            athleticsSection.classList.add('block');
-            athleticsSection.classList.remove('hidden');
-            campusSection.classList.add('hidden');
-        })
-        document.getElementById('btn-campus').addEventListener('click', function(){
-            const allSection=document.getElementById('all')
-            const athleticsSection=document.getElementById('Athletics')
-            const academicSection=document.getElementById('Academics')
-            const schoolSection=document.getElementById('Schools')
-            const campusSection=document.getElementById('campuslife')
-
-            allSection.classList.add('hidden');
-            academicSection.classList.add('hidden');
-            schoolSection.classList.add('hidden');
-            athleticsSection.classList.add('hidden');
-            athleticsSection.classList.remove('block');
-            campusSection.classList.remove('hidden');
-            campusSection.classList.add('block');
-        })
+        // Show the selected category
+        document.getElementById(category).classList.remove('hidden');
+        document.getElementById(category).classList.remove('lg:hidden');
+    }
     </script>
