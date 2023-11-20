@@ -1,7 +1,7 @@
 <div class="bg-gray-100 ">
     <div class="md:flex mx-10 md:mx-52 mt-10 ">
         <div class="mr-12 mt-10">
-          <h2 class="text-4xl font text-accent ">About Smart</h2><br><br>
+          <h2 class="text-4xl font text-accent ">About School</h2><br><br>
           <p class="text-xl text-justify font-semibold">Since its founding in 1701, Smart has been dedicated to expanding and sharing knowledge, 
             inspiring innovation, and preserving cultural and scientific information for future generations.</p>
             <div class="md:flex mt-10">
