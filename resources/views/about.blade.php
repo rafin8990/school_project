@@ -71,6 +71,8 @@
     @include('/shared/navbar')
     @include('/Aboutpage/body')
     @include('/Aboutpage/principle')
+    @include('/Aboutpage/mission')
+    @include('/Aboutpage/gallery')
     @include('/shared/footer')
 
   
