@@ -73,6 +73,7 @@
     @include('/Aboutpage/principle')
     @include('/Aboutpage/mission')
     @include('/Aboutpage/gallery')
+    @include('/Aboutpage/certificate')
     @include('/shared/footer')
 
   
