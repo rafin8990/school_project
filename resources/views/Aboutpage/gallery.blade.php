@@ -1,6 +1,6 @@
 <div class="bg-slate-600">
     
-    <div class="md:mx-52">
+    <div class="md:mx-52 mx-10">
         <h2 class="text-accent text-4xl  pt-14">Gallery</h2><br><br>
         <div class="md:flex">
             <div class="h-96 carousel carousel-vertical mr-5">

@@ -1,5 +1,5 @@
 <div class="bg-gray-100">
- <div class="md:flex mx-52 mt-10 pb-10">
+ <div class="md:flex md:mx-52 mt-10 pb-10 mx-10">
     <div class="mt-20 mr-20">
         <h2 class="text-accent text-4xl">Mission</h2><br><br>
         <p class="text-lg text-justify">Smart University is devoted to excellence in teaching, learning, and research, and to developing leaders in many disciplines who make a difference globally. The University, which is based in Cupertino and Silicon Valley, California, has an enrollment of over 20,000 degree candidates, including undergraduate, graduate, and professional students. 
