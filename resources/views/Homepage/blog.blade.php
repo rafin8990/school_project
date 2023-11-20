@@ -1,4 +1,4 @@
-<!-- <div>
+<div>
             <div>
                 <div class="font mx-5 md:w-[400px] ml-5 flex items-center mt-5 ">
                     <h1 class="text-4xl lg:text-5xl font-bold text-accent">Blogs</h1>
@@ -9,4 +9,3 @@
 </div>
 
 
- -->
