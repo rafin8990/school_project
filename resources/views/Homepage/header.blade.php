@@ -1,8 +1,6 @@
 <div
     class="relative overflow-hidden bg-cover bg-no-repeat"
-    style="
-     
-      background-image: url('https://cdn.britannica.com/35/230835-050-3D93A72A/School-children-wearing-school-uniforms.jpg');
+    style="background-image: url('https://cdn.britannica.com/35/230835-050-3D93A72A/School-children-wearing-school-uniforms.jpg');
       height: 600px;
     ">
     <div

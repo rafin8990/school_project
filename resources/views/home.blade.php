@@ -51,7 +51,7 @@
       display: inline-block;
       overflow: hidden;
       text-decoration: none;
-      color: black; /* Text color */
+      color: black; 
     }
 
     .fill-animation::before {
