@@ -72,7 +72,7 @@
             <div class='lg:w-[1200px] mx-auto'>
 
     <!-- mmm  -->
-            <h1 class='text-2xl md:text-6xl font-bold text-center my-10'>Contact</h1>
+            <h1 class='text-2xl md:text-6xl font-bold text-center my-10 font'>Contact</h1>
             <div class='md:flex justify-around items-center'>
                 <div class='lg:w-1/2'>
                     <div>
@@ -117,7 +117,7 @@
                         <input type="text" class="textarea textarea-bordered h-24 " />
                     </div>
                     <div class="mt-5">
-                        <button class="btn btn-accent">Submit</button>
+                        <button class="btn btn-accent">sent</button>
                     </div>
                 </div>
             </div>

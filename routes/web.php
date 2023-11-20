@@ -3,6 +3,7 @@
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\aboutController;
 use App\Http\Controllers\contactController;
+use App\Http\Controllers\dashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [homeController::class, 'home']);
 Route::get('/about', [aboutController::class, 'about']);
 Route::get('/contact', [contactController::class, 'contact']);
+Route::get('/dashboard', [dashboardController::class, 'dashboard']);

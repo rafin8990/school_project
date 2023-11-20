@@ -8,7 +8,7 @@
       <li><a href={{"/"}}>Home</a></li>
       <li><a href={{"/about"}}>About</a> </li>
       <li><a href={{"/contact"}}>Contact</a> </li>
-      <li><a>Item 3</a></li>
+      <li><a href={{"/dashboard"}}>Dashboard</a> </li>
       </ul>
     </div>
     <a href={{"/"}} class="font-bold text-xl">School</a>
@@ -18,7 +18,7 @@
       <li><a href={{"/"}}>Home</a></li>
       <li><a href={{"/about"}}>About</a> </li>
       <li><a href={{"/contact"}}>Contact</a> </li>
-      <li><a>Item 3</a></li>
+      <li><a href={{"/dashboard"}}>Dashboard</a> </li>
     </ul>
   </div>
   <div class="navbar-end">
