@@ -1,5 +1,5 @@
 <div
-    class="relative overflow-hidden bg-cover bg-no-repeat lg:w-[1250px] mx-auto my-10"
+    class="relative overflow-hidden bg-cover bg-no-repeat lg:w-[1200px] mx-auto my-10"
     style="
      
       background-image: url('https://www.thoughtco.com/thmb/vrp4f1nWL7vbvwIr_Op9ZSbJZTw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/teenage-students-in-classroom--141090063-5af498bc6bf0690036889c1b.jpg');

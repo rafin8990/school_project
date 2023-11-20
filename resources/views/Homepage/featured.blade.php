@@ -7,17 +7,17 @@
     }
 </style>
 
-<div class="bg-gray-100 p-20">
+<div class="bg-gray-100 p-20 lg:w-[1200px] mx-auto">
     <div class="flex justify-center items-center my-5" >
         <h1 class="text-4xl font font-bold text-accent underline">Featured</h1>
     </div>
     
 
     <section class="grid gap-12 md:grid-cols-3 md:gap-16">
-    <!-- Block #1 -->
-    <article>
-        <div class="w-14 h-14 rounded shadow-md bg-white flex justify-center items-center rotate-3 mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" width="31" height="20">
+        
+        <article>
+             <div class="w-14 h-14 rounded shadow-md bg-white flex justify-center items-center rotate-3 mb-6">
+             <svg xmlns="http://www.w3.org/2000/svg" width="31" height="20">
                 <defs>
                     <linearGradient id="icon1-a" x1="50%" x2="50%" y1="0%" y2="100%">
                         <stop offset="0%" stop-color="#A5B4FC" />
@@ -32,19 +32,19 @@
                     <path fill="url(#icon1-a)" d="M20.625 0H9.375a9.375 9.375 0 0 0 0 18.75h11.25a9.375 9.375 0 0 0 0-18.75Z" transform="translate(.885 .885)" />
                     <path fill="url(#icon1-b)" d="M9.375 17.5A8.125 8.125 0 0 1 1.25 9.375 8.125 8.125 0 0 1 9.375 1.25 8.125 8.125 0 0 1 17.5 9.375 8.125 8.125 0 0 1 9.375 17.5Z" transform="translate(.885 .885)" />
                 </g>
-            </svg>
-        </div>
-        <h2>
+                </svg>
+            </div>
+            <h2>
             <span class="flex tabular-nums text-slate-900 text-5xl font-extrabold mb-2 transition-[_--num] duration-[3s] ease-out [counter-set:_num_var(--num)] supports-[counter-set]:before:content-[counter(num)]" x-data="{ shown: false }" x-intersect="shown = true" :class="shown && '[--num:80]'">
                 <span class="supports-[counter-set]:sr-only">80</span>%
             </span>
             <span class="inline-flex font-semibold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-indigo-300 mb-2">of class of 2014</span>
         </h2>
         <p class="text-sm text-slate-500">bachelor’s recipients were employed text.</p>
-    </article>
-    <!-- Block #2 -->
-    <article>
-        <div class="w-14 h-14 rounded shadow-md bg-white flex justify-center items-center -rotate-3 mb-6">
+         </article>
+   
+         <article>
+           <div class="w-14 h-14 rounded shadow-md bg-white flex justify-center     items-center -rotate-3 mb-6">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="19">
                 <defs>
                     <linearGradient id="icon2-a" x1="50%" x2="50%" y1="0%" y2="100%">
@@ -61,7 +61,7 @@
                     <path fill="url(#icon2-b)" d="M18.5 0a5.5 5.5 0 0 0 0 11c.159 0 .314-.01.469-.024a15.896 15.896 0 0 1-2.393 6.759.5.5 0 0 0 .424.765h1a.5.5 0 0 0 .363-.155C20.934 15.64 24 11.215 24 5.5A5.506 5.506 0 0 0 18.5 0Z" />
                 </g>
             </svg>
-        </div>
+         </div>
         <h2>
             <span class="flex tabular-nums text-slate-900 text-5xl font-extrabold mb-2 transition-[_--num] duration-[3s] ease-out [counter-set:_num_var(--num)] supports-[counter-set]:before:content-[counter(num)]" x-data="{ shown: false }" x-intersect="shown = true" :class="shown && '[--num:92]'">
                 <span class="supports-[counter-set]:sr-only">92</span>%
@@ -96,7 +96,7 @@
         </h2>
         <p class="text-sm text-slate-500">overall student athlete GPA for Spring 2016 text.</p>
     </article>
-</section>
+    </section>
 </div>
 
 

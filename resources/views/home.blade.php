@@ -76,6 +76,7 @@
     @include('/Homepage/latestNews')
     @include('/Homepage/event')
     @include('/Homepage/featured')
+    @include('/Homepage/blog')
     @include('/shared/footer')
 
   

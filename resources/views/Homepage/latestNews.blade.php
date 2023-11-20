@@ -1,5 +1,5 @@
 
-<div class=" md:mt-[10%]">
+<div class=" md:mt-[10%] lg:w-[1200px] mx-auto p-5 bg-gray-100 my-5">
     <div class="font mx-5 md:w-[400px] ml-5 flex items-center justify-between ">
         <h1 class="text-4xl lg:text-5xl font-bold text-accent">Latest News</h1>
         <button class="underline-animation mt-5"><h5 class="text-xl font font-semibold"><span class="">See </span>All News</h5></button>
@@ -15,10 +15,10 @@
         
     </div>
     <!-- button content  -->
-    <div class="xl:flex items-center">
+    <div class="xl:flex ">
 
         <div>
-             <div id="all" class=" content lg:flex mr-10  ">
+             <div id="all" class=" content lg:flex   ">
                 <div class="mt-10 mx-3 lg:mx-10">
                     <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news2-435x280.jpg" alt="">
                         <div class="mx-3 md:w-[440px] lg:ml-5">
@@ -65,7 +65,7 @@
         
 
              </div>
-            <div id="Academics" class=" content  lg:flex lg:hidden  mr-10 ">
+            <div id="Academics" class=" content  lg:flex lg:hidden   ">
                     <div class="mt-10 mx-3 lg:mx-10">
                         <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news1-435x280.jpg" alt="">
                             <div class="mx-3 lg:w-[440px] lg:ml-5">
@@ -111,7 +111,7 @@
             
 
             </div>
-            <div id="Schools" class="content   lg:flex lg:hidden mr-10">
+            <div id="Schools" class="content   lg:flex lg:hidden ">
                     <div class="mt-10 mx-3 lg:mx-10">
                         <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news2-435x280.jpg" alt="">
                             <div class="mx-3 lg:w-[440px] lg:ml-5">
@@ -157,7 +157,7 @@
             
 
             </div>
-            <div id="Athletics" class="content lg:flex lg:hidden  mr-10 ">
+            <div id="Athletics" class="content lg:flex lg:hidden   ">
                     <div class="mt-10 mx-3 lg:mx-10">
                         <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news1-435x280.jpg" alt="">
                             <div class="mx-3 lg:w-[440px] lg:ml-5">
@@ -203,7 +203,7 @@
             
 
             </div>
-            <div id="campuslife" class="content  lg:flex lg:hidden mr-10 ">
+            <div id="campuslife" class="content  lg:flex lg:hidden  ">
                     <div class="mt-10 mx-3 lg:mx-10">
                         <img src="https://smartyschool.stylemixthemes.com/university/wp-content/uploads/2016/07/news2-435x280.jpg" alt="">
                             <div class="mx-3 lg:w-[440px] lg:ml-5">
@@ -251,7 +251,7 @@
             </div>
         </div>
 
-        <div class="bg-blue-900 p-10 my-5 mx-5 md:w-[400px]">
+        <div class="bg-blue-900 p-10 my-5 mx-5 md:mx-0 md:w-[400px] h-[400px]">
             
             <img src="https://smartyschool.stylemixthemes.com/university/wp-content/themes/smarty/assets/img/frontend-customizer/mailchimp-envelope.svg" alt="">
         
