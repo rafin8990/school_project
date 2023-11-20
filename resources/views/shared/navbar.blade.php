@@ -1,4 +1,4 @@
-<div class="navbar bg-base-100  mx-auto">
+<div class="navbar bg-gray-200  mx-auto">
   <div class="navbar-start">
     <div class="dropdown"> 
       <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -22,6 +22,6 @@
     </ul>
   </div>
   <div class="navbar-end">
-    <a class="btn">Button</a>
+    <a class="btn btn-accent">Login</a>
   </div>
 </div>

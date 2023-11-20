@@ -19,24 +19,38 @@
       </div>
     </div>
 </div>
- <div class="mb-28  w-[400px] lg:w-[1200px] mx-auto">
-            <div class="absolute bottom-32 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 "> 
-    
-            <div class="p-10 w-[350px] border bg-[#f6a84b] rounded-xl text-white mx-2 mt-2">
-                <h1 class="font text-2xl font-semibold text-center">Something</h1>
-                <p class="text-xl text-center mt-3">21 Awesome Things About Music at Smart</p>
-            </div>
-            <div class="p-10 w-[350px] border bg-[#71b4e1] rounded-xl text-white mx-2"> 
-                <h1 class="font text-2xl font-semibold text-center">Something</h1>
-                <p class="text-xl text-center mt-3">21 Awesome Things About Music at Smart</p>
-            </div>
-            <div class="p-10 w-[350px] border bg-[#bcbec0] rounded-xl text-white mx-2">
-                <h1 class="font text-2xl font-semibold text-center">Something</h1>
-                <p class="text-xl text-center mt-3">21 Awesome Things About Music at Smart</p>
-            </div>
+ <div class="bg-accent p-5">
+    <div class=" w-[400px] lg:w-[1200px] mx-auto">
+            <div class=" grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 "> 
+        
+                <div class="p-10 flex justify-between   text-white mx-2 mt-2">
+                    <div>
+                      <h1 class="font text-2xl font-semibold text-center">Something</h1>
+                      <p class="text-xl text-center mt-3">21 Awesome Things About Music at Smart</p>
+                    </div>
+                    <div class="h-[100px] w-[2px] bg-white hidden md:block">
+                    </div>
+                </div>
+                <div class="p-10 flex justify-between  text-white mx-2 mt-2">
+                    <div>
+                      <h1 class="font text-2xl font-semibold text-center">Something</h1>
+                      <p class="text-xl text-center mt-3">21 Awesome Things About Music at Smart</p>
+                    </div>
+                    <div class="h-[100px] w-[2px] bg-white hidden md:block">
+                    </div>
+                </div>
+                <div class="p-10 flex justify-between   text-white mx-2 mt-2">
+                    <div>
+                      <h1 class="font text-2xl font-semibold text-center">Something</h1>
+                      <p class="text-xl text-center mt-3">21 Awesome Things About Music at Smart</p>
+                    </div>
+                    
+                </div>
+                
 
-        </div>
-</div>
+            </div>
+    </div>
+ </div>
 
 
 
