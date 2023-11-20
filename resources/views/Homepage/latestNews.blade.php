@@ -15,7 +15,7 @@
         
     </div>
     <!-- button content  -->
-    <div class="xl:flex ">
+ 
 
         <div>
              <div id="all" class=" content lg:flex   ">
@@ -251,16 +251,8 @@
             </div>
         </div>
 
-        <div class="bg-blue-900 p-10 my-5 mx-5 md:mx-0 md:w-[400px] h-[400px]">
-            
-            <img src="https://smartyschool.stylemixthemes.com/university/wp-content/themes/smarty/assets/img/frontend-customizer/mailchimp-envelope.svg" alt="">
         
-
-            <h1 class="text-2xl text-white">Subscribe <br>to our newsletter</h1>
-            <input class="input input-bordered w-full " placeholder="Email" type="email" name="email" id="">
-            <button class="btn btn-accent text-white mt-5 w-full">Subscribe</button>
-        </div>
-    </div>
+   
 </div>
 
 

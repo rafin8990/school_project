@@ -13,14 +13,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script
-    
-
 </head>
-<body>
 <style>
-.font{
-    font-family: 'Playfair Display', serif;
-}
+    .font{
+         font-family: 'Playfair Display', serif;
+        }
 .underline-animation {
       position: relative;
       text-decoration: none;
@@ -62,15 +59,16 @@
       left: 0;
       width: 100%;
       height: 5px;
-      background-color: #71b4e1; /* Initial color before hover */
+      background-color: #71b4e1; 
       z-index: -1;
-      transition: height 0.3s ease-in-out; /* Animation transition */
+      transition: height 0.3s ease-in-out; 
     }
 
     .fill-animation:hover::before {
-      height: 100%; /* Fill out full content on hover */
+      height: 100%; 
     }
 </style>
+<body>
     @include('/shared/navbar')
     @include('/Homepage/header')
     @include('/Homepage/latestNews')
@@ -78,7 +76,5 @@
     @include('/Homepage/featured')
     @include('/Homepage/blog')
     @include('/shared/footer')
-
-  
 </body>
 </html>
