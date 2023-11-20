@@ -19,8 +19,8 @@
       </div>
     </div>
 </div>
- <div class="mt-5 w-[400px] lg:w-[1200px] mx-auto">
-            <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 "> 
+ <div class="mb-28  w-[400px] lg:w-[1200px] mx-auto">
+            <div class="absolute bottom-32 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 "> 
     
             <div class="p-10 w-[350px] border bg-[#f6a84b] rounded-xl text-white mx-2 mt-2">
                 <h1 class="font text-2xl font-semibold text-center">Something</h1>
