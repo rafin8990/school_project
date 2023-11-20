@@ -70,6 +70,7 @@
 </style>
     @include('/shared/navbar')
     @include('/Aboutpage/body')
+    @include('/Aboutpage/principle')
     @include('/shared/footer')
 
   
