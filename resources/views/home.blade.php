@@ -76,12 +76,12 @@
     }
 </style>
 
-    @include('/shared/navbar');
-    @include('/Homepage/header');
-    @include('/Homepage/latestNews');
-    @include('/Homepage/event');
-    @include('/Homepage/featured');
-    @include('/Homepage/blog');
-    @include('/shared/footer');
+    @include('/shared/navbar')
+    @include('/Homepage/header')
+    @include('/Homepage/latestNews')
+    @include('/Homepage/event')
+    @include('/Homepage/featured')
+    @include('/Homepage/blog')
+    @include('/shared/footer')
 </body>
 </html>
