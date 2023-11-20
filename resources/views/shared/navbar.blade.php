@@ -7,8 +7,8 @@
       <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
       <li><a href={{"/"}}>Home</a></li>
       <li><a href={{"/about"}}>About</a> </li>
-      <li><a href={{"/about"}}>Contact</a> </li>
-      <li><a>Item 3</a></li>
+      <li><a href={{"/contact"}}>Contact</a> </li>
+      <li><a href={{"/dashboard"}}>Dashboard</a> </li>
       </ul>
     </div>
     <a href={{"/"}} class="font-bold text-xl">School</a>
@@ -17,8 +17,8 @@
     <ul class="menu menu-horizontal px-1">
       <li><a href={{"/"}}>Home</a></li>
       <li><a href={{"/about"}}>About</a> </li>
-      <li><a href={{"/about"}}>Contact</a> </li>
-      <li><a>Item 3</a></li>
+      <li><a href={{"/contact"}}>Contact</a> </li>
+      <li><a href={{"/dashboard"}}>Dashboard</a> </li>
     </ul>
   </div>
   <div class="navbar-end">

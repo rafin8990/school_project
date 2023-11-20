@@ -7,11 +7,11 @@
     
         <!-- button point  -->
         <div class="font mt-10 hidden md:block" >
-            <button onclick="showContent('all')" class="font fill-animation px-4 py-2 bg-accent  hover:text-white border-0 w-[100px] ml-5 mt-3">ALL</button>
-            <button onclick="showContent('Academics')" class="font fill-animation px-4 py-2  hover:text-white border-0 w-[100px] ml-5 mt-3">Academics</button>
-            <button onclick="showContent('Schools')" class="font fill-animation px-4 py-2  hover:text-white border-0 w-[100px] ml-5 mt-3">Schools</button>
-            <button onclick="showContent('Athletics')" class="font fill-animation px-4 py-2  hover:text-white border-0 w-[100px] ml-5 mt-3">Athletics</button>
-            <button onclick="showContent('campuslife')" class="font fill-animation px-4 py-2  hover:text-white border-0 w-[120px] ml-5 mt-3">Campus life</button>
+            <button onclick="showContent('all')" class="font fill-animation px-4 py-2 bg-accent  hover:text-accent border-0 w-[100px] ml-5 mt-3">ALL</button>
+            <button onclick="showContent('Academics')" class="font fill-animation px-4 py-2  hover:text-accent border-0 w-[100px] ml-5 mt-3">Academics</button>
+            <button onclick="showContent('Schools')" class="font fill-animation px-4 py-2  hover:text-accent border-0 w-[100px] ml-5 mt-3">Schools</button>
+            <button onclick="showContent('Athletics')" class="font fill-animation px-4 py-2  hover:text-accent border-0 w-[100px] ml-5 mt-3">Athletics</button>
+            <button onclick="showContent('campuslife')" class="font fill-animation px-4 py-2  hover:text-accent border-0 w-[120px] ml-5 mt-3">Campus life</button>
             
         </div>
         <!-- button content  -->
