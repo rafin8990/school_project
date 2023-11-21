@@ -22,6 +22,6 @@
     </ul>
   </div>
   <div class="navbar-end">
-    <a class="btn btn-accent">Login</a>
+    <a href={{"/login"}} class="btn btn-accent">Login</a>
   </div>
 </div>

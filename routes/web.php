@@ -4,6 +4,7 @@ use App\Http\Controllers\homeController;
 use App\Http\Controllers\aboutController;
 use App\Http\Controllers\contactController;
 use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\authController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,3 +22,5 @@ Route::get('/', [homeController::class, 'home']);
 Route::get('/about', [aboutController::class, 'about']);
 Route::get('/contact', [contactController::class, 'contact']);
 Route::get('/dashboard', [dashboardController::class, 'dashboard']);
+Route::get('/login', [authController::class, 'login']);
+Route::get('/register', [authController::class, 'register']);
