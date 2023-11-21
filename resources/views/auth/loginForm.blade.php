@@ -1,8 +1,8 @@
 <div class=" min-h-screen lg:flex justify-between items-center ">
-    <div class="mx-5 lg:ml-52">
+    <div class="mx-5 lg:ml-52 my-5">
         <div>
             <div>
-                <h1 class="font text-4xl my-4 lg:text-5xl font-bold text-blue-900 text-center">
+                <h1 class="font text-accent text-4xl my-4 lg:text-5xl font-bold  text-center">
                     Login to your account
                 </h1>
                 <h3 class="text-center my-10 text-lg text-gray-500">
