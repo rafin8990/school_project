@@ -8,6 +8,7 @@ use App\Http\Controllers\authController;
 use App\Http\Controllers\admin\studentController;
 use App\Http\Controllers\humanResource\humanResourceController;
 use App\Http\Controllers\academics\academicController;
+use App\Http\Controllers\attendence\attendenceController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -51,5 +52,8 @@ Route::prefix('/')->group(function () {
     Route::get('/class',[academicController::class, 'class']);
     Route::get('/section',[academicController::class, 'section']);
     Route::get('/subject',[academicController::class, 'subject']);
-
+    
+    // attendence 
+    Route::get('/attendence',[attendenceController::class, 'attendence']);
+    Route::get('/update-attendence',[attendenceController::class, 'updateAttendence']);
 });
