@@ -1,4 +1,4 @@
-<div class="navbar bg-gray-200">
+<div class="navbar bg-accent">
     <div class="flex-1">
         <a href="/" class="font text-xl ml-5">School</a>
     </div>
