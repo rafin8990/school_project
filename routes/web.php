@@ -7,6 +7,8 @@ use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\authController;
 use App\Http\Controllers\admin\studentController;
 use App\Http\Controllers\humanResource\humanResourceController;
+use App\Http\Controllers\academics\academicController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,4 +46,10 @@ Route::prefix('/')->group(function () {
     Route::get('/staff-list',[humanResourceController::class, 'staffList']);
     Route::get('/designation',[humanResourceController::class, 'designation']);
     Route::get('/department',[humanResourceController::class, 'department']);
+    
+    // academics 
+    Route::get('/class',[academicController::class, 'class']);
+    Route::get('/section',[academicController::class, 'section']);
+    Route::get('/subject',[academicController::class, 'subject']);
+
 });
