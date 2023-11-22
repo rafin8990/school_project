@@ -5,6 +5,7 @@ use App\Http\Controllers\aboutController;
 use App\Http\Controllers\contactController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\authController;
+use App\Http\Controllers\admin\studentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [homeController::class, 'home']);
 Route::get('/about', [aboutController::class, 'about']);
 Route::get('/contact', [contactController::class, 'contact']);
-Route::get('/dashboard', [dashboardController::class, 'dashboard']);
 Route::get('/login', [authController::class, 'login']);
 Route::get('/register', [authController::class, 'register']);
+
+
+
+// Route group for dashboard
+Route::prefix('/')->group(function () {
+    Route::get('/dashboard', [dashboardController::class, 'dashboard']);
+    Route::get('/student-list', [studentController::class, 'studentList']);
+});

@@ -5,11 +5,11 @@
             <div tabindex="4" class="collapse collapse-plus bg-accent  mb-2 text-white">
                 <input type="checkbox" />
                 <div class="collapse-title">
-                    Students
+                <i class="fa-solid fa-school"></i> Students
                 </div>
                 <div class="collapse-content">
                     <ul>
-                        <li class="bg-white text-black rounded-xl"><a href="">student list</a></li>
+                        <li class="bg-white text-black rounded-xl"><a href="/student-list">student list</a></li>
                         <li class="bg-white text-black rounded-xl mt-2"><a href="">Add Student</a></li>
                     </ul>
                       
@@ -18,7 +18,7 @@
             <div tabindex="4" class="collapse collapse-plus bg-accent  mb-2 text-white">
                 <input type="checkbox" />
                 <div class="collapse-title">
-                    Human Ressources
+                <i class="fa-brands fa-figma"></i>  Human Ressources
                 </div>
                 <div class="collapse-content">
                     <ul>
@@ -35,7 +35,7 @@
             <div tabindex="4" class="collapse collapse-plus bg-accent  mb-2 text-white">
                 <input type="checkbox" />
                 <div class="collapse-title">
-                    Academics
+                <i class="fa-brands fa-slack"></i>  Academics
                 </div>
                 <div class="collapse-content">
                     <ul>
@@ -49,7 +49,7 @@
             <div tabindex="4" class="collapse collapse-plus bg-accent  mb-2 text-white">
                 <input type="checkbox" />
                 <div class="collapse-title">
-                    Attendence
+                <i class="fa-solid fa-bolt"></i>  Attendence
                 </div>
                 <div class="collapse-content">
                     <ul>
@@ -62,7 +62,7 @@
             <div tabindex="4" class="collapse collapse-plus bg-accent  mb-2 text-white">
                 <input type="checkbox" />
                 <div class="collapse-title">
-                    Fee Collection
+                <i class="fa-solid fa-bolt"></i>   Fee Collection
                 </div>
                 <div class="collapse-content">
                     <ul>
@@ -76,7 +76,7 @@
             <div tabindex="4" class="collapse collapse-plus bg-accent  mb-2 text-white">
                 <input type="checkbox" />
                 <div class="collapse-title">
-                    Examination
+                <i class="fa-solid fa-plus"></i>  Examination
                 </div>
                 <div class="collapse-content">
                     <ul>
@@ -89,7 +89,7 @@
             <div tabindex="4" class="collapse collapse-plus bg-accent  mb-2 text-white">
                 <input type="checkbox" />
                 <div class="collapse-title">
-                    Exam Reports
+                <i class="fa-brands fa-dropbox"></i>   Exam Reports
                 </div>
                 <div class="collapse-content">
                     <ul>
@@ -104,22 +104,7 @@
             <div tabindex="4" class="collapse collapse-plus bg-accent  mb-2 text-white">
                 <input type="checkbox" />
                 <div class="collapse-title">
-                    Exam Reports
-                </div>
-                <div class="collapse-content">
-                    <ul>
-                        <li class="bg-white text-black rounded-xl"><a href="">Transcript</a></li>
-                        <li class="bg-white text-black rounded-xl mt-2"><a href="">Possoin List</a></li>
-                        <li class="bg-white text-black rounded-xl mt-2"><a href="">Pass List</a></li>
-                        <li class="bg-white text-black rounded-xl mt-2"><a href="">Fail List</a></li>
-                    </ul>
-                      
-                </div>
-            </div>
-            <div tabindex="4" class="collapse collapse-plus bg-accent  mb-2 text-white">
-                <input type="checkbox" />
-                <div class="collapse-title">
-                    Library
+                <i class="fa-solid fa-hashtag"></i>  Library
                 </div>
                 <div class="collapse-content">
                     <ul>
@@ -133,7 +118,7 @@
             <div tabindex="4" class="collapse collapse-plus bg-accent  mb-2 text-white">
                 <input type="checkbox" />
                 <div class="collapse-title">
-                    Transport
+                <i class="fa-solid fa-car"></i>  Transport
                 </div>
                 <div class="collapse-content">
                     <ul>
@@ -146,7 +131,7 @@
             <div tabindex="4" class="collapse collapse-plus bg-accent  mb-2 text-white">
                 <input type="checkbox" />
                 <div class="collapse-title">
-                    Hostel
+                <i class="fa-solid fa-house"></i>  Hostel
                 </div>
                 <div class="collapse-content">
                     <ul>
