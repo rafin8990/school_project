@@ -1,7 +1,7 @@
-<div class="navbar bg-accent">
+<div class="navbar bg-blue-950">
     <div class="flex-1">
-        <a href="/" class="font text-xl ml-5">School</a>
-    </div>
+        <a href="/" class="font text-xl ml-5 text-white">School</a>
+    </div> 
     <div class="flex-none gap-2">
        
         <div class="dropdown dropdown-end">

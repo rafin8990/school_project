@@ -10,4 +10,7 @@ class studentController extends Controller
     public function studentList(){
         return view('Dashboard/student/studentList');
     }
+    public function addStudent(){
+        return view('Dashboard/student/addStudent');
+    }
 }
