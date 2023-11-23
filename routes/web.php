@@ -9,6 +9,7 @@ use App\Http\Controllers\admin\studentController;
 use App\Http\Controllers\humanResource\humanResourceController;
 use App\Http\Controllers\academics\academicController;
 use App\Http\Controllers\attendence\attendenceController;
+use App\Http\Controllers\feeCollection\feeCollectionController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -56,4 +57,10 @@ Route::prefix('/')->group(function () {
     // attendence 
     Route::get('/attendence',[attendenceController::class, 'attendence']);
     Route::get('/update-attendence',[attendenceController::class, 'updateAttendence']);
+    
+    // fee collection 
+    Route::get('/invoice-list',[feeCollectionController::class, 'invoiceList']);
+    Route::get('/invoice-individual',[feeCollectionController::class, 'invoiceIndividual']);
+    Route::get('/create-invoice',[feeCollectionController::class, 'createInvoice']);
+
 });

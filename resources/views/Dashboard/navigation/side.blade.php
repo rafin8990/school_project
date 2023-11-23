@@ -67,7 +67,7 @@
             <div class="collapse-content">
                 <ul>
                     <li class="bg-white text-black rounded-xl"><a href="/invoice-list">Invoice list</a></li>
-                    <li class="bg-white text-black rounded-xl mt-2"><a href="">Invoice Individual</a></li>
+                    <li class="bg-white text-black rounded-xl mt-2"><a href="/invoice-individual">Invoice Individual</a></li>
                     <li class="bg-white text-black rounded-xl mt-2"><a href="/create-invoice">create Invoice</a></li>
                 </ul>
                   
