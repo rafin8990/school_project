@@ -13,6 +13,8 @@ use App\Http\Controllers\feeCollection\feeCollectionController;
 use App\Http\Controllers\examination\examController;
 use App\Http\Controllers\examReports\examReportController;
 use App\Http\Controllers\library\libraryController;
+use App\Http\Controllers\transport\transportController;
+use App\Http\Controllers\hostel\hostelController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -81,7 +83,15 @@ Route::prefix('/')->group(function () {
     Route::get('/add-rack',[libraryController::class, 'addRack']);
     Route::get('/book-list',[libraryController::class, 'bookList']);
     Route::get('/issue-return',[libraryController::class, 'issueReturn']);
-
+    
+    // transport    
+    Route::get('/route',[transportController::class, 'route']);
+    Route::get('/vehicles',[transportController::class, 'vehicles']);
+    
+    // hostel 
+    Route::get('/fees-collection',[hostelController::class, 'feesCollection']);
+    Route::get('/hostel',[hostelController::class, 'hostel']);
+    Route::get('/member',[hostelController::class, 'member']);
 
 
 
