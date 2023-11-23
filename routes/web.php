@@ -44,6 +44,7 @@ Route::prefix('/')->group(function () {
 
     //human resource
     Route::get('/teachers',[humanResourceController::class, 'teachers']);
+    Route::get('/addteacher',[humanResourceController::class, 'addTeachers']);
     Route::get('/staffs',[humanResourceController::class, 'staff']);
     Route::get('/staff-list',[humanResourceController::class, 'staffList']);
     Route::get('/designation',[humanResourceController::class, 'designation']);

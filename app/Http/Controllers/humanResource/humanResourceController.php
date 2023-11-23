@@ -10,6 +10,9 @@ class humanResourceController extends Controller
     public function teachers(){
         return view('/Dashboard/humanResource/teachers');
     }
+    public function addTeachers(){
+        return view('/Dashboard/humanResource/addteacher');
+    }
     public function staff(){
         return view('/Dashboard/humanResource/staff');
     }

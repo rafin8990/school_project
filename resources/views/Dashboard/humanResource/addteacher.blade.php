@@ -5,7 +5,7 @@
 
 <!-- the content here  -->
 <div class="mx-10 mt-10">
-    <h1 class="text-2xl text-accent">Student Information</h1>
+    <h1 class="text-2xl text-accent">Teacher Information</h1>
     <div class="">
         <form>
             {{-- student information --}}
@@ -24,41 +24,34 @@
                     @include('/Dashboard/student/date')
                 </div>
                 <div class="mt-5 w-[400px]">
-                    <input type="text" placeholder="Enter The Student Id" class="input input-bordered w-full " />
+                    <input type="text" placeholder="Enter The Teacher Id" class="input input-bordered w-full " />
                 </div>
             </div>
 
             <div class="md:flex">
                 <div class="mt-5 w-[200px] mr-32">
-                    <select id="Class" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                        <option>Select Class</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                      </select>
+                    <select id="designation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option>Select Designation</option>
+                        <option>Assistant Teacher </option>
+                        <option>Teacher</option>
+                    </select>
                 </div>
                 <div class="mt-5 w-[200px] mr-32">
                     <select id="Section" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         <option>Select Section</option>
+                        <option>Permanent</option>
+                        <option>Provition</option>
                       </select>
                 </div>
                 <div class="mt-5 w-[200px]">
-                    <select id="Year" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                        <option>Select Year</option>
-                        <option>2020</option>
-                        <option>2021</option>
-                        <option>2022</option>
-                        <option>2023</option>
-                        <option>2024</option>
-                        <option>2025</option>
-                        <option>2026</option>
-                        <option>2027</option>
-                      </select>
+                    <div class="relative max-w-sm">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                           <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                              <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                            </svg>
+                        </div>
+                        <input datepicker datepicker-autohide type="text" class="input input-bordered block w-full ps-10 p-2.5 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select joining date">
+                      </div>
                 </div>
             </div>
             <div class="md:flex mt-5">
@@ -81,7 +74,7 @@
                 </div>
                 <div class="mt-5 w-[400px] ml-20">
                     <input type="file" class="file-input file-input-bordered file-input-accent w-full " />
-                    <p>upload the student profile picture</p>
+                    <p>upload the teacher profile picture</p>
 
                 </div>
             </div>
@@ -145,9 +138,14 @@
                 
 
             </div>
-
-            <div class="mt-5">
+            <div class="mt-5 md:flex">
+              <div class="mt-5">
                 <input type="password" placeholder="Enter password" class="input input-bordered w-full" />
+              </div>
+              <div>
+                <input type="text" placeholder="Enter nid" class="input input-bordered w-full" />
+
+              </div>
             </div>
             <div class="my-5 flex justify-end ">
                 <button class=" btn btn-accent text-white ">

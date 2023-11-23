@@ -6,7 +6,7 @@
 <div class="bg-gray-100 p-5">
     <h1 class="text-2xl font font-semibold text-accent  ml-5 py-5">Dashboard</h1>
 
-    <div class="2xl:flex">
+    <div class="">
         <div class="md:flex">
             @include('/Dashboard/home/chirt')
             @include('/Dashboard/home/analysis')
