@@ -10,6 +10,11 @@ use App\Http\Controllers\humanResource\humanResourceController;
 use App\Http\Controllers\academics\academicController;
 use App\Http\Controllers\attendence\attendenceController;
 use App\Http\Controllers\feeCollection\feeCollectionController;
+use App\Http\Controllers\examination\examController;
+use App\Http\Controllers\examReports\examReportController;
+use App\Http\Controllers\library\libraryController;
+use App\Http\Controllers\transport\transportController;
+use App\Http\Controllers\hostel\hostelController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -63,5 +68,32 @@ Route::prefix('/')->group(function () {
     Route::get('/invoice-list',[feeCollectionController::class, 'invoiceList']);
     Route::get('/invoice-individual',[feeCollectionController::class, 'invoiceIndividual']);
     Route::get('/create-invoice',[feeCollectionController::class, 'createInvoice']);
+    
+    // examination 
+    Route::get('/exam-list',[examController::class, 'examList']);
+    Route::get('/mark-import',[examController::class, 'markImport']);
+    
+    // exam-Reports 
+    Route::get('/transcript',[examReportController::class, 'transcript']);
+    Route::get('/possion-list',[examReportController::class, 'possoinList']);
+    Route::get('/pass-list',[examReportController::class, 'passList']);
+    Route::get('/fail-list',[examReportController::class, 'failList']);
+    
+    
+    //library
+    Route::get('/add-rack',[libraryController::class, 'addRack']);
+    Route::get('/book-list',[libraryController::class, 'bookList']);
+    Route::get('/issue-return',[libraryController::class, 'issueReturn']);
+    
+    // transport    
+    Route::get('/route',[transportController::class, 'route']);
+    Route::get('/vehicles',[transportController::class, 'vehicles']);
+    
+    // hostel 
+    Route::get('/fees-collection',[hostelController::class, 'feesCollection']);
+    Route::get('/hostel',[hostelController::class, 'hostel']);
+    Route::get('/member',[hostelController::class, 'member']);
+
+
 
 });
