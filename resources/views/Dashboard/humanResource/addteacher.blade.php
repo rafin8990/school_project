@@ -138,11 +138,11 @@
                 
 
             </div>
-            <div class="mt-5 md:flex">
-              <div class="mt-5">
+            <div class="mt-5 md:flex ">
+              <div class="mt-5 w-[400px] mr-32">
                 <input type="password" placeholder="Enter password" class="input input-bordered w-full" />
               </div>
-              <div>
+              <div class="mt-5 w-[400px]">
                 <input type="text" placeholder="Enter nid" class="input input-bordered w-full" />
 
               </div>
