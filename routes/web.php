@@ -11,6 +11,8 @@ use App\Http\Controllers\academics\academicController;
 use App\Http\Controllers\attendence\attendenceController;
 use App\Http\Controllers\feeCollection\feeCollectionController;
 use App\Http\Controllers\examination\examController;
+use App\Http\Controllers\examReports\examReportController;
+use App\Http\Controllers\library\libraryController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -69,10 +71,18 @@ Route::prefix('/')->group(function () {
     Route::get('/mark-import',[examController::class, 'markImport']);
     
     // exam-Reports 
-    Route::get('/transcript',[examController::class, 'transcript']);
-    Route::get('/possion-list',[examController::class, 'possoinList']);
-    Route::get('/pass-list',[examController::class, 'passList']);
-    Route::get('/fail-list',[examController::class, 'failList']);
+    Route::get('/transcript',[examReportController::class, 'transcript']);
+    Route::get('/possion-list',[examReportController::class, 'possoinList']);
+    Route::get('/pass-list',[examReportController::class, 'passList']);
+    Route::get('/fail-list',[examReportController::class, 'failList']);
+    
+    
+    //library
+    Route::get('/add-rack',[libraryController::class, 'addRack']);
+    Route::get('/book-list',[libraryController::class, 'bookList']);
+    Route::get('/issue-return',[libraryController::class, 'issueReturn']);
+
+
 
 
 });
