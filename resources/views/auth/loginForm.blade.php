@@ -36,7 +36,7 @@
                 Sign Up for discover new opportunities
             </p>
             <div class="flex justify-center">
-                <a href="/register">
+                <a href="/register/admin">
                     <button class="bg-white text-center w-28 py-2 rounded-xl mt-2">
                         Register
                     </button>

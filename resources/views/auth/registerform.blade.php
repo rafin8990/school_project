@@ -1,5 +1,5 @@
 <div class=" min-h-screen lg:flex justify-between items-center ">
-    <div class="mx-5 lg:ml-52">
+<div class="mx-5 ">
         <div>
             <div>
                 <h1 class="font text-4xl my-4 lg:text-5xl font-bold text-blue-900 text-center">
@@ -11,20 +11,32 @@
             </div>
 
             <div class="">
-                <form>
+                <form action="{{ route('users.store') }}" method="post">
+                    @csrf
 
                     <div class="mt-5">
-                        <input type="text" placeholder="Enter Name" class="input input-bordered w-full " />
+                        <p class="py-3">Name</p>
+                        <input type="text" name="name" placeholder="Enter Name" class="input input-bordered w-full " />
                     </div>
 
                     <div class="mt-5">
-                        <input type="email" placeholder="Enter Email" class="input input-bordered w-full " />
+                    <p class="py-3">Email</p>
+                        <input type="email" name="email" placeholder="Enter Email" class="input input-bordered w-full " />
                     </div>
                     <div class="mt-5">
-                        <input type="password" placeholder="Enter password" class="input input-bordered w-full" />
+                    <p class="py-3">Phone Number</p>
+                        <input type="text" name="phone_number" placeholder="Enter Email" class="input input-bordered w-full " />
                     </div>
-                    <div class="mt-5 ">
-                        <button class=" btn btn-accent text-white w-full">
+                    <div class="mt-5">
+                    <p class="py-3">Password</p>
+                        <input type="password" name="password" placeholder="Enter password" class="input input-bordered w-full" />
+                    </div>
+                    <div class="mt-5">
+                    <!-- <p class="py-3">Role</p>
+                        <input type="text" name="role" value="admin"  placeholder="Enter password" class="input input-bordered w-full" />
+                    </div> -->
+                    <div class="my-5 ">
+                        <button type="submit" class=" btn btn-accent btn-outline w-full">
                             Register
                         </button>
                     </div>
@@ -32,10 +44,11 @@
             </div>
         </div>
     </div>
+
     <div class=" bg-accent min-h-screen flex justify-center items-center p-5 lg:w-1/4 ">
         <div>
             <h1 class="text-4xl font-bold text-white text-center">
-                New Here
+                Already Have An account ?
             </h1>
             <p class="mt-2 text-gray-700 text-center">
                 Sign In for discover new opportunities
@@ -49,4 +62,6 @@
             </div>
         </div>
     </div>
+    
 </div>
+
