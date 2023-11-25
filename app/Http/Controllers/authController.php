@@ -17,7 +17,7 @@ class authController extends Controller
 
     public function loginUser(Request $request)
     {
-   
+       
         $this->validate($request, [
             'email' => 'required|string|email',
             'password' => 'required|string|min:4',
@@ -27,7 +27,7 @@ class authController extends Controller
 
         $user = Admin::where('email', $request->input('email'))->first();
 
-
+        
         if ($user) {
 
             if (Hash::check($request->password, $user->password)) {
