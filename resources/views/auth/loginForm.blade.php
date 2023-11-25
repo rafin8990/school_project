@@ -11,15 +11,15 @@
             </div>
 
             <div class="">
-                <form>
+                <form action="{{route('login-user')}}" method="post">
                     <div>
-                        <input type="email" placeholder="Enter Email" class="input input-bordered w-full " />
+                        <input type="email" name="email" placeholder="Enter Email" class="input input-bordered w-full " />
                     </div>
                     <div class="mt-5">
-                        <input type="password" placeholder="Enter password" class="input input-bordered w-full" />
+                        <input type="password" name="password" placeholder="Enter password" class="input input-bordered w-full" />
                     </div>
                     <div class="mt-5 ">
-                        <button class=" btn btn-accent text-white w-full">
+                        <button type="submit" class=" btn btn-accent text-white w-full">
                             Login
                         </button>
                     </div>

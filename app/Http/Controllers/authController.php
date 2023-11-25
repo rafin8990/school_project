@@ -13,11 +13,44 @@ class authController extends Controller
     {
         return view("auth/login");
     }
+
+
+    public function loginUser(Request $request)
+    {
+   
+        $this->validate($request, [
+            'email' => 'required|string|email',
+            'password' => 'required|string|min:4',
+        ]);
+
+
+
+        $user = Admin::where('email', $request->input('email'))->first();
+
+
+        if ($user) {
+
+            if (Hash::check($request->password, $user->password)) {
+
+                return redirect('/dashboard')->with('success', 'Login successful!');
+            } else {
+                return back()->with('fail', 'Login failed. Please check your password.');
+            }
+        } else {
+
+            return back()->with('fail', 'Login failed. Please check your user.');
+        }
+    }
+
+
+
+// registration 
+
     public function register()
     {
         return view("auth/register");
     }
-
+    
     public function store(Request $request)
     {
 
@@ -29,7 +62,7 @@ class authController extends Controller
             'password' => 'required|string',
         ]);
 
-      
+
         $existingUser = Admin::where('email', $request->input('email'))->first();
         $existingPhoneNumber = Admin::where('phone_number', $request->input('phone_number'))->first();
 
@@ -54,4 +87,7 @@ class authController extends Controller
 
         return redirect('/login')->with('success', 'Registration successful! Please log in.');
     }
+
+
+    
 }

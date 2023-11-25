@@ -33,6 +33,7 @@ Route::get('/', [homeController::class, 'home']);
 Route::get('/about', [aboutController::class, 'about']);
 Route::get('/contact', [contactController::class, 'contact']);
 Route::get('/login', [authController::class, 'login']);
+Route::get('/login-user', [authController::class, 'loginUser'])->name('login-user');
 
 // registration admin 
 Route::post('/register/admin', [authController::class, 'store']);
