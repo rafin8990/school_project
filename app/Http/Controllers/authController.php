@@ -41,7 +41,12 @@ class authController extends Controller
             return back()->with('fail', 'Login failed. Please check your user.');
         }
     }
-
+// some thng 
+// some thng 
+// some thng 
+// some thng 
+// some thng 
+// some thng 
 
 
 // registration 
