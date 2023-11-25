@@ -36,8 +36,8 @@ Route::get('/login', [authController::class, 'login']);
 Route::get('/login-user', [authController::class, 'loginUser'])->name('login-user');
 
 // registration admin 
-Route::post('/register/admin', [authController::class, 'store']);
-Route::get('/register/admin', [authController::class, 'register'])->name('users.store');
+Route::post('/register/admin', [authController::class, 'store'])->name('users.store');
+Route::get('/register/admin', [authController::class, 'register']);
 
 
 

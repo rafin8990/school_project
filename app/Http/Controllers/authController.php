@@ -33,10 +33,12 @@ class authController extends Controller
             if (Hash::check($request->password, $user->password)) {
 
                 return redirect('/dashboard')->with('success', 'Login successful!');
-            } else {
+            } 
+            else {
                 return back()->with('fail', 'Login failed. Please check your password.');
             }
-        } else {
+        } 
+        else {
 
             return back()->with('fail', 'Login failed. Please check your user.');
         }
