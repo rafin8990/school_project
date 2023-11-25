@@ -8,7 +8,17 @@
     <div class="mx-14 my-36 border">
         <form>
             <div class="mx-10 mt-10">
-                <input type="text" placeholder="Enter class" class="input input-bordered w-full " />
+                <select id="Class" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option>Select Class</option>
+                    <option>Class 1</option>
+                    <option>Class 2</option>
+                    <option>Class 3</option>
+                    <option>Class 4</option>
+                    <option>Class 5</option>
+                    <option>Class 6</option>
+                    <option>Class 7</option>
+                    <option>Class 8</option>
+                  </select>
             </div>
             <div class="mx-10 mt-10">
                 <input type="text" placeholder="Enter Section" class="input input-bordered w-full " />
