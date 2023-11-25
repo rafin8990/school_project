@@ -51,6 +51,7 @@ class authController extends Controller
         $admin->role = 'admin';
         $admin->save();
 
-        return redirect()->route('/login')->with('success', 'Registration successful! Please log in.');
+
+        return redirect('/login')->with('success', 'Registration successful! Please log in.');
     }
 }

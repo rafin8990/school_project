@@ -1,5 +1,5 @@
 <div class=" min-h-screen lg:flex justify-between items-center ">
-<div class="mx-5 ">
+<div class="mx-5 lg:ml-52 ">
         <div>
             <div>
                 <h1 class="font text-4xl my-4 lg:text-5xl font-bold text-blue-900 text-center">
@@ -31,10 +31,6 @@
                     <p class="py-3">Password</p>
                         <input type="password" name="password" placeholder="Enter password" class="input input-bordered w-full" />
                     </div>
-                    <div class="mt-5">
-                    <!-- <p class="py-3">Role</p>
-                        <input type="text" name="role" value="admin"  placeholder="Enter password" class="input input-bordered w-full" />
-                    </div> -->
                     <div class="my-5 ">
                         <button type="submit" class=" btn btn-accent btn-outline w-full">
                             Register
