@@ -11,7 +11,7 @@ class academicController extends Controller
         return view('/Dashboard/academics/class');
     }
     public function section(){
-        return view('/Dashboard/academics/seection');
+        return view('/Dashboard/academics/section');
     }
     public function subject(){
         return view('/Dashboard/academics/subject');
