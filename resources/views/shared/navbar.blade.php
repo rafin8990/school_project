@@ -18,10 +18,18 @@
       <li><a href={{"/"}}>Home</a></li>
       <li><a href={{"/about"}}>About</a> </li>
       <li><a href={{"/contact"}}>Contact</a> </li>
+      @if($data)
       <li><a href={{"/dashboard"}}>Dashboard</a> </li>
+      @endif
     </ul>
   </div>
+  @if($data)
+  <div class="navbar-end">
+    <a href={{"/logout"}} class="btn btn-accent">log Out</a>
+  </div>
+  @else
   <div class="navbar-end">
     <a href={{"/login"}} class="btn btn-accent">Login</a>
   </div>
+  @endif
 </div>

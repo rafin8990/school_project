@@ -35,6 +35,8 @@ Route::get('/contact', [contactController::class, 'contact']);
 Route::get('/login', [authController::class, 'login']);
 Route::get('/login-user', [authController::class, 'loginUser'])->name('login-user');
 
+Route::get('/logout', [authController::class, "logout"]);
+
 // registration admin 
 Route::post('/register/admin', [authController::class, 'store'])->name('users.store');
 Route::get('/register/admin', [authController::class, 'register']);

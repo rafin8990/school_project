@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 
 class authController extends Controller
@@ -31,6 +32,7 @@ class authController extends Controller
         if ($user) {
 
             if (Hash::check($request->password, $user->password)) {
+                $request->session()->put('loginId', $user->id);
 
                 return redirect('/dashboard')->with('success', 'Login successful!');
             } 
@@ -43,12 +45,6 @@ class authController extends Controller
             return back()->with('fail', 'Login failed. Please check your user.');
         }
     }
-// some thng 
-// some thng 
-// some thng 
-// some thng 
-// some thng 
-// some thng 
 
 
 // registration 
@@ -93,6 +89,14 @@ class authController extends Controller
 
 
         return redirect('/login')->with('success', 'Registration successful! Please log in.');
+    }
+
+    public function logout()
+    {
+        if (Session::has('loginId')) {
+            Session::pull('loginId');
+            return redirect('/login');
+        }
     }
 
 
