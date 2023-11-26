@@ -35,10 +35,12 @@ class authController extends Controller
                 $request->session()->put('loginId', $user->id);
 
                 return redirect('/dashboard')->with('success', 'Login successful!');
-            } else {
+            } 
+            else {
                 return back()->with('fail', 'Login failed. Please check your password.');
             }
-        } else {
+        } 
+        else {
 
             return back()->with('fail', 'Login failed. Please check your user.');
         }
