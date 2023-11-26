@@ -18,7 +18,7 @@
                     </a>
                 </li>
                 <li><a class="bg-accent mt-2">Settings</a></li>
-                <li><a class="bg-accent mt-2">Log Out</a></li>
+                <li><a href="/logout" class="bg-accent mt-2">Log Out</a></li>
             </ul>
         </div>
     </div>
