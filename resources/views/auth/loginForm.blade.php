@@ -11,7 +11,7 @@
             </div>
 
             <div class="">
-                <form action="{{route('login-user')}}" >
+                <form action="{{route('login-user')}}">
                     <div>
                         <input type="email" name="email" placeholder="Enter Email" class="input input-bordered w-full " />
                     </div>
