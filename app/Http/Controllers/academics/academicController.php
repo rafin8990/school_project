@@ -13,7 +13,7 @@ class academicController extends Controller
         return view('/Dashboard/academics/class');
     }
 
-    public function classpost(Request $request)
+    public function class_post(Request $request)
     {
         $this->validate($request, [
             'class' => 'required|string',
@@ -30,7 +30,7 @@ class academicController extends Controller
         $class->class = $request->input('class');
         $class->save();
     
-        return redirect()->route('class.index')->with('success', 'Successfully Class created.');
+        return redirect('/class')->with('success', 'Sucessfully created.');
     }
  
 
