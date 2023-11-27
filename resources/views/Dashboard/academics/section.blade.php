@@ -42,26 +42,15 @@
             </thead>
             <tbody>
               <!-- row 1 -->
+              @foreach ($sections as $section)
               <tr>
-                <th>1</th>
-                <td>Class 1</td>
-                <td>Sec-1</td>
-               
+
+                  <th>{{ $loop->index + 1 }}</th>
+                  <td>{{ $section->class }}</td>
+                  <td>{{ $section->section }}</td>
               </tr>
-              <!-- row 2 -->
-              <tr>
-                <th>2</th>
-                <td>Class 1</th>
-                <td>Sec-2</td>
-                
-              </tr>
-              <!-- row 3 -->
-              <tr>
-                <th>3</th>
-                <td>Class 2</th>
-                <td>Sec-3</td>
-               
-              </tr>
+          @endforeach
+             
             </tbody>
           </table>
     </div>

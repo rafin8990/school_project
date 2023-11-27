@@ -41,7 +41,8 @@ class academicController extends Controller
     public function section()
     {
         $classes = Classes::all();
-        return view('/Dashboard/academics/section',['classes' => $classes]);
+        $section = Section::all();
+        return view('/Dashboard/academics/section',['classes' => $classes,'sections'=>$section]);
     }
 
     public function section_post(Request $request)
