@@ -44,6 +44,8 @@ Route::get('/register/admin', [authController::class, 'register']);
 
 
 
+
+
 // Route group for dashboard
 Route::prefix('/')->group(function () {
     // dashboard home 
