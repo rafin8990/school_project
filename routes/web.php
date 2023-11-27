@@ -68,6 +68,8 @@ Route::prefix('/')->group(function () {
     Route::get('/class',[academicController::class, 'class']);
     Route::get('/section',[academicController::class, 'section']);
     Route::get('/subject',[academicController::class, 'subject']);
+    Route::post('/class-create',[academicController::class, 'class_post'])->name('class.classpost');
+    // Route::post('/class-create')
     
     // attendence 
     Route::get('/attendence',[attendenceController::class, 'attendence']);
