@@ -70,6 +70,7 @@ Route::prefix('/')->group(function () {
     Route::get('/subject',[academicController::class, 'subject']);
     Route::post('/class-create',[academicController::class, 'class_post'])->name('class.classpost');
     Route::post('/create-section',[academicController::class, 'section_post'])->name('create-section');
+    Route::post('/create-subject',[academicController::class, 'subject_post'])->name('create-subject');
   
     
     // attendence 

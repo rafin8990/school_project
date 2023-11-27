@@ -6,13 +6,14 @@
 <!-- the content here  -->
 <div class="md:flex">
     <div class="mx-14 my-36 border">
-        <form>
+        <form action="{{route('create-subject')}}" method="POST">
+          @csrf
             <div class="mx-10 mt-10">
-                <input type="text" placeholder="Enter Subject" class="input input-bordered w-full " />
+                <input type="text"  name="subject" placeholder="Enter Subject" class="input input-bordered w-full " />
             </div>
             
             <div class="mt-5 mx-10 mb-10">
-                <button class=" btn btn-accent text-white w-full">
+                <button type="submit" class=" btn btn-accent text-white w-full">
                     Create Subject
                 </button>
             </div>
@@ -30,28 +31,14 @@
             </thead>
             <tbody>
               <!-- row 1 -->
+              @foreach ($subjects as $subject)
               <tr>
-                <th>1</th>
-                <td>Bangla-1</td>
-               
+
+                  <th>{{ $loop->index + 1 }}</th>
+                  <td>{{ $subject->subject }}</td>
               </tr>
-              <!-- row 2 -->
-              <tr>
-                <th>2</th>
-                <td>Bangla-2</td>
-                
-              </tr>
-              <!-- row 3 -->
-              <tr>
-                <th>3</th>
-                <td>English-1</td>
-               
-              </tr>
-              <tr>
-                <th>3</th>
-                <td>English-2</td>
-               
-              </tr>
+          @endforeach
+             
             </tbody>
           </table>
     </div>

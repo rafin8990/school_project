@@ -3,12 +3,14 @@ namespace App\Http\Controllers\academics;
 
 use App\Models\Classes;
 use App\Models\Section;
+use App\Models\Subject;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 
 class academicController extends Controller
 {
+    // Create and view classes
     public function class ()
     {
         $classes = Classes::all();
@@ -37,7 +39,7 @@ class academicController extends Controller
 
    
 
-
+//  create and view sections
     public function section()
     {
         $classes = Classes::all();
@@ -65,8 +67,29 @@ class academicController extends Controller
         return redirect('/section')->with('success', 'Sucessfully created.');
         
     }
+
+// create and view subject
     public function subject()
     {
-        return view('/Dashboard/academics/subject');
+        $subjects = Subject::all();
+        return view('/Dashboard/academics/subject',['subjects' => $subjects]);
+    }
+    public function subject_post(Request $request){
+        $this->validate($request, [
+            'subject' => 'required|string',
+        ]);
+    
+        $subject = Subject::where('subject', $request->input('subject'))->first();
+    
+    
+        if ($subject) {
+            return back()->with('fail', 'Failed. This subject already exists');
+        }
+    
+        $subject = new Subject();
+        $subject->subject = $request->input('subject');
+        $subject->save();
+    
+        return redirect('/subject')->with('success', 'Sucessfully created.');
     }
 }
