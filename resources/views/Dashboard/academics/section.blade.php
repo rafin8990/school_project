@@ -6,26 +6,24 @@
 <!-- the content here  -->
 <div class="md:flex">
     <div class="mx-14 my-36 border">
-        <form>
+        <form action="{{route('create-section')}}" method="POST">
+          @csrf
             <div class="mx-10 mt-10">
-                <select id="Class" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <select id="Class" name="class" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     <option>Select Class</option>
-                    <option>Class 1</option>
-                    <option>Class 2</option>
-                    <option>Class 3</option>
-                    <option>Class 4</option>
-                    <option>Class 5</option>
-                    <option>Class 6</option>
-                    <option>Class 7</option>
-                    <option>Class 8</option>
+                    @foreach ($classes as $class )
+                    <option>{{$class->class}}</option>
+                    @endforeach
+                    
+      
                   </select>
             </div>
             <div class="mx-10 mt-10">
-                <input type="text" placeholder="Enter Section" class="input input-bordered w-full " />
+                <input type="text" name="section" placeholder="Enter Section"class="input input-bordered w-full " />
             </div>
             
             <div class="mt-5 mx-10 mb-10">
-                <button class=" btn btn-accent text-white w-full">
+                <button type="submit" class=" btn btn-accent text-white w-full">
                     Create Section
                 </button>
             </div>
