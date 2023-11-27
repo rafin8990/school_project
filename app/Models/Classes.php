@@ -12,4 +12,5 @@ class Classes extends Model
     protected $fillable=[
         'class'
     ];
+    protected $table="classes";
 }

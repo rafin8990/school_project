@@ -29,23 +29,16 @@
                 </thead>
                 <tbody>
                     <!-- row 1 -->
-                    <tr>
-                        <th>1</th>
-                        <td>Class 1</td>
 
-                    </tr>
-                    <!-- row 2 -->
-                    <tr>
-                        <th>2</th>
-                        <td>Class 2</td>
+                    @foreach ($classes as $item)
+                        <tr>
 
-                    </tr>
-                    <!-- row 3 -->
-                    <tr>
-                        <th>3</th>
-                        <td>Class 3</td>
+                            <th>{{ $loop->index + 1 }}</th>
+                            <td>{{ $item->class }}</td>
+                        </tr>
+                    @endforeach
 
-                    </tr>
+
                 </tbody>
             </table>
         </div>
