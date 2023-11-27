@@ -6,11 +6,13 @@ use App\Models\Classes;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+
 class academicController extends Controller
 {
     public function class ()
     {
-        return view('/Dashboard/academics/class');
+        $classes = Classes::all();
+        return view('/Dashboard/academics/class',['classes' => $classes]);
     }
 
     public function class_post(Request $request)
@@ -32,7 +34,8 @@ class academicController extends Controller
     
         return redirect('/class')->with('success', 'Sucessfully created.');
     }
- 
+
+   
 
 
     public function section()
