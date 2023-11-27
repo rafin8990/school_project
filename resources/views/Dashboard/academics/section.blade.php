@@ -23,7 +23,7 @@
             </div>
             
             <div class="mt-5 mx-10 mb-10">
-                <button type="submit" class=" btn btn-accent text-white w-full">
+                <button type="submit" class=" btn btn-accent w-full">
                     Create Section
                 </button>
             </div>

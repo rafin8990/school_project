@@ -85,7 +85,8 @@ Route::prefix('/')->group(function () {
     // examination 
     Route::get('/exam-list',[examController::class, 'examList']);
     Route::get('/mark-import',[examController::class, 'markImport']);
-    
+    Route::post('/exam-create',[examController::class, 'exam_list'])->name('exam_create');
+
     // exam-Reports 
     Route::get('/transcript',[examReportController::class, 'transcript']);
     Route::get('/possion-list',[examReportController::class, 'possoinList']);

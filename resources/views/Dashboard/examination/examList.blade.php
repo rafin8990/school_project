@@ -6,17 +6,18 @@
 <!-- the content here  -->
 <div class="md:flex">
     <div class="mx-14 my-36 border">
-        <form>
+        <form action="{{route('exam_create')}}" method="POST">
+          @csrf
             <div class="mx-10 mt-10">
-                <select class="select select-accent w-full max-w-xs">
-                    <option disabled selected>Select the class</option>
-                    <option>claas 1</option>
-                    <option>class 2</option>
-                    <option>class 3</option>
+                <select name="class" class="select select-accent w-full max-w-xs">
+                  <option>Select Class</option>
+                  @foreach ($classes as $class )
+                  <option>{{$class->class}}</option>
+                  @endforeach
                 </select>
             </div>
             <div class="mx-10 mt-10">
-                <input type="text" placeholder="Enter Exam name" class="input input-bordered w-full " />
+                <input type="text" name="exam" placeholder="Enter Exam name" class="input input-bordered w-full " />
             </div>
             
             <div class="mt-5 mx-10 mb-10">
@@ -39,26 +40,15 @@
             </thead>
             <tbody>
               <!-- row 1 -->
-              <tr>
-                <th>1</th>
-                <td>Class 1</td>
-                <td>First term exam</td>
-               
-              </tr>
-              <!-- row 2 -->
-              <tr>
-                <th>2</th>
-                <td>Class 2</td>
-                <td>First term exam</td>
-                
-              </tr>
-              <!-- row 3 -->
-              <tr>
-                <th>3</th>
-                <td>Class 3</td>
-                <td>First term exam</td>
-               
-              </tr>
+              @foreach ($exams as $exam)
+               <tr>
+
+                  <th>{{ $loop->index + 1 }}</th>
+                  <td>{{ $exam->class }}</td>
+                  <td>{{ $exam->exam }}</td>
+                </tr>
+              @endforeach
+  
             </tbody>
           </table>
     </div>
