@@ -11,7 +11,7 @@
     </div>
   <div class="mr-10">
     <select class="select select-accent w-full max-w-xs">
-      <option disabled selected>Select the class</option>
+      <option disabled selected>Select class</option>
       <option>claas 1</option>
       <option>class 2</option>
       <option>class 3</option>
@@ -19,7 +19,7 @@
   </div>
   <div class="mr-10">
     <select class="select select-accent w-full max-w-xs">
-      <option disabled selected>Select the section</option>
+      <option disabled selected>Select section</option>
       <option>sec-1</option>
       <option>sec-2</option>
       <option>sec-3</option>
@@ -44,7 +44,7 @@
   </div>
   <div>
     <select class="select select-accent w-full max-w-xs">
-      <option disabled selected>Select the year</option>
+      <option disabled selected>Select year</option>
       <option>2020</option>
       <option>2021</option>
       <option>2022</option>

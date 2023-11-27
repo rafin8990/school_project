@@ -6,13 +6,13 @@
 <!-- the content here  -->
 <div class="md:flex">
     <div class="mx-14 my-36 border">
-        <form>
+        <form action="{{route('class.classpost')}}" method="post">
             <div class="mx-10 mt-10">
-                <input type="text" placeholder="Enter class" class="input input-bordered w-full " />
+                <input type="text" name="class" placeholder="Enter class" class="input input-bordered w-full " />
             </div>
             
             <div class="mt-5 mx-10 mb-10">
-                <button class=" btn btn-accent text-white w-full">
+                <button type="submit" class=" btn btn-accent btn-outline text-white w-full">
                     Create Class
                 </button>
             </div>
