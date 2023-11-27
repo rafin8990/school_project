@@ -27,6 +27,7 @@ class authController extends Controller
 
 
         $user = Admin::where('email', $request->input('email'))->first();
+        // dd($user);
 
         
         if ($user) {
