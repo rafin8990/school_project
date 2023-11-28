@@ -81,6 +81,7 @@ Route::prefix('/')->group(function () {
     Route::get('/invoice-list',[feeCollectionController::class, 'invoiceList']);
     Route::get('/invoice-individual',[feeCollectionController::class, 'invoiceIndividual']);
     Route::get('/create-invoice',[feeCollectionController::class, 'createInvoice']);
+    Route::post('/create-invoice',[feeCollectionController::class, 'invoicecreate'])->name('Invoice');
     
     // examination 
     Route::get('/exam-list',[examController::class, 'examList']);
