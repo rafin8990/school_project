@@ -80,8 +80,9 @@
     @include('/Homepage/header')
     @include('/Homepage/latestNews')
     @include('/Homepage/event')
-    @include('/Homepage/featured')
     @include('/Homepage/blog')
+    @include('/Homepage/featured')
+    
     @include('/shared/footer')
 </body>
 </html>
