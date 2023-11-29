@@ -13,7 +13,8 @@ class studentController extends Controller
     public function studentList()
     {
         $students = Student::all();
-        return view('Dashboard/student/studentList',['students'=>$students]);
+        $classes = Classes::pluck('class', 'class');
+        return view('Dashboard/student/studentList',['students'=>$students],compact('classes'));
     }
 
     public function addStudent(Request $request)
@@ -93,6 +94,18 @@ class studentController extends Controller
         return view('Dashboard/student/addStudent', compact('classes'));
     }
     public function getSections($className)
+    {
+        $class = Classes::where('class', $className)->first();
+
+        if (!$class) {
+            return response()->json(['error' => 'Class not found'], 404);
+        }
+
+        $sections = Section::where('class', $class->class)->pluck('section', 'section');
+        return response()->json($sections);
+    }
+
+    public function getClassSection($className)
     {
         $class = Classes::where('class', $className)->first();
 
