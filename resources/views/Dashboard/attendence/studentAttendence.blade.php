@@ -8,18 +8,15 @@
 <div class="md:flex  my-10 justify-center">
   <div class="mr-10">
     <select class="select select-accent w-full max-w-xs">
-      <option disabled selected>Select the class</option>
-      <option>claas 1</option>
-      <option>class 2</option>
-      <option>class 3</option>
+      <option>Select Class</option>
+      @foreach ($classes as $class )
+      <option>{{$class->class}}</option>
+      @endforeach
     </select>
   </div>
   <div class="mr-10">
     <select class="select select-accent w-full max-w-xs">
-      <option disabled selected>Select the section</option>
-      <option>sec-1</option>
-      <option>sec-2</option>
-      <option>sec-3</option>
+      <option>Select section</option>
     </select>
   </div>
   <div >
