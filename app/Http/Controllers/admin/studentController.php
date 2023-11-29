@@ -12,7 +12,8 @@ class studentController extends Controller
 {
     public function studentList()
     {
-        return view('Dashboard/student/studentList');
+        $students = Student::all();
+        return view('Dashboard/student/studentList',['students'=>$students]);
     }
 
     public function addStudent(Request $request)
@@ -46,6 +47,7 @@ class studentController extends Controller
 
 
         $image = $request->file('image')->getClientOriginalName();
+
         $path = 'assets/images';
         $imagePath = $request->file('image')->move($path, $image);
         $isExist = Student::where('email', $request->input('email'))
