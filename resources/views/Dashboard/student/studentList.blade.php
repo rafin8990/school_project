@@ -38,31 +38,22 @@
         <th>Roll</th>
         <th>Name</th>
         <th>Class</th>
-        <th>Favorite Color</th>
+        <th>section</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
       <!-- row 1 -->
-      <tr>
-        <th>1</th>
-        <td>Cy Ganderton</td>
-        <td>Quality Control Specialist</td>
-        <td>Blue</td>
-      </tr>
-      <!-- row 2 -->
-      <tr>
-        <th>2</th>
-        <td>Hart Hagerty</td>
-        <td>Desktop Support Technician</td>
-        <td>Purple</td>
-      </tr>
-      <!-- row 3 -->
-      <tr>
-        <th>3</th>
-        <td>Brice Swyre</td>
-        <td>Tax Accountant</td>
-        <td>Red</td>
-      </tr>
+      @foreach ($students as $student)
+              <tr>
+
+                  <th>{{ $student->student_id }}</th>
+                  <td>{{ $student->first_name }} {{$student->last_name}}</td>
+                  <td>{{ $student->class }}</td>
+                  <td>{{ $student->section }}</td>
+              </tr>
+          @endforeach
+
     </tbody>
   </table>
 </div>
