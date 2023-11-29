@@ -7,22 +7,19 @@
 <div class=" mx-10 mt-10">
   <div class="flex justify-center"><h1 class="text-2xl text-accent">Create new Invoice</h1><br></div>
    <div>
-    <form action="">
+    <form action="{{route('Invoice')}}" method="POST">
+        @csrf
         <div class="mt-5">
-            <select id="class" class="input input-bordered w-full ">
-                <option>Select class</option>
-                <option>Class 1</option>
-                <option>Class 2</option>
-                <option>Class 3</option>
-                <option>Class 4</option>
-                <option>Class 5</option>
-                <option>Class 6</option>
-                <option>Class 7</option>
-                <option>Class 8</option>
+            <select id="class" name="class" class="input input-bordered w-full ">
+                <option>Select Class</option>
+                    @foreach ($classes as $class )
+                    <option>{{$class->class}}</option>
+                    @endforeach
+
               </select>
         </div>
         <div class="mt-5">
-            <select id="Year" class="input input-bordered w-full ">
+            <select id="Year" name="year" class="input input-bordered w-full ">
                 <option>Select Year</option>
                 <option>2020</option>
                 <option>2021</option>
@@ -35,7 +32,7 @@
               </select>
         </div>
         <div class="mt-5">
-            <select id="month" class="input input-bordered w-full">
+            <select id="month" name="month" class="input input-bordered w-full">
                 <option>Select month</option>
                 <option>January</option>
                 <option>February</option>
@@ -52,20 +49,25 @@
               </select>
         </div>
         <div class="mt-5">
-            <input type="text" name="admission_fee" placeholder="Enter admission fee" class="input input-bordered w-full " />
+            <label > Enter Monthly Admission Fee:</label>
+            <input type="text" name="admission_fee" placeholder="Enter admission fee" class="input input-bordered w-full " value="0"/>
         </div>
         <div class="mt-5">
-            <input type="text" name="tuition-fee" placeholder="Enter monthly tuition fee" class="input input-bordered w-full " />
+            <label > Enter Monthly  Tuition Fee:</label>
+            <input type="text" name="tuition_fee" placeholder="Enter monthly tuition fee" class="input input-bordered w-full " value="0"/>
         </div>
         
         <div class="mt-5">
-            <input type="text" name="library_fee" placeholder="Enter monthly library fee" class="input input-bordered w-full " />
+            <label > Enter Monthly Library Fee:</label>
+            <input type="text" name="library_fee" placeholder="Enter monthly library fee" class="input input-bordered w-full " value="0"/>
         </div>
         <div class="mt-5">
-            <input type="text" name="transport_fee" placeholder="Enter monthly transport fee" class="input input-bordered w-full " />
+            <label > Enter Monthly Transport Fee:</label>
+            <input type="text" name="transport_fee" placeholder="Enter monthly transport fee" class="input input-bordered w-full " value="0"/>
         </div>
         <div class="mt-5">
-            <input type="text" name="curriculum_fee" placeholder="Enter monthly extra curriculum fee" class="input input-bordered w-full " />
+            <label > Enter Monthly Extra Curriculum Fee:</label>
+            <input type="text" name="curriculum_fee" placeholder="Enter monthly extra curriculum fee" class="input input-bordered w-full " value="0"/>
         </div>
         <div class="mt-5 ">
             <button type="submit" class=" btn btn-accent btn-outline text-white w-full">

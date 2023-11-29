@@ -6,12 +6,18 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
-class Exam extends Model
+class Feecollection extends Model
 {
     use HasFactory,Notifiable;
     protected $fillable=[
         'class',
-        'exam'
+        'year',
+        'month',
+        'admission_fee',
+        'tuition_fee',
+        'library_fee',
+        'transport_fee',
+        'curriculum_fee'
     ];
-    protected $table="exams";
+    protected $table="feecollestions";
 }

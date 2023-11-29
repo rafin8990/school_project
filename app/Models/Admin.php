@@ -18,4 +18,7 @@ class Admin extends Model
     ];
    
 
+    protected $table="admins";
+
+
 }

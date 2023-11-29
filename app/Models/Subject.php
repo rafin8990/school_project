@@ -12,4 +12,5 @@ class Subject extends Model
     protected $fillable=[
         'subject'
     ];
+    protected $table="subjects";
 }
