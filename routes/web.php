@@ -54,7 +54,9 @@ Route::prefix('/')->group(function () {
 
     //student routes
     Route::get('/student-list', [studentController::class, 'studentList']);
-    Route::get('/add-student', [studentController::class, 'addStudent']);
+    Route::get('/add-student', [studentController::class, 'addStudentForm']);
+    Route::get('/get-sections/{className}', [studentController::class, 'getSections']);
+    Route::post('/create-student', [studentController::class, 'addStudent'])->name('student.add');
 
     //human resource
     Route::get('/teachers',[humanResourceController::class, 'teachers']);

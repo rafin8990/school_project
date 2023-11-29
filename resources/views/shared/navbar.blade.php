@@ -25,6 +25,7 @@
   </div>
   @if($data)
   <div class="navbar-end">
+    <p class="mx-5">{{$data->name}}</p>
     <a href={{"/logout"}} class="btn btn-accent">log Out</a>
   </div>
   @else
