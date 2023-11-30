@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
@@ -18,43 +19,44 @@ class authController extends Controller
 
     public function loginUser(Request $request)
     {
-       
+
         $this->validate($request, [
             'email' => 'required|string|email',
             'password' => 'required|string|min:4',
         ]);
-
-
-
-        $user = Admin::where('email', $request->input('email'))->first();
-        // dd($user);
-
-        
-        if ($user) {
-
-            if (Hash::check($request->password, $user->password)) {
-                $request->session()->put('loginId', $user->id);
+    
+        $admin = Admin::where('email', $request->input('email'))->first();
+        $student = Student::where('email', $request->input('email'))->first();
+        if ($admin) {
+            if (Hash::check($request->password, $admin->password)) {
+                $request->session()->put('loginId', $admin->id);
 
                 return redirect('/dashboard')->with('success', 'Login successful!');
-            } 
-            else {
+            } else {
                 return back()->with('fail', 'Login failed. Please check your password.');
             }
-        } 
-        else {
+        } else if ($student) {
+            if (Hash::check($request->password, $student->password)) {
+                $request->session()->put('studentId', $student->id);
 
-            return back()->with('fail', 'Login failed. Please check your user.');
+                return redirect('/dashboard')->with('success', 'Login successful!');
+            } else {
+                return back()->with('fail', 'Login failed. Please check your password.');
+            }
         }
+
+
+
     }
 
 
-// registration 
+    // registration 
 
     public function register()
     {
         return view("auth/register");
     }
-    
+
     public function store(Request $request)
     {
 
@@ -101,5 +103,5 @@ class authController extends Controller
     }
 
 
-    
+
 }

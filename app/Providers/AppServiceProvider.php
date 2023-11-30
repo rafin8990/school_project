@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 use App\Models\Admin;
+use App\Models\Student;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
 
@@ -23,12 +24,19 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         View::composer('*', function ($view) {
-            $data = null; // Set a default value for $data
-            if (Session::has('loginId')) {
-                $userId = Session::get('loginId');
-                $data = Admin::find($userId); // Retrieve user data by the loginId from the session
+            $adminData = null; 
+            $studentData=null;
+            $adminId = Session::get('loginId');
+            $studentID=Session::get('studentId');
+            if($adminId){
+                $adminData=Admin::find($adminId);
             }
-            $view->with('data', $data);
+            if($studentID){
+                $studentData=Student::find($studentID);
+            }
+            $view->with('adminData', $adminData)
+                ->with('studentData',$studentData);
+            
         });
     }
 }

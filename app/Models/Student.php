@@ -31,7 +31,8 @@ class Student extends Model
         'parmanent_zip_code',
         'email',
         'phoneNumber',
-        'password'
+        'password',
+        'role',
     ];
     protected $table="students";
 }

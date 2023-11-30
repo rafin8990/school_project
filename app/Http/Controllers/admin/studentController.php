@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Models\Student;
 use App\Models\Classes;
 use App\Models\Section;
+use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -80,8 +81,9 @@ class studentController extends Controller
         $student->parmanent_country = $request->input('parmanent_country');
         $student->parmanent_zip_code = $request->input('parmanent_zip_code');
         $student->email = $request->input('email');
-        $student->password = $request->input('password');
+        $student->password = Hash::make($request->input('password'));
         $student->phoneNumber = $request->input('phoneNumber');
+        $student->role='student';
         $student->save();
 
 

@@ -18,14 +18,20 @@
       <li><a href={{"/"}}>Home</a></li>
       <li><a href={{"/about"}}>About</a> </li>
       <li><a href={{"/contact"}}>Contact</a> </li>
-      @if($data)
+      @if($adminData || $studentData )
       <li><a href={{"/dashboard"}}>Dashboard</a> </li>
       @endif
     </ul>
   </div>
-  @if($data)
+  @if($adminData || $studentData )
   <div class="navbar-end">
-    <p class="mx-5">{{$data->name}}</p>
+    @if($adminData)
+      <p class="mx-5">{{$adminData->name}}</p>
+    @endif
+    @if($studentData)
+    
+      <p class="mx-5">{{$studentData->first_name}} {{$studentData->last_name}}</p>
+    @endif
     <a href={{"/logout"}} class="btn btn-accent">log Out</a>
   </div>
   @else
