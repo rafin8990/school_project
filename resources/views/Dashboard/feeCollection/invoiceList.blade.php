@@ -62,6 +62,7 @@
         <th>Month</th>
         <th>Year</th>
         <th>Total Amount</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -72,23 +73,13 @@
         <td>January</td>
         <td>2023</td>
         <td>300tk</td>
+        <td>
+          <a href="" class="mr-2"><i class="fa fa-edit" style="color:green;"></i></a>
+          <a href="" class="mr-2"><i class="fa fa-eye" style="color:#12c56a;"></i></a>
+          <a href=""><i class="fa fa-trash" aria-hidden="true" style="color:red;"></i></a>
+      </td>
       </tr>
-      <!-- row 2 -->
-      <tr>
-        <th>2</th>
-        <td>Class 2</td>
-        <td>January</td>
-        <td>2023</td>
-        <td>300tk</td>
-      </tr>
-      <!-- row 3 -->
-      <tr>
-        <th>3</th>
-        <td>Class 3</td>
-        <td>January</td>
-        <td>2023</td>
-        <td>300tk</td>
-      </tr>
+     
     </tbody>
   </table>
 </div>

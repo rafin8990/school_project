@@ -11,10 +11,14 @@
             @csrf
             <div class="md:flex">
                 <div class="mt-5 w-[400px] mr-32">
+                    <label>First Name:</label>
+                    <span class="text-red-500">*</span>
                     <input name="first_name" type="text" placeholder="Enter The First Name"
                         class="input input-bordered w-full " />
                 </div>
                 <div class="mt-5 w-[400px]">
+                    <label>Last Name:</label>
+                    <span class="text-red-500">*</span>
                     <input name="last_name" type="text" placeholder="Enter The Last Name"
                         class="input input-bordered w-full " />
                 </div>
@@ -23,9 +27,13 @@
 
             <div class="md:flex">
                 <div class="mt-5 w-[400px] mr-32">
+                    <label>Birthdate:</label>
+                    <span class="text-red-500">*</span>
                     @include('/Dashboard/student/date')
                 </div>
                 <div class="mt-5 w-[400px]">
+                    <label>Student Roll:</label>
+                    <span class="text-red-500">*</span>
                     <input name="student_id" type="text" placeholder="Enter The Student Id"
                         class="input input-bordered w-full " />
                 </div>
@@ -33,6 +41,8 @@
 
             <div class="md:flex">
                 <div class="mt-5 w-[200px] mr-32">
+                    <label>Class:</label>
+                    <span class="text-red-500">*</span>
                     <select name="class" id="classSelect"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         <option>Select Class</option>
@@ -42,12 +52,16 @@
                     </select>
                 </div>
                 <div class="mt-5 w-[200px] mr-32">
+                    <label>Section:</label>
+                    <span class="text-red-500">*</span>
                     <select name="section" id="sectionSelect"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         <option>Select Section</option>
                     </select>
                 </div>
                 <div class="mt-5 w-[200px]">
+                    <label>year:</label>
+                    <span class="text-red-500">*</span>
                     <select name="year" id='date-dropdown'
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         <option>Select Year</option>
@@ -56,21 +70,26 @@
             </div>
             <div class="md:flex mt-5">
 
-                <div class="mt-5 w-[400px] flex mr-12">
+                <div class="mt-5 w-[400px] ">
+                    <label>Gender:</label>
+                    <span class="text-red-500">*</span><br>
                     <select name="gender" class="select select-accent w-full max-w-xs">
-                        <option disabled selected>Select Gender</option>
+                        <option >Select Gender</option>
                         <option>Male</option>
                         <option>Female</option>
                     </select>
                 </div>
                 <div class="mt-5 w-[400px] ml-20">
+                    <label>upload the student profile picture</label>
+                    <span class="text-red-500">*</span>
                     <input name="image" type="file" class="file-input file-input-bordered file-input-accent w-full " />
-                    <p>upload the student profile picture</p>
+                    
 
                 </div>
             </div>
             {{-- Present Address --}}
-            <h1 class="text-2xl text-accent mt-10">Present Address</h1>
+            <h1 class="text-2xl text-accent mt-10">Present Address <span class="text-red-500">*</span></h1>
+            
 
             <div class="mt-5">
                 <input name="present_address" type="text" placeholder="Enter Street address"
@@ -99,7 +118,8 @@
             </div>
 
             {{-- Permanent address --}}
-            <h1 class="text-2xl text-accent mt-10">Permanent Address</h1>
+            <h1 class="text-2xl text-accent mt-10">Permanent Address <span class="text-red-500">*</span></h1>
+            
 
             <div class="mt-5">
                 <input name="parmanent_address" type="text" placeholder="Enter Street address"
@@ -130,10 +150,14 @@
             <h1 class="text-2xl text-accent mt-10">Contact Information</h1>
             <div class="mt-5 md:flex">
                 <div class="mt-5 w-[400px] mr-32">
+                    <label>Gmail:</label>
+                    <span class="text-red-500">*</span>
                     @include('/Dashboard/student/gmail')
                 </div>
 
                 <div class="mt-5 w-[400px]">
+                    <label>Mobile No:</label>
+                    <span class="text-red-500">*</span>
                     <input type="text" name="phoneNumber" id="floating_phone"
                         placeholder="Enter The mobile number" class="input input-bordered w-full " />
                 </div>
@@ -142,6 +166,8 @@
             </div>
 
             <div class="mt-5">
+                <label>Password:</label>
+                    <span class="text-red-500">*</span>
                 <input name="password" type="password" placeholder="Enter password"
                     class="input input-bordered w-full" />
             </div>

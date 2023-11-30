@@ -46,7 +46,7 @@
         <th>Id</th>
         <th>Name</th>
         <th>Department</th>
-        <th>Favorite Color</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -55,22 +55,13 @@
         <th>1</th>
         <td>Cy Ganderton</td>
         <td>Quality Control Specialist</td>
-        <td>Blue</td>
+        <td>
+          <a href="" class="mr-2"><i class="fa fa-edit" style="color:green;"></i></a>
+          <a href="" class="mr-2"><i class="fa fa-eye" style="color:#12c56a;"></i></a>
+          <a href=""><i class="fa fa-trash" aria-hidden="true" style="color:red;"></i></a>
+      </td>
       </tr>
-      <!-- row 2 -->
-      <tr>
-        <th>2</th>
-        <td>Hart Hagerty</td>
-        <td>Desktop Support Technician</td>
-        <td>Purple</td>
-      </tr>
-      <!-- row 3 -->
-      <tr>
-        <th>3</th>
-        <td>Brice Swyre</td>
-        <td>Tax Accountant</td>
-        <td>Red</td>
-      </tr>
+     
     </tbody>
   </table>
 </div>
