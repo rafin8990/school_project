@@ -35,6 +35,7 @@
                 <th>Id</th>
                 <th>Class Name</th>
                 <th>Class Exam Name</th>
+                <th>Action</th>
                 
               </tr>
             </thead>
@@ -46,6 +47,11 @@
                   <th>{{ $loop->index + 1 }}</th>
                   <td>{{ $exam->class }}</td>
                   <td>{{ $exam->exam }}</td>
+                  <td>
+                    <a href="" class="mr-2"><i class="fa fa-edit" style="color:green;"></i></a>
+                    <a href="" class="mr-2"><i class="fa fa-eye" style="color:#12c56a;"></i></a>
+                    <a href=""><i class="fa fa-trash" aria-hidden="true" style="color:red;"></i></a>
+                </td>
                 </tr>
               @endforeach
   

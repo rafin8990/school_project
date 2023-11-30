@@ -28,7 +28,7 @@
     </div>
 
     <div class="overflow-x-auto">
-        <table class="table">
+        <table class="table border ">
             <!-- head -->
             <thead>
                 <tr>
@@ -48,6 +48,11 @@
                         <td>{{ $student->first_name }} {{ $student->last_name }}</td>
                         <td>{{ $student->class }}</td>
                         <td>{{ $student->section }}</td>
+                        <td>
+                            <a href="" class="mr-2"><i class="fa fa-edit" style="color:green;"></i></a>
+                            <a href="" class="mr-2"><i class="fa fa-eye" style="color:#12c56a;"></i></a>
+                            <a href=""><i class="fa fa-trash" aria-hidden="true" style="color:red;"></i></a>
+                        </td>
                     </tr>
                 @endforeach
 
