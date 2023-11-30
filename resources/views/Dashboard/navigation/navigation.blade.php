@@ -4,11 +4,11 @@
     </div> 
     <div class="flex-none gap-2">
        
-        <div class="dropdown dropdown-end">
+    @if($studentData)
+    <div class="dropdown dropdown-end ml-2">
             <label tabindex="0" class="btn btn-ghost btn-circle avatar">
                 <div class="w-10 rounded-full">
-                    <img alt="Tailwind CSS Navbar component"
-                        src="https://cdn-icons-png.flaticon.com/512/149/149071.png" />
+                    <img src="{{ asset('assets/images/' . $studentData->image) }}" alt="Student Image" />
                 </div>
             </label>
             <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
@@ -18,8 +18,9 @@
                     </a>
                 </li>
                 <li><a class="bg-accent mt-2">Settings</a></li>
-                <li><a href="/logout" class="bg-accent mt-2">Log Out</a></li>
+                <li><a href={{"/logout"}} class="mt-2 btn btn-accent">Log Out</a></li>
             </ul>
         </div>
+    @endif
     </div>
 </div>

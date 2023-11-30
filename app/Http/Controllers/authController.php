@@ -100,6 +100,10 @@ class authController extends Controller
             Session::pull('loginId');
             return redirect('/login');
         }
+        if(Session::has('studentId')){
+            Session::pull('studentId');
+            return redirect('/login');
+        }
     }
 
 
