@@ -26,7 +26,9 @@
   @if($adminData || $studentData )
   <div class="navbar-end">
     @if($adminData)
+
       <p class="mx-5">{{$adminData->name}}</p>
+
       <a href={{"/logout"}} class="btn btn-accent">log Out</a>
     @endif
     @if($studentData)
