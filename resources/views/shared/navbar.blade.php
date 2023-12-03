@@ -26,12 +26,15 @@
   @if($adminData || $studentData )
   <div class="navbar-end">
     @if($adminData)
+
       <p class="mx-5">{{$adminData->name}}</p>
+
+      <a href={{"/logout"}} class="btn btn-accent">log Out</a>
     @endif
     @if($studentData)
       <p class="">{{$studentData->first_name}} {{$studentData->last_name}}</p>
     @endif
-    <!-- <a href={{"/logout"}} class="btn btn-accent">log Out</a> -->
+    
     @if($studentData)
     <div class="dropdown dropdown-end ml-2">
             <label tabindex="0" class="btn btn-ghost btn-circle avatar">
