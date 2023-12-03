@@ -11,12 +11,28 @@ use Illuminate\Http\Request;
 
 class studentController extends Controller
 {
-    public function studentList()
+    public function studentList(Request $request)
     {
-        $students = Student::all();
-        $classes = Classes::pluck('class', 'class');
-        return view('Dashboard/student/studentList',['students'=>$students],compact('classes'));
+
+        if ($request) {
+            $class = $request->input('class');
+            $section = $request->input('section');
+            $students = Student::when($class, function ($query) use ($class) {
+                return $query->where('class', $class);
+            })->when($section, function ($query) use ($section) {
+                return $query->where('section', $section);
+            })->get();
+            $classes = Classes::pluck('class', 'class');
+            return view('Dashboard/student/studentList', ['students' => $students], compact('classes'));
+        } else {
+            $students = Student::all();
+            $classes = Classes::pluck('class', 'class');
+            return view('Dashboard/student/studentList', ['students' => $students], compact('classes'));
+        }
+
     }
+
+
 
     public function addStudent(Request $request)
     {
@@ -83,7 +99,7 @@ class studentController extends Controller
         $student->email = $request->input('email');
         $student->password = Hash::make($request->input('password'));
         $student->phoneNumber = $request->input('phoneNumber');
-        $student->role='student';
+        $student->role = 'student';
         $student->save();
 
 
