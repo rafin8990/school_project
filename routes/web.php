@@ -43,9 +43,6 @@ Route::get('/register/admin', [authController::class, 'register']);
 
 
 
-
-
-
 // Route group for dashboard
 Route::prefix('/')->group(function () {
     // dashboard home 
@@ -58,6 +55,7 @@ Route::prefix('/')->group(function () {
     Route::get('/get-sections/{className}', [studentController::class, 'getSections']);
     Route::get('/get-studentlist/{className}', [studentController::class, 'getClassSection']);
     Route::post('/create-student', [studentController::class, 'addStudent'])->name('student.add');
+    Route::delete('/students/{id}', [StudentController::class, 'DeleteStudent'])->name('students.delete');
 
     //human resource
     Route::get('/teachers',[humanResourceController::class, 'teachers']);
