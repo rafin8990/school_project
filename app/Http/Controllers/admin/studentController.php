@@ -11,6 +11,8 @@ use Illuminate\Http\Request;
 
 class studentController extends Controller
 {
+
+    // get student list 
     public function studentList(Request $request)
     {
 
@@ -33,6 +35,8 @@ class studentController extends Controller
     }
 
 
+
+    // add student 
 
     public function addStudent(Request $request)
     {
@@ -133,6 +137,16 @@ class studentController extends Controller
 
         $sections = Section::where('class', $class->class)->pluck('section', 'section');
         return response()->json($sections);
+    }
+
+
+    // delete student from the table 
+    public function DeleteStudent($id)
+    {
+        $student = Student::findOrFail($id);
+        $student->delete();
+
+        return redirect('/student-list')->with('success', 'Student deleted successfully');
     }
 
 

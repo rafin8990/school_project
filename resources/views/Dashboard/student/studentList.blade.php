@@ -42,9 +42,9 @@
         </thead>
         <tbody>
             <!-- row 1 -->
-           
-          
-            
+
+
+
             @foreach ($students as $student)
             <tr>
 
@@ -52,14 +52,20 @@
                 <td>{{ $student->first_name }} {{ $student->last_name }}</td>
                 <td>{{ $student->class }}</td>
                 <td>{{ $student->section }}</td>
-                <td>
+                <td class="flex">
                     <a href="" class="mr-2"><i class="fa fa-edit" style="color:green;"></i></a>
                     <a href="" class="mr-2"><i class="fa fa-eye" style="color:#12c56a;"></i></a>
-                    <a href=""><i class="fa fa-trash" aria-hidden="true" style="color:red;"></i></a>
+                    <form action="{{ route('students.delete', $student->id) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit">
+                            <i class="fa fa-trash" aria-hidden="true" style="color:red;"></i>
+                        </button>
+                    </form>
                 </td>
             </tr>
             @endforeach
-         
+
 
         </tbody>
     </table>
