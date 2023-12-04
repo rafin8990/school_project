@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,70 +13,78 @@
     <script src="https://kit.fontawesome.com/d703802588.js" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
 <body>
-<style>
-    .font{
-         font-family: 'Playfair Display', serif;
+    <style>
+        .font {
+            font-family: 'Playfair Display', serif;
         }
-.underline-animation {
-      position: relative;
-      text-decoration: none;
-      display: inline-block;
-    }
 
-    .underline-animation:hover::before {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background-color: #71b4e1; 
-      animation: underline 0.3s ease-in-out;
-    }
+        .underline-animation {
+            position: relative;
+            text-decoration: none;
+            display: inline-block;
+        }
 
-    @keyframes underline {
-      0% {
-        transform: scaleX(0);
-      }
-      100% {
-        transform: scaleX(1);
-      }
-    }
+        .underline-animation:hover::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #71b4e1;
+            animation: underline 0.3s ease-in-out;
+        }
 
-    .fill-animation {
-      position: relative;
-      display: inline-block;
-      overflow: hidden;
-      text-decoration: none;
-      color: black; 
-    }
+        @keyframes underline {
+            0% {
+                transform: scaleX(0);
+            }
 
-    .fill-animation::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 5px;
-      background-color: #71b4e1; 
-      z-index: -1;
-      transition: height 0.3s ease-in-out; 
-    }
+            100% {
+                transform: scaleX(1);
+            }
+        }
 
-    .fill-animation:hover::before {
-      height: 100%; 
-    }
-    @property --num {
-        syntax: '<integer>';
-        initial-value: 0;
-        inherits: false;
-    }
-</style>
+        .fill-animation {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            text-decoration: none;
+            color: black;
+        }
 
-   
+        .fill-animation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: #71b4e1;
+            z-index: -1;
+            transition: height 0.3s ease-in-out;
+        }
+
+        .fill-animation:hover::before {
+            height: 100%;
+        }
+
+        @property --num {
+            syntax: '<integer>';
+            initial-value: 0;
+            inherits: false;
+        }
+    </style>
+
+    @include('/shared/navbar')
+    @include('/Notice/main')
+
+    @include('/shared/footer')
+
 </body>
+
 </html>
