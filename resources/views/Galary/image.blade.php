@@ -1,5 +1,5 @@
 <div class="flex justify-center items-center">
-    <h1 class=" font font-bold text-4xl  text-accent my-5">Galary</h1>
+    <h1 class=" font font-bold text-4xl  text-accent my-5">Gellary</h1>
 </div>
 
 <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mx-10">
