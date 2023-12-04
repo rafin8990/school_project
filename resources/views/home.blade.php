@@ -78,6 +78,7 @@
 
     @include('/shared/navbar')
     @include('/Homepage/header')
+    @include('/Homepage/notice')
     @include('/Homepage/latestNews')
     @include('/Homepage/event')
     @include('/Homepage/blog')
