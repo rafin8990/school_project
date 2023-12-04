@@ -8,7 +8,13 @@
       <li><a href={{"/"}}>Home</a></li>
       <li><a href={{"/about"}}>About</a> </li>
       <li><a href={{"/contact"}}>Contact</a> </li>
+      <li><a href={{"/result"}}>Results</a> </li>
+      <li><a href={{"/notice"}}>Notice</a> </li>
+      <li><a href={{"/galary"}}>Galary</a> </li>
+      <li><a href={{"/admission"}}>Admission Center</a> </li>
+      @if($adminData || $studentData )
       <li><a href={{"/dashboard"}}>Dashboard</a> </li>
+      @endif
       </ul>
     </div>
     <a href={{"/"}} class="font-bold text-xl">School</a>
@@ -18,6 +24,10 @@
       <li><a href={{"/"}}>Home</a></li>
       <li><a href={{"/about"}}>About</a> </li>
       <li><a href={{"/contact"}}>Contact</a> </li>
+      <li><a href={{"/result"}}>Results</a> </li>
+      <li><a href={{"/notice"}}>Notice</a> </li>
+      <li><a href={{"/galary"}}>Galary</a> </li>
+      <li><a href={{"/admission"}}>Admission Center</a> </li>
       @if($adminData || $studentData )
       <li><a href={{"/dashboard"}}>Dashboard</a> </li>
       @endif

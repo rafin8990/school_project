@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\homeController;
+use App\Http\Controllers\galaryController;
 use App\Http\Controllers\aboutController;
 use App\Http\Controllers\contactController;
 use App\Http\Controllers\dashboardController;
@@ -32,6 +33,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [homeController::class, 'home']);
 Route::get('/about', [aboutController::class, 'about']);
 Route::get('/contact', [contactController::class, 'contact']);
+Route::get('/galary', [galaryController::class, 'galary']);
 Route::get('/login', [authController::class, 'login']);
 Route::get('/login-user', [authController::class, 'loginUser'])->name('login-user');
 
@@ -55,7 +57,10 @@ Route::prefix('/')->group(function () {
     Route::get('/get-sections/{className}', [studentController::class, 'getSections']);
     Route::get('/get-studentlist/{className}', [studentController::class, 'getClassSection']);
     Route::post('/create-student', [studentController::class, 'addStudent'])->name('student.add');
-    Route::delete('/students/{id}', [StudentController::class, 'DeleteStudent'])->name('students.delete');
+    Route::delete('/students/{id}', [studentController::class, 'DeleteStudent'])->name('students.delete');
+    // update student 
+    Route::get('/students/{id}/edit', [studentController::class, 'edit'])->name('students.edit');
+    Route::put('/students/{id}', [studentController::class, 'update'])->name('students.update');
 
     //human resource
     Route::get('/teachers',[humanResourceController::class, 'teachers']);

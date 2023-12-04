@@ -150,4 +150,22 @@ class studentController extends Controller
     }
 
 
+    // update student data 
+
+    public function edit($id)
+{
+    $student = Student::findOrFail($id);
+    $classes = Classes::pluck('class', 'class');
+
+    return view('Dashboard/student/updateStudent', ['student' => $student], compact('classes'));
+}
+
+public function update(Request $request, $id)
+{
+    $student = Student::findOrFail($id);
+    $student->update($request->all());
+
+    return redirect('/student-list')->with('success', 'Student updated successfully');
+}
+
 }
