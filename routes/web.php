@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\galaryController;
+use App\Http\Controllers\admissionController;
 use App\Http\Controllers\aboutController;
 use App\Http\Controllers\contactController;
 use App\Http\Controllers\dashboardController;
@@ -34,6 +35,7 @@ Route::get('/', [homeController::class, 'home']);
 Route::get('/about', [aboutController::class, 'about']);
 Route::get('/contact', [contactController::class, 'contact']);
 Route::get('/galary', [galaryController::class, 'galary']);
+Route::get('/admission', [admissionController::class, 'admission']);
 Route::get('/login', [authController::class, 'login']);
 Route::get('/login-user', [authController::class, 'loginUser'])->name('login-user');
 
