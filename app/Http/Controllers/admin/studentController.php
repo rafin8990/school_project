@@ -187,4 +187,12 @@ public function update(Request $request, $id)
     return redirect('/student-list')->with('success', 'Student updated successfully');
 }
 
+//view page
+public function view($id)
+{
+    $student = Student::findOrFail($id);
+    return view('Dashboard/student/view', ['student' => $student],);
+}
+
+
 }

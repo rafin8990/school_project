@@ -54,7 +54,7 @@
                 <td>{{ $student->section }}</td>
                 <td class="flex">
                     <a href="{{ route('students.edit', $student->id) }}" class="mr-2"><i class="fa fa-edit" style="color:green;"></i></a>
-                    <a href="" class="mr-2"><i class="fa fa-eye" style="color:#12c56a;"></i></a>
+                    <a href="{{ route('students.view', $student->id) }}" class="mr-2"><i class="fa fa-eye" style="color:#12c56a;"></i></a>
                     <form action="{{ route('students.delete', $student->id) }}" method="post">
                         @csrf
                         @method('DELETE')
