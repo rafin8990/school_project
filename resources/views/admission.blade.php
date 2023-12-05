@@ -80,13 +80,21 @@
         }
     </style>
     @include('/shared/navbar')
-    <div class="md:flex bg-gray-100">
+    <div class=" bg-gray-100 mx-20 my-10">
+        <h1 class="font font-bold text-4xl text-accent text-center mb-5 border p-2 ">Admission Notice</h1>
+      <div class="md:flex">
+        
         <div class="w-3/4">
             @include('/Admission/admissionNotice')
         </div>
         <div class="mx-5 pt-10">
             @include('/Admission/scroll')
         </div>
+      </div>  
+    </div>
+    <div class="mx-52 my-10 border">
+        @include('/Admission/form')
+    
     </div>
 
     @include('/shared/footer')
