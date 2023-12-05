@@ -64,7 +64,7 @@ Route::prefix('/')->group(function () {
     Route::delete('/students/{id}', [studentController::class, 'DeleteStudent'])->name('students.delete');
     // update student 
     Route::get('/students/{id}/edit', [studentController::class, 'edit'])->name('students.edit');
-    Route::put('/students/{id}', [studentController::class, 'update'])->name('students.update');
+    Route::put('/students/{id}/update', [studentController::class, 'update'])->name('students.update');
 
     //human resource
     Route::get('/teachers',[humanResourceController::class, 'teachers']);
