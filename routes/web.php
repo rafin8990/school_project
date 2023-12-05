@@ -80,7 +80,7 @@ Route::prefix('/')->group(function () {
     
     //update teacher
     Route::get('/teacher/{id}/edit', [humanResourceController::class, 'edit'])->name('teachers.edit');
-    Route::put('/teacher/{id}/update', [studentController::class, 'update'])->name('teachers.update');
+    Route::put('/teacher/{id}/update', [humanResourceController::class, 'update'])->name('teachers.update');
     // academics 
     Route::get('/class',[academicController::class, 'class']);
     Route::get('/section',[academicController::class, 'section']);

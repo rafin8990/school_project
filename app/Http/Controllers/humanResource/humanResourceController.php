@@ -56,32 +56,32 @@ class humanResourceController extends Controller
             return back()->with('fail', 'Failed. This Student already exists');
         }
 
-        $student = new Teacher();
-        $student->firstname = $request->input('firstname');
-        $student->lastname = $request->input('lastname');
-        $student->birth_date = $request->input('birth_date');
-        $student->teacher_id = $request->input('teacher_id');
-        $student->designation = $request->input('designation');
-        $student->section = $request->input('section');
-        $student->joindate = $request->input('joindate');
-        $student->gender = $request->input('gender');
-        $student->image = $image;
-        $student->present_address = $request->input('present_address');
-        $student->present_city = $request->input('present_city');
-        $student->present_state = $request->input('present_state');
-        $student->present_country = $request->input('present_country');
-        $student->present_zip_code = $request->input('present_zip_code');
-        $student->parmanent_address = $request->input('parmanent_address');
-        $student->parmanent_state = $request->input('parmanent_state');
-        $student->parmanent_city = $request->input('parmanent_city');
-        $student->parmanent_country = $request->input('parmanent_country');
-        $student->parmanent_zip_code = $request->input('parmanent_zip_code');
-        $student->email = $request->input('email');
-        $student->password = $request->input('password');
-        $student->mobile = $request->input('mobile');
-        $student->nid = $request->input('nid');
-        $student->role = 'teacher';
-        $student->save();
+        $teacher = new Teacher();
+        $teacher->firstname = $request->input('firstname');
+        $teacher->lastname = $request->input('lastname');
+        $teacher->birth_date = $request->input('birth_date');
+        $teacher->teacher_id = $request->input('teacher_id');
+        $teacher->designation = $request->input('designation');
+        $teacher->section = $request->input('section');
+        $teacher->joindate = $request->input('joindate');
+        $teacher->gender = $request->input('gender');
+        $teacher->image = $image;
+        $teacher->present_address = $request->input('present_address');
+        $teacher->present_city = $request->input('present_city');
+        $teacher->present_state = $request->input('present_state');
+        $teacher->present_country = $request->input('present_country');
+        $teacher->present_zip_code = $request->input('present_zip_code');
+        $teacher->parmanent_address = $request->input('parmanent_address');
+        $teacher->parmanent_state = $request->input('parmanent_state');
+        $teacher->parmanent_city = $request->input('parmanent_city');
+        $teacher->parmanent_country = $request->input('parmanent_country');
+        $teacher->parmanent_zip_code = $request->input('parmanent_zip_code');
+        $teacher->email = $request->input('email');
+        $teacher->password = $request->input('password');
+        $teacher->mobile = $request->input('mobile');
+        $teacher->nid = $request->input('nid');
+        $teacher->role = 'teacher';
+        $teacher->save();
 
 
         return redirect('/addteacher')->with('success', 'Sucessfully created.');
@@ -97,34 +97,35 @@ class humanResourceController extends Controller
         return view('Dashboard/humanreSource/updateTeacher', ['teachers' => $teachers]);
     }
     
-    // public function update(Request $request, $id)
-    // {
-    //         $student = Student::findOrFail($id);
-    //         $student->first_name = $request->input('first_name');
-    //         $student->last_name = $request->input('last_name');
-    //         $student->birth_date = $request->input('birth_date');
-    //         $student->student_id = $request->input('student_id');
-    //         $student->class = $request->input('class');
-    //         $student->section = $request->input('section');
-    //         $student->year = $request->input('year');
-    //         $student->gender = $request->input('gender');
-    //         $student->present_address = $request->input('present_address');
-    //         $student->present_street = $request->input('present_street');
-    //         $student->present_city = $request->input('present_city');
-    //         $student->present_country = $request->input('present_country');
-    //         $student->present_zip_code = $request->input('present_zip_code');
-    //         $student->parmanent_address = $request->input('parmanent_address');
-    //         $student->parmanent_street = $request->input('parmanent_street');
-    //         $student->parmanent_city = $request->input('parmanent_city');
-    //         $student->parmanent_country = $request->input('parmanent_country');
-    //         $student->parmanent_zip_code = $request->input('parmanent_zip_code');
-    //         $student->email = $request->input('email');
-    //         $student->phoneNumber = $request->input('phoneNumber');
-    //         $student->role = 'student';
-    //         $student->save();
+    public function update(Request $request, $id)
+    {
+        $teacher = Teacher::findOrFail($id);
+        $teacher->firstname = $request->input('firstname');
+        $teacher->lastname = $request->input('lastname');
+        $teacher->birth_date = $request->input('birth_date');
+        $teacher->teacher_id = $request->input('teacher_id');
+        $teacher->designation = $request->input('designation');
+        $teacher->section = $request->input('section');
+        $teacher->joindate = $request->input('joindate');
+        $teacher->gender = $request->input('gender');
+        $teacher->present_address = $request->input('present_address');
+        $teacher->present_city = $request->input('present_city');
+        $teacher->present_state = $request->input('present_state');
+        $teacher->present_country = $request->input('present_country');
+        $teacher->present_zip_code = $request->input('present_zip_code');
+        $teacher->parmanent_address = $request->input('parmanent_address');
+        $teacher->parmanent_state = $request->input('parmanent_state');
+        $teacher->parmanent_city = $request->input('parmanent_city');
+        $teacher->parmanent_country = $request->input('parmanent_country');
+        $teacher->parmanent_zip_code = $request->input('parmanent_zip_code');
+        $teacher->email = $request->input('email');
+        $teacher->mobile = $request->input('mobile');
+        $teacher->nid = $request->input('nid');
+        $teacher->role = 'teacher';
+        $teacher->save();
     
-    //     return redirect('/student-list')->with('success', 'Student updated successfully');
-    // }
+        return redirect('/teachers')->with('success', 'Teacher updated successfully');
+    }
 
 
 
