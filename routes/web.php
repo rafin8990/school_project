@@ -4,6 +4,7 @@ use App\Http\Controllers\homeController;
 use App\Http\Controllers\galaryController;
 use App\Http\Controllers\admissionController;
 use App\Http\Controllers\noticeController;
+use App\Http\Controllers\resultController;
 use App\Http\Controllers\aboutController;
 use App\Http\Controllers\contactController;
 use App\Http\Controllers\dashboardController;
@@ -38,6 +39,7 @@ Route::get('/contact', [contactController::class, 'contact']);
 Route::get('/galary', [galaryController::class, 'galary']);
 Route::get('/admission', [admissionController::class, 'admission']);
 Route::get('/notice', [noticeController::class, 'notice']);
+Route::get('/result', [resultController::class, 'Result']);
 Route::get('/login', [authController::class, 'login']);
 Route::get('/login-user', [authController::class, 'loginUser'])->name('login-user');
 
@@ -76,6 +78,9 @@ Route::prefix('/')->group(function () {
     Route::get('/designation',[humanResourceController::class, 'designation']);
     Route::get('/department',[humanResourceController::class, 'department']);
     
+    //update teacher
+    Route::get('/teacher/{id}/edit', [humanResourceController::class, 'edit'])->name('teachers.edit');
+    Route::put('/teacher/{id}/update', [humanResourceController::class, 'update'])->name('teachers.update');
     // academics 
     Route::get('/class',[academicController::class, 'class']);
     Route::get('/section',[academicController::class, 'section']);

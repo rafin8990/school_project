@@ -75,6 +75,8 @@
         inherits: false;
     }
 </style>
-
+@include('/shared/navbar')
+@include('/Result/showresult')
+@include('/shared/footer')
 </body>
 </html>
