@@ -10,7 +10,8 @@ class humanResourceController extends Controller
 {
     // Teacher  add
     public function teachers(){
-        return view('/Dashboard/humanResource/teachers');
+        $teachers = Teacher::all();
+        return view('/Dashboard/humanResource/teachers',['teachers' => $teachers]);
     }
 
     public function addteacher(Request $request)
@@ -89,6 +90,46 @@ class humanResourceController extends Controller
     public function addTeachers(){
         return view('/Dashboard/humanResource/addteacher');
     }
+
+    public function edit($id)
+    {
+        $teachers = Teacher::findOrFail($id);
+        return view('Dashboard/humanreSource/updateTeacher', ['teachers' => $teachers]);
+    }
+    
+    // public function update(Request $request, $id)
+    // {
+    //         $student = Student::findOrFail($id);
+    //         $student->first_name = $request->input('first_name');
+    //         $student->last_name = $request->input('last_name');
+    //         $student->birth_date = $request->input('birth_date');
+    //         $student->student_id = $request->input('student_id');
+    //         $student->class = $request->input('class');
+    //         $student->section = $request->input('section');
+    //         $student->year = $request->input('year');
+    //         $student->gender = $request->input('gender');
+    //         $student->present_address = $request->input('present_address');
+    //         $student->present_street = $request->input('present_street');
+    //         $student->present_city = $request->input('present_city');
+    //         $student->present_country = $request->input('present_country');
+    //         $student->present_zip_code = $request->input('present_zip_code');
+    //         $student->parmanent_address = $request->input('parmanent_address');
+    //         $student->parmanent_street = $request->input('parmanent_street');
+    //         $student->parmanent_city = $request->input('parmanent_city');
+    //         $student->parmanent_country = $request->input('parmanent_country');
+    //         $student->parmanent_zip_code = $request->input('parmanent_zip_code');
+    //         $student->email = $request->input('email');
+    //         $student->phoneNumber = $request->input('phoneNumber');
+    //         $student->role = 'student';
+    //         $student->save();
+    
+    //     return redirect('/student-list')->with('success', 'Student updated successfully');
+    // }
+
+
+
+
+    //staff list
     public function staff(){
         return view('/Dashboard/humanResource/staff');
     }
