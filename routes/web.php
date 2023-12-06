@@ -71,9 +71,10 @@ Route::prefix('/')->group(function () {
     Route::get('/students/{id}/view', [studentController::class, 'view'])->name('students.view');
     //human resource
     Route::get('/teachers',[humanResourceController::class, 'teachers']);
-    Route::get('/addteacher',[humanResourceController::class, 'addTeachers']);
-    Route::post('/create-teacher', [humanResourceController::class, 'addteacher'])->name('teacher.add');
-    Route::get('/staffs',[humanResourceController::class, 'staff']);
+    Route::get('/addteacher',[humanResourceController::class, 'addTeachers']);//add teacher
+    Route::post('/create-teacher', [humanResourceController::class, 'addteacher'])->name('teacher.add');//add teacher
+    Route::get('/staffs',[humanResourceController::class, 'staff']);//add staff
+    Route::post('/addstaff',[humanResourceController::class, 'addstaff'])->name('staff.add');//add staff
     Route::get('/staff-list',[humanResourceController::class, 'staffList']);
     Route::get('/designation',[humanResourceController::class, 'designation']);
     Route::get('/department',[humanResourceController::class, 'department']);
@@ -81,6 +82,21 @@ Route::prefix('/')->group(function () {
     //update teacher
     Route::get('/teacher/{id}/edit', [humanResourceController::class, 'edit'])->name('teachers.edit');
     Route::put('/teacher/{id}/update', [humanResourceController::class, 'update'])->name('teachers.update');
+    //view teacher
+    Route::get('/teachers/{id}/teacherview', [humanResourceController::class, 'view'])->name('teachers.view');
+    //delete teacher
+    Route::delete('/techers/{id}', [humanResourceController::class, 'Deleteteacher'])->name('teacher.delete');
+
+
+    //update staff
+    Route::get('/staff/{id}/edit', [humanResourceController::class, 'staffedit'])->name('staffs.edit');
+    Route::put('/staff/{id}/update', [humanResourceController::class, 'staffupdate'])->name('staffs.update');
+    //view staff
+    Route::get('/staff/{id}/staffview', [humanResourceController::class, 'staffview'])->name('staffs.view');
+    //delete teacher
+    Route::delete('/staff/{id}', [humanResourceController::class, 'Deletestaff'])->name('staff.delete');
+
+
     // academics 
     Route::get('/class',[academicController::class, 'class']);
     Route::get('/section',[academicController::class, 'section']);

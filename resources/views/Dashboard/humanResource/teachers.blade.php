@@ -7,20 +7,7 @@
 </div>
 <div class="md:flex  my-10 justify-center">
   <div class="mr-10">
-    <select class="select select-accent w-full max-w-xs">
-      <option disabled selected>Select the Name</option>
-      <option>#</option>
-      {{-- <option>class 2</option>
-      <option>class 3</option> --}}
-    </select>
-  </div>
-  <div>
-    <select class="select select-accent w-full max-w-xs">
-      <option disabled selected>Select the depeartment</option>
-      <option>English</option>
-      {{-- <option>sec-2</option>
-      <option>sec-3</option> --}}
-    </select>
+    <input type="text" class="input input-bordered w-full " placeholder="Enter name">
   </div>
 
   <div class="flex justify-end ml-10">
@@ -59,8 +46,8 @@
                 <td>{{ $teacher->designation }}</td>
                 <td class="flex">
                     <a href="{{ route('teachers.edit', $teacher->id) }}" class="mr-2"><i class="fa fa-edit" style="color:green;"></i></a>
-                    <a href="{{ route('students.view', $teacher->id) }}" class="mr-2"><i class="fa fa-eye" style="color:#12c56a;"></i></a>
-                    <form action="{{ route('students.delete', $teacher->id) }}" method="post">
+                    <a href="{{ route('teachers.view', $teacher->id) }}" class="mr-2"><i class="fa fa-eye" style="color:#12c56a;"></i></a>
+                    <form action="{{ route('teacher.delete', $teacher->id) }}" method="post">
                         @csrf
                         @method('DELETE')
                         <button type="submit">
@@ -69,7 +56,7 @@
                     </form>
                 </td>
             </tr>
-            @endforeach
+       @endforeach
   
     </tbody>
   </table>
