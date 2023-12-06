@@ -7,20 +7,7 @@
 </div>
 <div class="md:flex  my-10 justify-center">
   <div class="mr-10">
-    <select class="select select-accent w-full max-w-xs">
-      <option disabled selected>Select the Name</option>
-      <option>#</option>
-      {{-- <option>class 2</option>
-      <option>class 3</option> --}}
-    </select>
-  </div>
-  <div>
-    <select class="select select-accent w-full max-w-xs">
-      <option disabled selected>Select the depeartment</option>
-      <option>English</option>
-      {{-- <option>sec-2</option>
-      <option>sec-3</option> --}}
-    </select>
+    <input type="text" class="input input-bordered w-full " placeholder="Enter name">
   </div>
 
   <div class="flex justify-end ml-10">
@@ -51,16 +38,25 @@
     </thead>
     <tbody>
       <!-- row 1 -->
-      <tr>
-        <th>1</th>
-        <td>Cy Ganderton</td>
-        <td>Quality Control Specialist</td>
-        <td>
-          <a href="" class="mr-2"><i class="fa fa-edit" style="color:green;"></i></a>
-          <a href="" class="mr-2"><i class="fa fa-eye" style="color:#12c56a;"></i></a>
-          <a href=""><i class="fa fa-trash" aria-hidden="true" style="color:red;"></i></a>
-      </td>
-      </tr>
+      @foreach ($staffs as $staff)
+            <tr>
+
+                <th>{{ $staff->staff_id }}</th>
+                <td>{{ $staff->firstname }} {{ $staff->lastname }}</td>
+                <td>{{ $staff->designation }}</td>
+                <td class="flex">
+                    <a href="{{ route('staffs.edit', $staff->id) }}" class="mr-2"><i class="fa fa-edit" style="color:green;"></i></a>
+                    <a href="{{ route('staffs.view', $staff->id) }}" class="mr-2"><i class="fa fa-eye" style="color:#12c56a;"></i></a>
+                    <form action="{{ route('staff.delete', $staff->id) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" >
+                            <i class="fa fa-trash" aria-hidden="true" style="color:red;"></i>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+       @endforeach
      
     </tbody>
   </table>

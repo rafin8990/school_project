@@ -165,7 +165,7 @@
               </div>
             </div>
             <div class="my-5 flex justify-end ">
-                <button type="submit" class=" btn btn-accent text-white ">
+                <button type="submit" class=" btn btn-accent btn-outline text-white ">
                     Submit
                 </button>
             </div>
