@@ -51,16 +51,25 @@
     </thead>
     <tbody>
       <!-- row 1 -->
-      <tr>
-        <th>1</th>
-        <td>Cy Ganderton</td>
-        <td>Quality Control Specialist</td>
-        <td>
-          <a href="" class="mr-2"><i class="fa fa-edit" style="color:green;"></i></a>
-          <a href="" class="mr-2"><i class="fa fa-eye" style="color:#12c56a;"></i></a>
-          <a href=""><i class="fa fa-trash" aria-hidden="true" style="color:red;"></i></a>
-      </td>
-      </tr>
+      @foreach ($teachers as $teacher)
+            <tr>
+
+                <th>{{ $teacher->teacher_id }}</th>
+                <td>{{ $teacher->firstname }} {{ $teacher->lastname }}</td>
+                <td>{{ $teacher->designation }}</td>
+                <td class="flex">
+                    <a href="{{ route('teachers.edit', $teacher->id) }}" class="mr-2"><i class="fa fa-edit" style="color:green;"></i></a>
+                    <a href="{{ route('students.view', $teacher->id) }}" class="mr-2"><i class="fa fa-eye" style="color:#12c56a;"></i></a>
+                    <form action="{{ route('students.delete', $teacher->id) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit">
+                            <i class="fa fa-trash" aria-hidden="true" style="color:red;"></i>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            @endforeach
   
     </tbody>
   </table>
