@@ -86,6 +86,35 @@ class academicController extends Controller
         
     }
 
+    public function sectionEdit($id)
+    {
+        $classes = Classes::all();
+        $section = Section::findOrFail($id);
+        return view('Dashboard/academics/updateSection', ['section' => $section,'classes' => $classes]);
+    }
+    public function sectionupdate(Request $request, $id)
+    {
+        $section = Section::findOrFail($id);
+        $section->class = $request->input('class');
+        $section->section = $request->input('section');
+        $section->save();
+
+        return redirect('/section')->with('success', 'Sucessfully created.');
+    }
+
+    public function Deletesection($id)
+    {
+        $section = Section::findOrFail($id);
+        $section->delete();
+        return redirect('/section')->with('success', 'Section deleted successfully');
+    }
+   
+
+
+    
+    
+    
+
 // create and view subject
     public function subject()
     {

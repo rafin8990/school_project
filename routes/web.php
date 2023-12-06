@@ -109,6 +109,14 @@ Route::prefix('/')->group(function () {
     Route::put('/class/{id}/update', [academicController::class, 'classupdate'])->name('class.update');
     //delete class
     Route::delete('/class/{id}', [academicController::class, 'Deleteclass'])->name('class.delete');
+
+    //update section
+    Route::get('/section/{id}/edit', [academicController::class, 'sectionEdit'])->name('section.edit');
+    Route::put('/section/{id}/update', [academicController::class, 'sectionupdate'])->name('section.update');
+    //delete class
+    Route::delete('/section/{id}', [academicController::class, 'Deletesection'])->name('section.delete');
+
+
     // attendence 
     Route::get('/attendence',[attendenceController::class, 'attendence']);
     Route::get('/update-attendence',[attendenceController::class, 'updateAttendence']);

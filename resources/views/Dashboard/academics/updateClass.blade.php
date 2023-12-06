@@ -13,7 +13,7 @@
 
                 <div class="mt-5 mx-10 mb-10">
                     <button type="submit" class=" btn btn-accent btn-outline text-white w-full">
-                        Create Class
+                        Update Class
                     </button>
                 </div>
             </form>
