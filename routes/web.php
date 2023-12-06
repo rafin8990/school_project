@@ -58,8 +58,8 @@ Route::prefix('/')->group(function () {
 
 
     //student routes
-    Route::get('/student-list', [studentController::class, 'studentList']);
-    Route::get('/add-student', [studentController::class, 'addStudentForm']);
+    Route::get('/student-list', [studentController::class, 'studentList'])->middleware('admin');
+    Route::get('/add-student', [studentController::class, 'addStudentForm'])->middleware('admin');
     Route::get('/get-sections/{className}', [studentController::class, 'getSections']);
     Route::get('/get-studentlist/{className}', [studentController::class, 'getClassSection']);
     Route::post('/create-student', [studentController::class, 'addStudent'])->name('student.add');

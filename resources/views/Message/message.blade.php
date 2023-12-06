@@ -23,6 +23,6 @@
 <script>
     setTimeout(function() {
         document.querySelector('.alert-error').style.display = 'none';
-    }, 3000); // Hide the error message after 3 seconds (3000 milliseconds)
+    }, 10000); // Hide the error message after 3 seconds (3000 milliseconds)
 </script>
 @endif
