@@ -36,7 +36,25 @@ class academicController extends Controller
     
         return redirect('/class')->with('success', 'Sucessfully created.');
     }
+    public function classEdit($id)
+    {
+        $classes = Classes::findOrFail($id);
+        return view('Dashboard/academics/updateClass', ['classes' => $classes]);
+    }
+    public function classupdate(Request $request, $id)
+    {
+        $class = Classes::findOrFail($id);
+        $class->class = $request->input('class');
+        $class->save();
+        return redirect('/class')->with('success', 'Class Updated successfully'); 
+    }
 
+    public function Deleteclass($id)
+    {
+        $class = Classes::findOrFail($id);
+        $class->delete();
+        return redirect('/class')->with('success', 'Class deleted successfully');
+    }
    
 
 //  create and view sections

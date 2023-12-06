@@ -36,10 +36,16 @@
 
                             <th>{{ $loop->index + 1 }}</th>
                             <td>{{ $item->class }}</td>
-                            <td>
-                                <a href="" class="mr-2"><i class="fa fa-edit" style="color:green;"></i></a>
-                                <a href="" class="mr-2"><i class="fa fa-eye" style="color:#12c56a;"></i></a>
-                                <a href=""><i class="fa fa-trash" aria-hidden="true" style="color:red;"></i></a>
+                            <td class="flex">
+                                <a href="{{ route('class.edit', $item->id) }}" class="mr-2"><i class="fa fa-edit" style="color:green;"></i></a>
+                                
+                                <form action="{{ route('class.delete', $item->id) }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" >
+                                        <i class="fa fa-trash" aria-hidden="true" style="color:red;"></i>
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach
