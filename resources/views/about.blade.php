@@ -68,6 +68,7 @@
       height: 100%; /* Fill out full content on hover */
     }
 </style>
+@include('/Message/message')
     @include('/shared/navbar')
     @include('/Aboutpage/body')
     @include('/Aboutpage/principle')

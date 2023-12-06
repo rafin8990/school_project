@@ -79,6 +79,7 @@
             inherits: false;
         }
     </style>
+    @include('/Message/message')
     @include('/shared/navbar')
     <div class=" bg-gray-100 mx-20 my-10">
         <h1 class="font font-bold text-4xl text-accent text-center mb-5 border p-2 ">Admission Notice</h1>

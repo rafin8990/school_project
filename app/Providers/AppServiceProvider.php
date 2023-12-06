@@ -3,6 +3,7 @@
 namespace App\Providers;
 use App\Models\Admin;
 use App\Models\Student;
+use App\Models\Teacher;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
 
@@ -26,17 +27,22 @@ class AppServiceProvider extends ServiceProvider
         View::composer('*', function ($view) {
             $adminData = null; 
             $studentData=null;
+            $teacherData=null;
             $adminId = Session::get('loginId');
             $studentID=Session::get('studentId');
+            $teacherId=Session::get('studentId');
             if($adminId){
                 $adminData=Admin::find($adminId);
             }
             if($studentID){
                 $studentData=Student::find($studentID);
             }
+            if($teacherData){
+                $teacherData=Teacher::find($teacherId);
+            }
             $view->with('adminData', $adminData)
-                ->with('studentData',$studentData);
-            
+                ->with('studentData',$studentData)
+                ->with('teacherData',$teacherData);
         });
     }
 }

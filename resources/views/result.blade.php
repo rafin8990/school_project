@@ -75,6 +75,6 @@
         inherits: false;
     }
 </style>
-
+@include('/Message/message')
 </body>
 </html>

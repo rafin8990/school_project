@@ -68,6 +68,7 @@
       height: 100%; 
     }
 </style>
+@include('/Message/message')
     @include('/shared/navbar')
     
     {{-- <div class='lg:w-[1200px] mx-auto'>

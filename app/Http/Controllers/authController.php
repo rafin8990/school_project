@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use App\Models\Student;
+use App\Models\Teacher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Storage;
+
 
 class authController extends Controller
 {
@@ -27,6 +28,7 @@ class authController extends Controller
     
         $admin = Admin::where('email', $request->input('email'))->first();
         $student = Student::where('email', $request->input('email'))->first();
+        $teacher=Teacher::where('email', $request->input('email'))->first();
         if ($admin) {
             if (Hash::check($request->password, $admin->password)) {
                 $request->session()->put('loginId', $admin->id);
@@ -39,6 +41,13 @@ class authController extends Controller
             if (Hash::check($request->password, $student->password)) {
                 $request->session()->put('studentId', $student->id);
 
+                return redirect('/dashboard')->with('success', 'Login successful!');
+            } else {
+                return back()->with('fail', 'Login failed. Please check your password.');
+            }
+        }else if($teacher){
+            if (Hash::check($request->password, $teacher->password)) {
+                $request->session()->put('teacherId', $teacher->id);
                 return redirect('/dashboard')->with('success', 'Login successful!');
             } else {
                 return back()->with('fail', 'Login failed. Please check your password.');
@@ -102,6 +111,10 @@ class authController extends Controller
         }
         if(Session::has('studentId')){
             Session::pull('studentId');
+            return redirect('/login');
+        }
+        if(Session::has('teacherId')){
+            Session::pull('teacherId');
             return redirect('/login');
         }
     }

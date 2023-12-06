@@ -38,7 +38,6 @@ return new class extends Migration
             $table->string('nid');
             $table->string('role');
             $table->timestamps();
-            
         });
     }
 

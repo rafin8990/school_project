@@ -86,9 +86,11 @@
     <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content ">
     @yield('dashboard')
+    @include('/Message/message')
         <label for="my-drawer-2" class="btn btn-accent drawer-button lg:hidden">Open drawer</label>
 
     </div>
+   
     @include('/Dashboard/navigation/side')
 </div>
 
