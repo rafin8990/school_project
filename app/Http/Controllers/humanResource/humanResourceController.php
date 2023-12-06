@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\humanResource;
 
 use App\Models\Teacher;
+use App\Models\Staff;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -53,7 +54,7 @@ class humanResourceController extends Controller
             ->exists();
 
         if ($isExist) {
-            return back()->with('fail', 'Failed. This Student already exists');
+            return back()->with('fail', 'Failed. This teacher already exists');
         }
 
         $teacher = new Teacher();
@@ -127,7 +128,18 @@ class humanResourceController extends Controller
         return redirect('/teachers')->with('success', 'Teacher updated successfully');
     }
 
+    public function view($id)
+    {
+        $teacher = Teacher::findOrFail($id);
+        return view('Dashboard/humanResource/teacherview', ['teacher' => $teacher],);
+    }
 
+    public function Deleteteacher($id)
+    {
+        $teacher = Teacher::findOrFail($id);
+        $teacher->delete();
+        return redirect('/teachers')->with('success', 'Teacher deleted successfully');
+    }
 
 
     //staff list
@@ -135,8 +147,133 @@ class humanResourceController extends Controller
         return view('/Dashboard/humanResource/staff');
     }
     public function staffList(){
-        return view('/Dashboard/humanResource/staffList');
+        $staff = Staff::all();
+        return view('/Dashboard/humanResource/staffList',['staffs' => $staff]);
     }
+
+    public function addstaff(Request $request)
+    {
+
+        $this->validate($request, [
+            'firstname' => 'required|string',
+            'lastname' => 'required|string',
+            'birth_date' => 'required|string',
+            'staff_id' => 'required|string',
+            'designation' => 'required|string',
+            'section' => 'required|string',
+            'joindate' => 'required|string',
+            'gender' => 'required|string',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'present_address' => 'required|string',
+            'present_city' => 'required|string',
+            'present_state' => 'required|string',
+            'present_country' => 'required|string',
+            'present_zip_code' => 'required|string',
+            'parmanent_address' => 'required|string',
+            'parmanent_state' => 'required|string',
+            'parmanent_city' => 'required|string',
+            'parmanent_country' => 'required|string',
+            'parmanent_zip_code' => 'required|string',
+            'email' => 'required|string',
+            'mobile' => 'required|string',
+            'password' => 'required|string|min:4',
+            'nid' => 'required|string',
+        ]);
+
+
+        $image = $request->file('image')->getClientOriginalName();
+
+        $path = 'assets/images';
+        $imagePath = $request->file('image')->move($path, $image);
+        $isExist = Staff::where('email', $request->input('email'))
+            ->orWhere('mobile', $request->input('mobile'))
+            ->exists();
+
+        if ($isExist) {
+            return back()->with('fail', 'Failed. This Staff already exists');
+        }
+
+        $staff = new Staff();
+        $staff->firstname = $request->input('firstname');
+        $staff->lastname = $request->input('lastname');
+        $staff->birth_date = $request->input('birth_date');
+        $staff->staff_id = $request->input('staff_id');
+        $staff->designation = $request->input('designation');
+        $staff->section = $request->input('section');
+        $staff->joindate = $request->input('joindate');
+        $staff->gender = $request->input('gender');
+        $staff->image = $image;
+        $staff->present_address = $request->input('present_address');
+        $staff->present_city = $request->input('present_city');
+        $staff->present_state = $request->input('present_state');
+        $staff->present_country = $request->input('present_country');
+        $staff->present_zip_code = $request->input('present_zip_code');
+        $staff->parmanent_address = $request->input('parmanent_address');
+        $staff->parmanent_state = $request->input('parmanent_state');
+        $staff->parmanent_city = $request->input('parmanent_city');
+        $staff->parmanent_country = $request->input('parmanent_country');
+        $staff->parmanent_zip_code = $request->input('parmanent_zip_code');
+        $staff->email = $request->input('email');
+        $staff->password = $request->input('password');
+        $staff->mobile = $request->input('mobile');
+        $staff->nid = $request->input('nid');
+        $staff->role = 'staff';
+        $staff->save();
+
+
+        return redirect('/staffs')->with('success', 'Sucessfully created.');
+    }
+
+    public function staffedit($id)
+    {
+        $Staffs = Staff::findOrFail($id);
+        return view('Dashboard/humanreSource/updateStaff', ['staffs' => $Staffs]);
+    }
+    
+    public function staffupdate(Request $request, $id)
+    {
+        $staff = Staff::findOrFail($id);
+        $staff->firstname = $request->input('firstname');
+        $staff->lastname = $request->input('lastname');
+        $staff->birth_date = $request->input('birth_date');
+        $staff->staff_id = $request->input('staff_id');
+        $staff->designation = $request->input('designation');
+        $staff->section = $request->input('section');
+        $staff->joindate = $request->input('joindate');
+        $staff->gender = $request->input('gender');
+        $staff->present_address = $request->input('present_address');
+        $staff->present_city = $request->input('present_city');
+        $staff->present_state = $request->input('present_state');
+        $staff->present_country = $request->input('present_country');
+        $staff->present_zip_code = $request->input('present_zip_code');
+        $staff->parmanent_address = $request->input('parmanent_address');
+        $staff->parmanent_state = $request->input('parmanent_state');
+        $staff->parmanent_city = $request->input('parmanent_city');
+        $staff->parmanent_country = $request->input('parmanent_country');
+        $staff->parmanent_zip_code = $request->input('parmanent_zip_code');
+        $staff->email = $request->input('email');
+        $staff->mobile = $request->input('mobile');
+        $staff->nid = $request->input('nid');
+        $staff->role = 'staff';
+        $staff->save();
+    
+        return redirect('/staff-list')->with('success', 'Staff updated successfully');
+    }
+
+    public function staffview($id)
+    {
+        $staff = Staff::findOrFail($id);
+        return view('Dashboard/humanResource/staffview', ['staff' => $staff],);
+    }
+
+    public function Deletestaff($id)
+    {
+        $staff = Staff::findOrFail($id);
+        $staff->delete();
+        return redirect('/staff-list')->with('success', 'Staff deleted successfully');
+    }
+
+
     
     public function designation(){
         return view('/Dashboard/humanResource/designation');

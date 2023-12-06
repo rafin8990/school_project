@@ -20,7 +20,7 @@
       </div>
       <div>
         <h3 class="text-2xl mt-5 ml-5 text-accent">Contact Info: </h3>
-        <h3 class="text-lg mt-5 ml-5">Gmal: {{$student->email}}</h3>
+        <h3 class="text-lg mt-5 ml-5">Gmail: {{$student->email}}</h3>
         <h3 class="text-lg mt-5 ml-5">Mobile No: {{$student->phoneNumber}}</h3>
       </div>
     </div>
