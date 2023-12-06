@@ -76,6 +76,8 @@
     }
 </style>
 
+    @include('/Message/message')
+
     @include('/shared/navbar')
     @include('/auth/registerform')
     

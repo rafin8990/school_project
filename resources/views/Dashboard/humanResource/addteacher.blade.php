@@ -1,7 +1,7 @@
 @extends('Dashboard.app')
 
 @section('dashboard')
-
+@include('/Message/message')
 
 <!-- the content here  -->
 <div class="mx-10 mt-10">

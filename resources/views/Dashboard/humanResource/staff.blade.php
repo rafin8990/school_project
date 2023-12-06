@@ -2,7 +2,7 @@
 
 @section('dashboard')
 
-
+@include('/Message/message')
 <!-- the content here  -->
 <div class="mx-10 mt-10">
     <h1 class="text-2xl text-accent">Staff Information</h1>

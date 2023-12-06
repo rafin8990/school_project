@@ -75,8 +75,8 @@
         inherits: false;
     }
 </style>
-
-    @include('/shared/navbar');
+    @include('/Message/message')
+    @include('/shared/navbar')
     @include('/auth/loginForm')
     
 </body>

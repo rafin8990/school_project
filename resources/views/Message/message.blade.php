@@ -3,7 +3,7 @@
 @if(session('Success'))
 <div class="toast toast-top toast-center">
     <div class="alert alert-success">
-        <span>{{ session('Success') }}</span>
+        <span>{{ session('success') }}</span>
     </div>
 </div>
 <script>
@@ -14,7 +14,7 @@
 @endif
 
 <!-- Error Message -->
-@if(session('Fail'))
+@if(session('fail'))
 <div class="toast toast-top toast-center">
     <div class="alert alert-error">
         <span>{{ session('Fail') }}</span>

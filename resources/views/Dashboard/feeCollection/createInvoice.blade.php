@@ -2,7 +2,7 @@
 
 @section('dashboard')
 
-
+@include('/Message/message')
 <!-- the content here  -->
 <div class=" mx-10 mt-10">
   <div class="flex justify-center"><h1 class="text-2xl text-accent">Create new Invoice</h1><br></div>
