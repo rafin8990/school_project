@@ -1,6 +1,6 @@
 
 <!-- Success Message -->
-@if(session('Success'))
+@if(session('success'))
 <div class="toast toast-top toast-center">
     <div class="alert alert-success">
         <span>{{ session('success') }}</span>
@@ -9,7 +9,7 @@
 <script>
     setTimeout(function() {
         document.querySelector('.alert-success').style.display = 'none';
-    }, 3000); // Hide the success message after 3 seconds (3000 milliseconds)
+    }, 10000); // Hide the success message after 3 seconds (3000 milliseconds)
 </script>
 @endif
 
@@ -17,7 +17,7 @@
 @if(session('fail'))
 <div class="toast toast-top toast-center">
     <div class="alert alert-error">
-        <span>{{ session('Fail') }}</span>
+        <span>{{ session('fail') }}</span>
     </div>
 </div>
 <script>
