@@ -1,6 +1,7 @@
 @extends('Dashboard.app')
 
 @section('dashboard')
+@include('/Message/message')
 
 
 <div class="bg-gray-100 p-5">

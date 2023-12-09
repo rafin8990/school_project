@@ -1,9 +1,9 @@
 @extends('Dashboard.app')
 
 @section('dashboard')
-
+@include('/Message/message')
 <div>
-    <h1 class="text-4xl font font-semibold text-accent text-center my-5">Invoice List</h1>
+  <h1 class="text-4xl font font-semibold text-accent text-center my-5">Invoice List</h1>
 </div>
 <div class="md:flex  my-10 justify-center">
   <div class="mr-10">
@@ -16,19 +16,19 @@
   </div>
   <div class="mr-10">
     <select class="select select-accent w-full max-w-xs">
-        <option>Select month</option>
-        <option>January</option>
-        <option>February</option>
-        <option>March</option>
-        <option>April</option>
-        <option>May</option>
-        <option>June</option>
-        <option>July</option>
-        <option>August</option>
-        <option>September</option>
-        <option>October</option>
-        <option>November</option>
-        <option>December</option>
+      <option>Select month</option>
+      <option>January</option>
+      <option>February</option>
+      <option>March</option>
+      <option>April</option>
+      <option>May</option>
+      <option>June</option>
+      <option>July</option>
+      <option>August</option>
+      <option>September</option>
+      <option>October</option>
+      <option>November</option>
+      <option>December</option>
     </select>
   </div>
   <div>
@@ -47,9 +47,9 @@
 
   <div class="flex justify-end ml-10">
     <button class=" btn btn-accent text-white ">
-        Search
+      Search
     </button>
-</div>
+  </div>
 </div>
 
 <div class="overflow-x-auto">
@@ -67,19 +67,28 @@
     </thead>
     <tbody>
       <!-- row 1 -->
+      @foreach ($feeCollections as $feeCollection)
       <tr>
-        <th>1</th>
-        <td>Class 1</td>
-        <td>January</td>
-        <td>2023</td>
+        <th>{{$feeCollection->id}}</th>
+        <td>{{$feeCollection->class}}</td>
+        <td>{{$feeCollection-> month}}</td>
+        <td>{{$feeCollection->year}}</td>
         <td>300tk</td>
-        <td>
+        <td claas="flex">
           <a href="" class="mr-2"><i class="fa fa-edit" style="color:green;"></i></a>
           <a href="" class="mr-2"><i class="fa fa-eye" style="color:#12c56a;"></i></a>
-          <a href=""><i class="fa fa-trash" aria-hidden="true" style="color:red;"></i></a>
-      </td>
+          <form action="{{ route('invoice.delete', $feeCollection->id) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit">
+                            <i class="fa fa-trash" aria-hidden="true" style="color:red;"></i>
+                        </button>
+                    </form>
+        </td>
       </tr>
-     
+      @endforeach
+
+
     </tbody>
   </table>
 </div>

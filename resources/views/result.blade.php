@@ -75,8 +75,11 @@
         inherits: false;
     }
 </style>
+
+@include('/Message/message')
 @include('/shared/navbar')
 @include('/Result/showresult')
 @include('/shared/footer')
+
 </body>
 </html>

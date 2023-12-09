@@ -1,6 +1,7 @@
 @extends('Dashboard.app')
 
 @section('dashboard')
+@include('/Message/message')
 <div>
     <h1 class="text-4xl font font-semibold text-accent text-center my-5">Student List</h1>
 </div>

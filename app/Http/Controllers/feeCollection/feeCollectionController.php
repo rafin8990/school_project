@@ -61,6 +61,14 @@ class feeCollectionController extends Controller
         return view('/Dashboard/feeCollection/invoiceIndividual');
     }
     public function invoiceList(){
-        return view('/Dashboard/feeCollection/invoiceList');
+        $feeCollections = Feecollection::all();
+        return view('/Dashboard/feeCollection/invoiceList', ['feeCollections'=>$feeCollections]);
+    }
+
+    public function DeleteInvoice($id)
+    {
+        $invoice = Feecollection::findOrFail($id);
+        $invoice->delete();
+        return redirect('/invoice-list')->with('success', 'Invoice deleted successfully');
     }
 }

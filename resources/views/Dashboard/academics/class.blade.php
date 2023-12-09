@@ -1,7 +1,9 @@
 @extends('Dashboard.app')
 
 @section('dashboard')
+
     <!-- the content here  -->
+    @include('/Message/message')
     <div class="md:flex">
         <div class="mx-14 my-36 border">
             <form action="{{ url('class-create') }}" method="post">

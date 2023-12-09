@@ -1,7 +1,7 @@
 @extends('Dashboard.app')
 
 @section('dashboard')
-
+@include('/Message/message')
 <div>
     <h1 class="text-4xl font font-semibold text-accent text-center my-10"> Individual Invoice </h1>
 </div>

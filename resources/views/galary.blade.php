@@ -75,6 +75,7 @@
         inherits: false;
     }
 </style>
+@include('/Message/message')
 @include('/shared/navbar')
 @include('/Galary/slider')
 @include('/Galary/image')
