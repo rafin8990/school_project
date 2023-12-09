@@ -36,7 +36,25 @@ class academicController extends Controller
     
         return redirect('/class')->with('success', 'Sucessfully created.');
     }
+    public function classEdit($id)
+    {
+        $classes = Classes::findOrFail($id);
+        return view('Dashboard/academics/updateClass', ['classes' => $classes]);
+    }
+    public function classupdate(Request $request, $id)
+    {
+        $class = Classes::findOrFail($id);
+        $class->class = $request->input('class');
+        $class->save();
+        return redirect('/class')->with('success', 'Class Updated successfully'); 
+    }
 
+    public function Deleteclass($id)
+    {
+        $class = Classes::findOrFail($id);
+        $class->delete();
+        return redirect('/class')->with('success', 'Class deleted successfully');
+    }
    
 
 //  create and view sections
@@ -67,6 +85,35 @@ class academicController extends Controller
         return redirect('/section')->with('success', 'Sucessfully created.');
         
     }
+
+    public function sectionEdit($id)
+    {
+        $classes = Classes::all();
+        $section = Section::findOrFail($id);
+        return view('Dashboard/academics/updateSection', ['section' => $section,'classes' => $classes]);
+    }
+    public function sectionupdate(Request $request, $id)
+    {
+        $section = Section::findOrFail($id);
+        $section->class = $request->input('class');
+        $section->section = $request->input('section');
+        $section->save();
+
+        return redirect('/section')->with('success', 'Sucessfully created.');
+    }
+
+    public function Deletesection($id)
+    {
+        $section = Section::findOrFail($id);
+        $section->delete();
+        return redirect('/section')->with('success', 'Section deleted successfully');
+    }
+   
+
+
+    
+    
+    
 
 // create and view subject
     public function subject()

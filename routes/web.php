@@ -70,12 +70,12 @@ Route::prefix('/')->group(function () {
     // view student
     Route::get('/students/{id}/view', [studentController::class, 'view'])->name('students.view');
     //human resource
-    Route::get('/teachers',[humanResourceController::class, 'teachers']);
+    Route::get('/teachers',[humanResourceController::class, 'teachers'])->name('teachers');//teacher list
     Route::get('/addteacher',[humanResourceController::class, 'addTeachers']);//add teacher
     Route::post('/create-teacher', [humanResourceController::class, 'addteacher'])->name('teacher.add');//add teacher
     Route::get('/staffs',[humanResourceController::class, 'staff']);//add staff
     Route::post('/addstaff',[humanResourceController::class, 'addstaff'])->name('staff.add');//add staff
-    Route::get('/staff-list',[humanResourceController::class, 'staffList']);
+    Route::get('/staff-list',[humanResourceController::class, 'staffList'])->name('staff_list');
     Route::get('/designation',[humanResourceController::class, 'designation']);
     Route::get('/department',[humanResourceController::class, 'department']);
     
@@ -104,8 +104,19 @@ Route::prefix('/')->group(function () {
     Route::post('/class-create',[academicController::class, 'class_post'])->name('class.classpost');
     Route::post('/create-section',[academicController::class, 'section_post'])->name('create-section');
     Route::post('/create-subject',[academicController::class, 'subject_post'])->name('create-subject');
-  
-    
+    //update class
+    Route::get('/class/{id}/edit', [academicController::class, 'classEdit'])->name('class.edit');
+    Route::put('/class/{id}/update', [academicController::class, 'classupdate'])->name('class.update');
+    //delete class
+    Route::delete('/class/{id}', [academicController::class, 'Deleteclass'])->name('class.delete');
+
+    //update section
+    Route::get('/section/{id}/edit', [academicController::class, 'sectionEdit'])->name('section.edit');
+    Route::put('/section/{id}/update', [academicController::class, 'sectionupdate'])->name('section.update');
+    //delete class
+    Route::delete('/section/{id}', [academicController::class, 'Deletesection'])->name('section.delete');
+
+
     // attendence 
     Route::get('/attendence',[attendenceController::class, 'attendence']);
     Route::get('/update-attendence',[attendenceController::class, 'updateAttendence']);

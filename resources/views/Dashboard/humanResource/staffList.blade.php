@@ -5,9 +5,9 @@
 <div>
     <h1 class="text-4xl font font-semibold text-accent text-center my-5">Staff List</h1>
 </div>
-<div class="md:flex  my-10 justify-center">
+<form action="{{route('staff_list')}}" method="GET" class="md:flex  my-10 justify-center">
   <div class="mr-10">
-    <input type="text" class="input input-bordered w-full " placeholder="Enter name">
+    <input type="text" name="search" class="input input-bordered w-full " placeholder="Search">
   </div>
 
   <div class="flex justify-end ml-10">
@@ -15,7 +15,7 @@
         Search
     </button>
 </div>
-</div>
+</form>
 <div class="flex justify-end mr-10 mb-5">
       <a href="/staffs">
         <button class=" btn btn-accent text-white ">
