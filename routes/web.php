@@ -115,6 +115,7 @@ Route::prefix('/')->group(function () {
     Route::get('/invoice-individual',[feeCollectionController::class, 'invoiceIndividual']);
     Route::get('/create-invoice',[feeCollectionController::class, 'createInvoice']);
     Route::post('/create-invoice',[feeCollectionController::class, 'invoicecreate'])->name('Invoice');
+    Route::delete('/invoice/{id}', [feeCollectionController::class, 'DeleteInvoice'])->name('invoice.delete');
     
     // examination 
     Route::get('/exam-list',[examController::class, 'examList']);
