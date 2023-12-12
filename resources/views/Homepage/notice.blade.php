@@ -1,29 +1,66 @@
 <style>
-    @keyframes scrollLeft {
-        0% {
-            transform: translateX(0);
+    .scroll-container {
+        overflow: hidden;
+
+    }
+
+    .scroll-text {
+        /* animation properties */
+        white-space: nowrap;
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+
+        -moz-animation: my-animation 60s linear infinite;
+        -webkit-animation: my-animation 15s linear infinite;
+        animation: my-animation 60s linear infinite;
+    }
+
+    /* for Firefox */
+    @-moz-keyframes my-animation {
+        from {
+            -moz-transform: translateX(100%);
         }
 
-        100% {
+        to {
+            -moz-transform: translateX(-100%);
+        }
+    }
+
+    /* for Chrome */
+    @-webkit-keyframes my-animation {
+        from {
+            -webkit-transform: translateX(100%);
+        }
+
+        to {
+            -webkit-transform: translateX(-100%);
+        }
+    }
+
+    @keyframes my-animation {
+        from {
+            -moz-transform: translateX(100%);
+            -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+        }
+
+        to {
+            -moz-transform: translateX(-100%);
+            -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
         }
-    }
-
-    .scroll-container {
-        white-space: nowrap;
-        overflow: hidden;
-        animation: scrollLeft 15s linear infinite;
-        /* Adjust the duration as needed */
-    }
-
-    .scroll-content {
-        display: inline-block;
     }
 </style>
 
 
-<div class="scroll-container">
-    <div class="scroll-content text-2xl">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque, quas neque necessitatibus laudantium amet asperiores quasi nihil voluptatibus ipsum consectetur aspernatur sunt
-</div>
+<div class="flex items-center">
+    <div>
+        <h1 class="scroll-container bg-accent mt-2 p-2 text-white w-[100px] mx-5 text-center">Notice:</h1>
+    </div>
+    <div class="scroll-container">
+        <div class="scroll-text text-2xl">
+            <a href="http://school.nedubd.com/fontend/assets/files/notice.pdf">In commemoration of Victory Day, our office will be closed on December 16th. Victory Day is a significant occasion that holds great historical importance for our nation.</a>
+        </div>
+    </div>
 </div>
