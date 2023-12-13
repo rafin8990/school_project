@@ -19,7 +19,7 @@
       </div>
     </div>
 </div>
- <div class="bg-blue-900 p-5">
+ <div class="bg-blue-600 p-5">
     <div class=" w-[400px] lg:w-[1200px] mx-auto">
             <div class=" grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 "> 
         
