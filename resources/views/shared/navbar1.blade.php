@@ -1,4 +1,4 @@
-<div class="bg-blue-900 flex justify-around">
+<div class="bg-blue-600 flex justify-around">
     <div class="flex items-center">
         <p class="mx-3 text-white">info@baitsbd.com</p>
         <p class="mx-3 text-white">+88 01923 24 07 00</p>
