@@ -88,7 +88,7 @@
 
     <div class="ml-5">
         <div class="border border-blue-400 ">
-            <h1 class="text-xl p-3 bg-blue-900 text-white font font-semibold">Notice</h1>
+            <h1 class="text-xl p-3 bg-blue-400 text-white font font-semibold">Notice</h1>
             <div class="scroll-container max-w-lg p-4">
                 <div class="scroll-item my-2 mx-2">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, consectetur.</p>
