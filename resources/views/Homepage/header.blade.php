@@ -8,7 +8,7 @@
       style="background-color: rgba(0, 0, 0, 0.75)">
       <div class="flex h-full items-center justify-center">
         <div class="px-6 text-center text-white md:px-12">
-          <h1 class="font mb-6  text-4xl lg:text-[80px] font-bold text-accent ">National Education Bangladesh </h1>
+          <h1 class="font mb-6  text-4xl lg:text-[80px] font-bold text-blue-600 ">National Education Bangladesh </h1>
           <h3 class="mb-8 sm:text-xl lg:text-3xl font-bold sm:w-[300px] lg:w-[600px] mx-auto ">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius accusamus tempora necessitatibus dicta provident sunt quidem quod.</h3>
           <button
             type="button"
