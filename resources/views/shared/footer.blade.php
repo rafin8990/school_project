@@ -94,7 +94,7 @@
 
   <!-- Text -->
   <div class="mb-6">
-  <h5 class="mb-2 font-bold uppercase">Explore Our World</h5>
+  <h5 class="mb-2 font-bold uppercase">National Education Bangladesh</h5>
 
   <p class="mb-4">
     Embark on an adventure of a lifetime and uncover hidden

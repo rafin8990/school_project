@@ -1,5 +1,5 @@
 <div class="md:flex">
-    <div class="mx-10">
+    <div class="mx-5">
         <div class="max-w-screen-md mx-auto my-5 border border-blue-400 p-3">
             <h1 class="text-4xl font-semibold text-center font my-10">Welcome to our school</h1>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi quisquam perspiciatis voluptatum
@@ -13,7 +13,7 @@
                 soluta saepe magni iure!</p>
         </div>
         <div class="max-w-screen-md mx-auto my-10 border border-blue-400">
-            <h1 class="text-4xl font-semibold font bg-blue-400 text-white p-2">Head Teacher</h1>
+            <h1 class="text-4xl font-semibold font bg-blue-600 text-white p-2">Head Teacher</h1>
             <div class="flex p-2">
                 <img class="w-1/5" src="https://selvamarts.edu.in/wp-content/uploads/2016/01/PrincipalPhoto.jpg" alt="">
                 <div class="mx-2">
@@ -33,7 +33,7 @@
     </div>
     <div class="ml-5">
         <div class="my-5 max-w-lg  border border-blue-400">
-            <h1 class="text-4xl font-semibold font bg-blue-400 text-white p-2">Usefull links</h1>
+            <h1 class="text-4xl font-semibold font bg-blue-600 text-white p-2">Usefull links</h1>
             <ul class="p-2">
                 <li class="text-lg font-semibold text-blue-500"><a href="">Education Board Result</a></li>
                 <li class="text-lg font-semibold text-blue-500"><a href="">Dc Office</a></li>
@@ -46,7 +46,7 @@
             </ul>
         </div>
         <div class="my-5 max-w-lg border border-blue-400">
-            <h1 class="text-4xl font-semibold font bg-blue-400 text-white p-2">Explore</h1>
+            <h1 class="text-4xl font-semibold font bg-blue-600 text-white p-2">Explore</h1>
             <ul class="p-2">
                 <li class="text-lg font-semibold text-blue-500"><a href="">Online Magazine 20182-19</a></li>
                 <li class="text-lg font-semibold text-blue-500"><a href="">Use of MMC Monitoring App</a></li>

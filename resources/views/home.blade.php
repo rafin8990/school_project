@@ -82,7 +82,7 @@
     @include('/Homepage/header')
     @include('/Homepage/notice')
     @include('/Homepage/slider')
-    @include('/Homepage/teacher')
+ 
     @include('/Homepage/event')
     @include('/Homepage/blog')
     @include('/Homepage/featured')
