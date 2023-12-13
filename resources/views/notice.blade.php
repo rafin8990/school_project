@@ -79,7 +79,9 @@
             inherits: false;
         }
     </style>
+
     @include('/Message/message')
+    @include('/shared/navbar1')
     @include('/shared/navbar')
     @include('/Notice/main')
 

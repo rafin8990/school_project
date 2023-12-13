@@ -76,6 +76,7 @@
     }
 </style>
 @include('/Message/message')
+@include('/shared/navbar1')
 @include('/shared/navbar')
 @include('/Galary/slider')
 @include('/Galary/image')

@@ -77,6 +77,7 @@
 </style>
 
 @include('/Message/message')
+@include('/shared/navbar1')
 @include('/shared/navbar')
 @include('/Result/showresult')
 @include('/shared/footer')

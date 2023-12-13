@@ -69,6 +69,7 @@
     }
 </style>
 @include('/Message/message')
+@include('/shared/navbar1')
     @include('/shared/navbar')
     
     {{-- <div class='lg:w-[1200px] mx-auto'>
