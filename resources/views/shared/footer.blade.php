@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="bg-blue-600 text-center text-neutral-600 dark:bg-blue-600 dark:text-neutral-200">
+<footer class="bg-blue-600 text-center text-white dark:bg-blue-600 dark:text-white">
 
   <!-- Social media -->
   <div class="flex items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-neutral-500 lg:justify-between">
