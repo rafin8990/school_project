@@ -24,7 +24,7 @@
     }
 </style>
 
-<div class="md:flex ">
+<div class="md:flex lg:w-[1200px] mx-auto">
     <div>
         <div class="max-w-screen-md mx-auto my-8">
             <div class="slider-container">
@@ -86,7 +86,7 @@
         </div>
     </div>
 
-    <div>
+    <div class="ml-5">
         <div class="border border-blue-400 ">
             <h1 class="text-xl p-3 bg-blue-900 text-white font font-semibold">Notice</h1>
             <div class="scroll-container max-w-lg p-4">
