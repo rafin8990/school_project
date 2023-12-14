@@ -1,66 +1,18 @@
 <div class="bg-blue-600 flex justify-around">
-    <div class="flex items-center">
-        <p class="mx-3 text-white">info@baitsbd.com</p>
-        <p class="mx-3 text-white">+88 01923 24 07 00</p>
-    </div>
-    <div>
-        @if($adminData || $studentData || $teacherData)
-        <div class="flex mr-5">
-            <a href={{"/logout"}} class="w-[100px] underline">log Out</a>
-            @if($studentData)
-            <div class="dropdown dropdown-end ml-2">
-                <label tabindex="0" class="btn btn-ghost btn-circle avatar">
-                    <div class="w-10 rounded-full">
-                        <img src="{{ asset('assets/images/' . $studentData->image) }}" alt="Student Image" />
-                    </div>
-                </label>
-                <ul tabindex="0"
-                    class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-                    <li>
-                        <a class="justify-between bg-accent">
-                            Profile
-                        </a>
-                    </li>
-                    <li><a class="bg-accent mt-2">Settings</a></li>
-                    <li><a href={{"/logout"}} class="mt-2 btn btn-accent">Log Out</a></li>
-                </ul>
-            </div>
-            @endif
-            @if($teacherData)
-            <div class="dropdown dropdown-end ml-2">
-                <label tabindex="0" class="btn btn-ghost btn-circle avatar">
-                    <div class="w-10 rounded-full">
-                        <img src="{{ asset('assets/images/' . $studentData->image) }}" alt="Student Image" />
-                    </div>
-                </label>
-                <ul tabindex="0"
-                    class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-                    <li>
-                        <a class="justify-between bg-accent">
-                            Profile
-                        </a>
-                    </li>
-                    <li><a class="bg-accent mt-2">Settings</a></li>
-                    <li><a href={{"/logout"}} class="mt-2 btn btn-accent">Log Out</a></li>
-                </ul>
-            </div>
-            @endif
-        </div>
-        @else
-        <div class="bg-blue-900 flex justify-end">
-            <a href={{"/login"}} class="text-white p-2">Login</a>
-        </div>
-        @endif
-    </div>
+    
 </div>
-<div class="bg-accent flex justify-around items-center">
+<div class="bg-white flex justify-around items-center">
     <div class="md:flex  items-center">
         <div class="w-[150px]">
             <img src="https://png.pngtree.com/png-clipart/20211017/original/pngtree-school-logo-png-image_6851480.png"
                 alt="">
         </div>
         <div>
-            <h1 class="text-4xl font font-bold"> National Education <br> Bangladesh</h1>
+            <h1 class="text-4xl text-accent font font-bold"> National Education <br> Bangladesh</h1>
+            <div class="flex items-center mt-">
+                <p class="mr-3 text-black">info@baitsbd.com</p>
+                <p class="mx-3 text-black">+88 01923 24 07 00</p>
+            </div>
         </div>
     </div>
     <div class="flex mx-5">

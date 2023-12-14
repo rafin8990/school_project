@@ -77,8 +77,8 @@
 </style>
 
 @include('/Message/message')
-    @include('/shared/navbar1')
-    @include('/shared/navbar')
+@include('/shared/navbar1')
+@include('/shared/navbar')
     @include('/Homepage/header')
     @include('/Homepage/notice')
     @include('/Homepage/slider')
