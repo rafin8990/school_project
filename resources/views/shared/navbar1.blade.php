@@ -1,7 +1,7 @@
 <div class="bg-blue-600 flex justify-around ">
     
 </div>
-<div class="bg-white flex justify-between items-center mx-10 h-[110px] mb-5">
+<div class="bg-white flex justify-around items-center mx-10 h-[110px] mb-5">
     <div class="md:flex items-center mt-10">
         <div class="w-[150px]">
             <img src="https://png.pngtree.com/png-clipart/20211017/original/pngtree-school-logo-png-image_6851480.png"
