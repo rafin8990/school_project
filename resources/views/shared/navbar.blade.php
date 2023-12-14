@@ -1,5 +1,5 @@
-<div class="navbar    mx-auto">
-  <div class="navbar-start">
+<div class="navbar  mx-auto">
+  <div class="navbar-start ">
     <div class="dropdown">
       <label tabindex="0" class="btn btn-ghost lg:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24"
@@ -8,7 +8,7 @@
         </svg>
 
       </label>
-      <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box ">
+      <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box">
         <li class=" text-lg"><a href={{"/"}}>Home</a></li>
         <li class=" text-lg"><a href={{"/about"}}>About</a> </li>
         <li class=" text-lg"><a href={{"/contact"}}>Contact</a> </li>
