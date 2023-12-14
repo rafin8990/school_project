@@ -1,15 +1,15 @@
-<div class="bg-blue-600 flex justify-around">
+<div class="bg-blue-600 flex justify-around ">
     
 </div>
-<div class="bg-white flex justify-around items-center">
-    <div class="md:flex  items-center">
+<div class="bg-white flex justify-between items-center mx-10 h-[110px] mb-5">
+    <div class="md:flex items-center mt-10">
         <div class="w-[150px]">
             <img src="https://png.pngtree.com/png-clipart/20211017/original/pngtree-school-logo-png-image_6851480.png"
                 alt="">
         </div>
         <div>
             <h1 class="text-4xl text-accent font font-bold"> National Education <br> Bangladesh</h1>
-            <div class="flex items-center mt-">
+            <div class="flex items-center ">
                 <p class="mr-3 text-black">info@baitsbd.com</p>
                 <p class="mx-3 text-black">+88 01923 24 07 00</p>
             </div>
