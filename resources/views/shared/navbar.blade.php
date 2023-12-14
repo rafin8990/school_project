@@ -40,7 +40,7 @@
     <div>
       @if($adminData || $studentData || $teacherData)
       <div class="flex mr-5">
-        <a href={{"/logout"}} class="w-[100px] underline">log Out</a>
+        <a href={{"/logout"}} class="w-[100px] btn btn-ghost">log Out</a>
         @if($studentData)
         <div class="dropdown dropdown-end ml-2">
           <label tabindex="0" class="btn btn-ghost btn-circle avatar">
