@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Administration\AuthoriserController;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\galaryController;
 use App\Http\Controllers\admissionController;
@@ -70,7 +71,10 @@ Route::prefix('/')->group(function () {
     // view student
     Route::get('/students/{id}/view', [studentController::class, 'view'])->name('students.view');
 
+// Administration controller 
 
+Route::get('/authoriser',[AuthoriserController::class,'authoriser']);
+Route::get('/addHeadTeacher',[AuthoriserController::class,'addHeadTeacher']);
 
 
 

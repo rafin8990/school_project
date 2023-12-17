@@ -9,7 +9,8 @@
             </div>
             <div class="collapse-content">
                 <ul>
-                    <li class="bg-white text-black rounded-xl mt-2"><a href="/teachers">Authoriser</a></li>
+                    <li class="bg-white text-black rounded-xl mt-2"><a href="/authoriser">Head Teacher</a></li>
+                    <li class="bg-white text-black rounded-xl mt-2"><a href="/addHeadTeacher">Add Head Teacher</a></li>
                 </ul>
                   
             </div>
@@ -89,7 +90,7 @@
         <div tabindex="4" class="collapse collapse-plus bg-blue-950 bg-accent  mb-2 text-white">
             <input type="checkbox" />
             <div class="collapse-title text-2xl">
-                <i class="fa-solid fa-bolt"></i> Fee Collection
+            <i class="fa-solid fa-cubes"></i> Fee Collection
             </div>
             <div class="collapse-content">
                 <ul>
