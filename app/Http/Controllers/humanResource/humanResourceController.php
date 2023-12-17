@@ -302,11 +302,5 @@ class humanResourceController extends Controller
     }
 
 
-    
-    public function designation(){
-        return view('/Dashboard/humanResource/designation');
-    }
-    public function department(){
-        return view('/Dashboard/humanResource/department');
-    }
+  
 }

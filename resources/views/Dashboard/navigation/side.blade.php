@@ -18,15 +18,14 @@
         <div tabindex="4" class="collapse collapse-plus bg-blue-950 bg-accent  mb-2 text-white">
             <input type="checkbox" />
             <div class="collapse-title text-2xl">
-                <i class="fa-brands fa-figma"></i> Human Ressources
+                <i class="fa-brands fa-figma"></i> Administration
             </div>
             <div class="collapse-content">
                 <ul>
-                    <li class="bg-white text-black rounded-xl"><a href="/teachers">Teachers</a></li>
-                    <li class="bg-white text-black rounded-xl mt-2"><a href="/staffs">Staffs</a></li>
-                    <li class="bg-white text-black rounded-xl mt-2"><a href="/staff-list">Staff list</a></li>
-                    <li class="bg-white text-black rounded-xl mt-2"><a href="/designation">Designation</a></li>
-                    <li class="bg-white text-black rounded-xl mt-2"><a href="/department">Department</a></li>
+                    <li class="bg-white text-black rounded-xl mt-2"><a href="/teachers">Authoriser</a></li>
+                    <li class="bg-white text-black rounded-xl mt-2"><a href="/teachers">Teachers</a></li>
+                    <li class="bg-white text-black rounded-xl mt-2"><a href="/teachers">Guardian</a></li>
+                    <li class="bg-white text-black rounded-xl mt-2"><a href="/staff-list">Staffs</a></li>
                 </ul>
                   
             </div>

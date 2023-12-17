@@ -69,6 +69,11 @@ Route::prefix('/')->group(function () {
     Route::put('/students/{id}/update', [studentController::class, 'update'])->name('students.update');
     // view student
     Route::get('/students/{id}/view', [studentController::class, 'view'])->name('students.view');
+
+
+
+
+
     //human resource
     Route::get('/teachers',[humanResourceController::class, 'teachers'])->name('teachers');//teacher list
     Route::get('/addteacher',[humanResourceController::class, 'addTeachers']);//add teacher
@@ -76,8 +81,6 @@ Route::prefix('/')->group(function () {
     Route::get('/staffs',[humanResourceController::class, 'staff']);//add staff
     Route::post('/addstaff',[humanResourceController::class, 'addstaff'])->name('staff.add');//add staff
     Route::get('/staff-list',[humanResourceController::class, 'staffList'])->name('staff_list');
-    Route::get('/designation',[humanResourceController::class, 'designation']);
-    Route::get('/department',[humanResourceController::class, 'department']);
     
     //update teacher
     Route::get('/teacher/{id}/edit', [humanResourceController::class, 'edit'])->name('teachers.edit');
