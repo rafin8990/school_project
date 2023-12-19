@@ -9,7 +9,7 @@
   <div class="mr-10">
     <select id="classSelect" class="select select-accent w-full max-w-xs">
       <option>Select Class</option>
-      @foreach  ($classes as $className => $classLabel)
+      @foreach ($classes as $className => $classLabel)
       <option value="{{ $className }}">{{ $classLabel }}</option>
       @endforeach
     </select>
@@ -29,7 +29,7 @@
         </svg>
       </div>
       <input datepicker datepicker-autohide type="text"
-        class="input input-bordered block w-full ps-10 p-2.5 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        class="input input-bordered block w-full ps-10 p-2.5 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
         placeholder="Select date">
     </div>
   </div>
@@ -55,11 +55,11 @@
     </thead>
     <tbody>
       <!-- row 1 -->
-
+      @foreach ($students as $student)
       <tr>
         <th>1</th>
-        <td>1</td>
-        <td>Asma AKter</td>
+        <td>{{ $student->student_id }}</td>
+        <td>{{ $student->first_name }} {{ $student->last_name }}</td>
         <td>
           {{-- <div class="flex w-[200px]">
             <div class=" items-center">
@@ -84,6 +84,9 @@
         </td>
         <td></td>
       </tr>
+      @endforeach
+
+
       <!-- row 2 -->
 
     </tbody>
@@ -110,28 +113,28 @@
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
-  $(document).ready(function () {
-    // Fetch sections based on selected class
-    $('#classSelect').on('change', function () {
-      var className = $(this).val();
+   $(document).ready(function () {
+        // Fetch sections based on selected class
+        $('#classSelect').on('change', function () {
+            var className = $(this).val();
 
-      $.ajax({
-        url: '/get-sections/' + className,
-        type: 'GET',
-        success: function (data) {
-          // Clear existing options
-          $('#sectionSelect').empty();
+            $.ajax({
+                url: '/get-studentlist/' + className,
+                type: 'GET',
+                success: function (data) {
+                    // Clear existing options
+                    $('#sectionSelect').empty();
 
-          // Populate section options
-          $.each(data, function (key, value) {
-            $('#sectionSelect').append('<option value="' + key + '">' + value + '</option>');
-          });
-        },
-        error: function (xhr, status, error) {
-          console.error(xhr.responseText);
-        }
-      });
+                    // Populate section options
+                    $.each(data, function (key, value) {
+                        $('#sectionSelect').append('<option value="' + key + '">' + value + '</option>');
+                    });
+                },
+                error: function (xhr, status, error) {
+                    console.error(xhr.responseText);
+                }
+            });
+        });
     });
-  });
 
 </script>
