@@ -1,7 +1,7 @@
 
 <!-- navbar -->
 <div class="navbar bg-accent">
-  <div class="navbar-start">
+  <div class="navbar-start lg:hidden">
     <div class="dropdown">
       <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -22,7 +22,7 @@
       </ul>
     </div>
   </div>
-  <div class="navbar-center hidden lg:flex">
+  <div class="navbar-center hidden lg:flex ml-10">
     <ul class="menu menu-horizontal px-1">
       <li class=" text-lg"><a href={{"/"}}>Home</a></li>
       <li class=" text-lg"><a href={{"/about"}}>About</a> </li>

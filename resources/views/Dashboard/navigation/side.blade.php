@@ -2,6 +2,7 @@
     <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
     <ul class="menu p-4 w-80 min-h-full bg-blue-950 text-base-content">
 
+
     <div tabindex="4" class="collapse collapse-plus bg-blue-950   mb-2 text-white">
             <input type="checkbox" />
             <div class="collapse-title text-2xl ">
@@ -16,6 +17,34 @@
                     <li class="bg-white text-black rounded-xl mt-2"><a href="/add-student">Executive</a></li>
                     <li class="bg-white text-black rounded-xl mt-2"><a href="/add-student">Customer Care</a></li>
                 </ul>
+
+    <div tabindex="4" class="collapse collapse-plus bg-blue-950 bg-accent  mb-2 text-white">
+            <input type="checkbox" />
+            <div class="collapse-title text-2xl">
+                <i class="fa-brands fa-figma"></i> Administration
+            </div>
+            <div class="collapse-content">
+                <ul>
+                    <li class="bg-white text-black rounded-xl mt-2"><a href="/authoriser">Head Teacher</a></li>
+                    <li class="bg-white text-black rounded-xl mt-2"><a href="/addHeadTeacher">Add Head Teacher</a></li>
+                </ul>
+                  
+            </div>
+        </div>
+
+        <div tabindex="4" class="collapse collapse-plus bg-blue-950 bg-accent  mb-2 text-white">
+            <input type="checkbox" />
+            <div class="collapse-title text-2xl">
+            <i class="fa-solid fa-cube"></i> Teachers
+            </div>
+            <div class="collapse-content">
+                <ul>
+                    <li class="bg-white text-black rounded-xl mt-2"><a href="/teachers">Teachers</a></li>
+                    <li class="bg-white text-black rounded-xl mt-2"><a href="/addteachers">Add Teachers</a></li>
+                    
+                </ul>
+                  
+
             </div>
         </div>
 
@@ -32,22 +61,21 @@
                   
             </div>
         </div>
+       
         <div tabindex="4" class="collapse collapse-plus bg-blue-950 bg-accent  mb-2 text-white">
             <input type="checkbox" />
             <div class="collapse-title text-2xl">
-                <i class="fa-brands fa-figma"></i> Human Ressources
+            <i class="fa-solid fa-bars-staggered"></i> Staff
             </div>
             <div class="collapse-content">
                 <ul>
-                    <li class="bg-white text-black rounded-xl"><a href="/teachers">Teachers</a></li>
-                    <li class="bg-white text-black rounded-xl mt-2"><a href="/staffs">Staffs</a></li>
-                    <li class="bg-white text-black rounded-xl mt-2"><a href="/staff-list">Staff list</a></li>
-                    <li class="bg-white text-black rounded-xl mt-2"><a href="/designation">Designation</a></li>
-                    <li class="bg-white text-black rounded-xl mt-2"><a href="/department">Department</a></li>
+                    <li class="bg-white text-black rounded-xl mt-2"><a href="/staff-list">Staffs</a></li>
+                    <li class="bg-white text-black rounded-xl mt-2"><a href="/staffs">Add Staff</a></li>
                 </ul>
                   
             </div>
         </div>
+        
         <div tabindex="4" class="collapse collapse-plus bg-blue-950 bg-accent  mb-2 text-white">
             <input type="checkbox" />
             <div class="collapse-title text-2xl">
@@ -79,7 +107,7 @@
         <div tabindex="4" class="collapse collapse-plus bg-blue-950 bg-accent  mb-2 text-white">
             <input type="checkbox" />
             <div class="collapse-title text-2xl">
-                <i class="fa-solid fa-bolt"></i> Fee Collection
+            <i class="fa-solid fa-cubes"></i> Fee Collection
             </div>
             <div class="collapse-content">
                 <ul>

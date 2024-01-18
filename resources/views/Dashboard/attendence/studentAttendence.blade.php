@@ -30,13 +30,21 @@
         </svg>
       </div>
       <input datepicker datepicker-autohide type="text"
+
         class="input input-bordered block w-full ps-10 p-2.5 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+
+        class="input input-bordered block w-full ps-10 p-2.5 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+
         placeholder="Select date">
     </div>
   </div>
 
   <div class="flex justify-end ml-10">
+
     <button onclick="filterStudents()" class=" btn btn-accent text-white ">
+
+    <button class=" btn btn-accent text-white ">
+
       Search
     </button>
   </div>
@@ -55,6 +63,9 @@
       </tr>
     </thead>
     <tbody>
+
+      <!-- row 1 -->
+
       @foreach ($students as $student)
       <tr>
         <form method="post" action="{{ route('saveAttendance') }}">
@@ -90,8 +101,8 @@
       <!-- row 1 -->
       <!-- <tr>
         <th>1</th>
-        <td>1</td>
-        <td>Asma AKter</td>
+        <td>{{ $student->student_id }}</td>
+        <td>{{ $student->first_name }} {{ $student->last_name }}</td>
         <td>
           {{-- <div class="flex w-[200px]">
             <div class=" items-center">
@@ -115,7 +126,14 @@
 
         </td>
         <td></td>
+
       </tr> -->
+
+      </tr>
+      @endforeach
+
+
+
       <!-- row 2 -->
 
     </tbody>
@@ -123,7 +141,11 @@
 
 </div>
 <div class="flex justify-end mt-10 mr-10">
+
   <button type="submit" class=" btn btn-accent text-white ">
+
+  <button class=" btn btn-accent text-white ">
+
     submit
   </button>
 </div>
@@ -142,6 +164,7 @@
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
+
   $(document).ready(function () {
     // Fetch sections based on selected class
     $('#classSelect').on('change', function () {
@@ -183,5 +206,30 @@
       },
     });
   }
+
+   $(document).ready(function () {
+        // Fetch sections based on selected class
+        $('#classSelect').on('change', function () {
+            var className = $(this).val();
+
+            $.ajax({
+                url: '/get-studentlist/' + className,
+                type: 'GET',
+                success: function (data) {
+                    // Clear existing options
+                    $('#sectionSelect').empty();
+
+                    // Populate section options
+                    $.each(data, function (key, value) {
+                        $('#sectionSelect').append('<option value="' + key + '">' + value + '</option>');
+                    });
+                },
+                error: function (xhr, status, error) {
+                    console.error(xhr.responseText);
+                }
+            });
+        });
+    });
+
 
 </script>
