@@ -21,8 +21,7 @@ class AdminMiddleware
         if (Session::has('loginId')) {
             $userId = Session::get('loginId');
             $user = Admin::find($userId);
-       
-            if ($user &&  $user->role === 'admin' ) {
+            if ($user &&  $user->role === 'admin' || $user->role === 'super_admin' ) {
                 return $next($request); 
             }
         }

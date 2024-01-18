@@ -120,6 +120,7 @@ Route::prefix('/')->group(function () {
     // attendence 
     Route::get('/attendence',[attendenceController::class, 'attendence']);
     Route::get('/update-attendence',[attendenceController::class, 'updateAttendence']);
+    Route::post('/attendance/save', [attendenceController::class, 'saveAttendance'])->name('saveAttendance');
     
     // fee collection 
     Route::get('/invoice-list',[feeCollectionController::class, 'invoiceList']);
