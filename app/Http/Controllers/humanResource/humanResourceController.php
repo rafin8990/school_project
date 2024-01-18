@@ -96,9 +96,9 @@ class humanResourceController extends Controller
         $teacher->password = $request->input('password');
         $teacher->mobile = $request->input('mobile');
         $teacher->nid = $request->input('nid');
+        $teacher->school_code=$request->input('school_code');
         $teacher->role = 'teacher';
         $teacher->save();
-
 
         return redirect('/addteacher')->with('success', 'Sucessfully created.');
     }

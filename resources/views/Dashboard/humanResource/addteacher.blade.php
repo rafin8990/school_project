@@ -164,6 +164,11 @@
 
               </div>
             </div>
+            <div class="hidden mt-5 w-[400px]">
+
+                <input name="school_code" value="{{$schoolCode}}" type="text"
+                    class="hidden input input-bordered w-full " />
+            </div>
             <div class="my-5 flex justify-end ">
                 <button type="submit" class=" btn btn-accent btn-outline text-white ">
                     Submit

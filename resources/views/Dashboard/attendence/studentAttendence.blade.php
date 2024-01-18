@@ -9,6 +9,7 @@
   <div class="mr-10">
     <select id="classSelect" class="select select-accent w-full max-w-xs">
       <option>Select Class</option>
+
       @foreach ($classes as $className => $classLabel)
       <option value="{{ $className }}">{{ $classLabel }}</option>
       @endforeach
@@ -29,13 +30,21 @@
         </svg>
       </div>
       <input datepicker datepicker-autohide type="text"
+
+        class="input input-bordered block w-full ps-10 p-2.5 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+
         class="input input-bordered block w-full ps-10 p-2.5 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+
         placeholder="Select date">
     </div>
   </div>
 
   <div class="flex justify-end ml-10">
+
+    <button onclick="filterStudents()" class=" btn btn-accent text-white ">
+
     <button class=" btn btn-accent text-white ">
+
       Search
     </button>
   </div>
@@ -46,7 +55,7 @@
     <!-- head -->
     <thead>
       <tr>
-        <th>Id</th>
+       
         <td>Roll</td>
         <th>Name</th>
         <th>Attendance</th>
@@ -54,9 +63,43 @@
       </tr>
     </thead>
     <tbody>
+
       <!-- row 1 -->
+
       @foreach ($students as $student)
       <tr>
+        <form method="post" action="{{ route('saveAttendance') }}">
+          <td> <input disabled value="{{ $student->student_id }}" class="input input-bordered input-accent" type="text">
+          </td>
+          <td><input disabled value="{{ $student->first_name }} {{ $student->last_name }}"
+              class="input input-bordered input-accent" type="text"></td>
+          </td>
+          <td>
+            <div class="flex">
+              <div class="flex  items-center">
+                <input type="radio" name="radio-4" value="Present" class="radio radio-accent" checked />
+                <p class="ml-2">Present</p>
+              </div>
+              <div class="flex  items-center ml-2">
+                <input type="radio" name="radio-4" value="Absent" class="radio radio-error" />
+                <p class="ml-2">Absent</p>
+              </div>
+
+            </div>
+          </td>
+          <td><input placeholder="Add Note" class="input input-bordered input-accent" type="text"></td>
+        </form>
+
+
+
+
+
+
+
+      </tr>
+      @endforeach
+      <!-- row 1 -->
+      <!-- <tr>
         <th>1</th>
         <td>{{ $student->student_id }}</td>
         <td>{{ $student->first_name }} {{ $student->last_name }}</td>
@@ -83,8 +126,12 @@
 
         </td>
         <td></td>
+
+      </tr> -->
+
       </tr>
       @endforeach
+
 
 
       <!-- row 2 -->
@@ -94,7 +141,11 @@
 
 </div>
 <div class="flex justify-end mt-10 mr-10">
+
+  <button type="submit" class=" btn btn-accent text-white ">
+
   <button class=" btn btn-accent text-white ">
+
     submit
   </button>
 </div>
@@ -113,6 +164,49 @@
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
+
+  $(document).ready(function () {
+    // Fetch sections based on selected class
+    $('#classSelect').on('change', function () {
+      var className = $(this).val();
+
+      $.ajax({
+        url: '/get-studentlist/' + className,
+        type: 'GET',
+        success: function (data) {
+          // Clear existing options
+          $('#sectionSelect').empty();
+
+          // Populate section options
+          $.each(data, function (key, value) {
+            $('#sectionSelect').append('<option value="' + key + '">' + value + '</option>');
+          });
+        },
+        error: function (xhr, status, error) {
+          console.error(xhr.responseText);
+        }
+      });
+    });
+  });
+
+  function filterStudents() {
+    var classValue = $('#classSelect').val();
+    var sectionValue = $('#sectionSelect').val();
+
+    $.ajax({
+      type: 'GET',
+      url: '/student-list',
+      data: {
+        class: classValue,
+        section: sectionValue,
+      },
+      success: function (data) {
+        // Update the table body with the filtered data
+        $('#studentsTable tbody').html(data);
+      },
+    });
+  }
+
    $(document).ready(function () {
         // Fetch sections based on selected class
         $('#classSelect').on('change', function () {
@@ -136,5 +230,6 @@
             });
         });
     });
+
 
 </script>

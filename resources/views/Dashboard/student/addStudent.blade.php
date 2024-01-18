@@ -37,6 +37,7 @@
                     <input name="student_id" type="text" placeholder="Enter The Student Id"
                         class="input input-bordered w-full " />
                 </div>
+
             </div>
 
             <div class="md:flex">
@@ -74,7 +75,7 @@
                     <label>Gender:</label>
                     <span class="text-red-500">*</span><br>
                     <select name="gender" class="select select-accent w-full max-w-xs">
-                        <option >Select Gender</option>
+                        <option>Select Gender</option>
                         <option>Male</option>
                         <option>Female</option>
                     </select>
@@ -83,13 +84,13 @@
                     <label>upload the student profile picture</label>
                     <span class="text-red-500">*</span>
                     <input name="image" type="file" class="file-input file-input-bordered file-input-accent w-full " />
-                    
+
 
                 </div>
             </div>
             {{-- Present Address --}}
             <h1 class="text-2xl text-accent mt-10">Present Address <span class="text-red-500">*</span></h1>
-            
+
 
             <div class="mt-5">
                 <input name="present_address" type="text" placeholder="Enter Street address"
@@ -119,7 +120,7 @@
 
             {{-- Permanent address --}}
             <h1 class="text-2xl text-accent mt-10">Permanent Address <span class="text-red-500">*</span></h1>
-            
+
 
             <div class="mt-5">
                 <input name="parmanent_address" type="text" placeholder="Enter Street address"
@@ -158,8 +159,8 @@
                 <div class="mt-5 w-[400px]">
                     <label>Mobile No:</label>
                     <span class="text-red-500">*</span>
-                    <input type="text" name="phoneNumber" id="floating_phone"
-                        placeholder="Enter The mobile number" class="input input-bordered w-full " />
+                    <input type="text" name="phoneNumber" id="floating_phone" placeholder="Enter The mobile number"
+                        class="input input-bordered w-full " />
                 </div>
 
 
@@ -167,9 +168,14 @@
 
             <div class="mt-5">
                 <label>Password:</label>
-                    <span class="text-red-500">*</span>
+                <span class="text-red-500">*</span>
                 <input name="password" type="password" placeholder="Enter password"
                     class="input input-bordered w-full" />
+            </div>
+            <div class="hidden mt-5 w-[400px]">
+
+                <input name="school_code" value="{{$schoolCode}}" type="text"
+                    class="hidden input input-bordered w-full " />
             </div>
             <div class="my-5 flex justify-end ">
                 <button type="submit" class=" btn btn-accent btn-outline text-white ">
@@ -208,18 +214,18 @@
         });
     });
 
-    $(document).ready(function() {
-    let $dateDropdown = $('#date-dropdown');
-    
-    let currentYear = new Date().getFullYear();
-    let earliestYear = 1970;
+    $(document).ready(function () {
+        let $dateDropdown = $('#date-dropdown');
 
-    while (currentYear >= earliestYear) {
-      let $dateOption = $('<option>');
-      $dateOption.text(currentYear);
-      $dateOption.val(currentYear);
-      $dateDropdown.append($dateOption);
-      currentYear -= 1;
-    }
-  });
+        let currentYear = new Date().getFullYear();
+        let earliestYear = 1970;
+
+        while (currentYear >= earliestYear) {
+            let $dateOption = $('<option>');
+            $dateOption.text(currentYear);
+            $dateOption.val(currentYear);
+            $dateDropdown.append($dateOption);
+            currentYear -= 1;
+        }
+    });
 </script>

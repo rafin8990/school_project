@@ -25,9 +25,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         View::composer('*', function ($view) {
+           
             $adminData = null; 
             $studentData=null;
             $teacherData=null;
+            $schoolCode="100";
             $adminId = Session::get('loginId');
             $studentID=Session::get('studentId');
             $teacherId=Session::get('studentId');
@@ -42,6 +44,7 @@ class AppServiceProvider extends ServiceProvider
             }
             $view->with('adminData', $adminData)
                 ->with('studentData',$studentData)
+                ->with('schoolCode',$schoolCode)
                 ->with('teacherData',$teacherData);
         });
     }

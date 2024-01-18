@@ -12,6 +12,8 @@ use Illuminate\Http\Request;
 class studentController extends Controller
 {
 
+    protected $schoolCode;
+  
     // get student list 
     public function studentList(Request $request)
     {
@@ -40,7 +42,6 @@ class studentController extends Controller
 
     public function addStudent(Request $request)
     {
-
         $this->validate($request, [
             'first_name' => 'required|string',
             'last_name' => 'required|string',
@@ -104,14 +105,14 @@ class studentController extends Controller
         $student->password = Hash::make($request->input('password'));
         $student->phoneNumber = $request->input('phoneNumber');
         $student->role = 'student';
+        $student ->school_code=$request->input('school_code');
         $student->save();
-
-
         return redirect('/add-student')->with('success', 'Sucessfully created.');
 
     }
     public function addStudentForm()
     {
+      
         $classes = Classes::pluck('class', 'class');
         return view('Dashboard/student/addStudent', compact('classes'));
     }
