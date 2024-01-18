@@ -107,8 +107,6 @@ class studentController extends Controller
         $student->role = 'student';
         $student ->school_code=$request->input('school_code');
         $student->save();
-
-
         return redirect('/add-student')->with('success', 'Sucessfully created.');
 
     }

@@ -3,6 +3,7 @@
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\galaryController;
 use App\Http\Controllers\admissionController;
+use App\Http\Controllers\NEDUBD\AdminController;
 use App\Http\Controllers\noticeController;
 use App\Http\Controllers\resultController;
 use App\Http\Controllers\aboutController;
@@ -53,9 +54,19 @@ Route::get('/register/admin', [authController::class, 'register']);
 
 // Route group for dashboard
 Route::prefix('/')->group(function () {
+
+
     // dashboard home 
     Route::get('/dashboard', [dashboardController::class, 'dashboard']);
 
+
+    // NEDUBD 
+    Route::get('/allAdmin/{schoolCode}', [AdminController::class,'allAdmin']);
+
+
+    Route::get('/allAdmin/{schoolCode}/{adminId}', [AdminController::class,'viewAdmin']);
+
+    Route::put('/allAdmin/{school_code}/{adminId}', [AdminController::class,'updateAdmin']);
 
     //student routes
     Route::get('/student-list', [studentController::class, 'studentList'])->middleware('admin');

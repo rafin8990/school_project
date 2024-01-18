@@ -100,7 +100,6 @@ class humanResourceController extends Controller
         $teacher->role = 'teacher';
         $teacher->save();
 
-
         return redirect('/addteacher')->with('success', 'Sucessfully created.');
     }
 

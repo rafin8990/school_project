@@ -1,5 +1,5 @@
 <div class=" min-h-screen lg:flex justify-between items-center ">
-<div class="mx-5 lg:ml-52 ">
+    <div class="mx-5 lg:ml-52 ">
         <div>
             <div>
                 <h1 class="font text-4xl my-4 lg:text-5xl font-bold text-blue-900 text-center">
@@ -20,16 +20,34 @@
                     </div>
 
                     <div class="mt-5">
-                    <p class="py-3">Email</p>
-                        <input type="email" name="email" placeholder="Enter Email" class="input input-bordered w-full " />
+                        <p class="py-3">Email</p>
+                        <input type="email" name="email" placeholder="Enter Email"
+                            class="input input-bordered w-full " />
                     </div>
                     <div class="mt-5">
-                    <p class="py-3">Phone Number</p>
-                        <input type="text" name="phone_number" placeholder="Enter Email" class="input input-bordered w-full " />
+                        <p class="py-3">Phone Number</p>
+                        <input type="text" name="phone_number" placeholder="Enter Email"
+                            class="input input-bordered w-full " />
                     </div>
                     <div class="mt-5">
-                    <p class="py-3">Password</p>
-                        <input type="password" name="password" placeholder="Enter password" class="input input-bordered w-full" />
+                        <p class="py-3">Select Role</p>
+                        <select name="role" class="select select-bordered w-full ">
+                            <option selected>admin_one</option>
+                            <option >admin_two</option>
+                            <option>data_entry_operator</option>
+                            <option>executive</option>
+                            <option>customer_care</option>
+                        </select>
+                    </div>
+                    <div class="mt-5">
+                        <p class="py-3">Password</p>
+                        <input type="password" name="password" placeholder="Enter password"
+                            class="input input-bordered w-full" />
+                    </div>
+                    <div class="hidden mt-5 w-[400px]">
+
+                        <input name="school_code" value="{{$schoolCode}}" type="text"
+                            class="hidden input input-bordered w-full " />
                     </div>
                     <div class="my-5 ">
                         <button type="submit" class=" btn btn-accent btn-outline w-full">
@@ -58,6 +76,5 @@
             </div>
         </div>
     </div>
-    
-</div>
 
+</div>
