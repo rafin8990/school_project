@@ -19,7 +19,7 @@
                         <input type="password" name="password" placeholder="Enter password" class="input input-bordered w-full" />
                     </div>
                     <div class="mt-5 ">
-                        <button type="submit" class=" btn btn-accent text-white w-full">
+                        <button type="submit" class=" btn btn-accent  w-full text-black">
                             Login
                         </button>
                     </div>
