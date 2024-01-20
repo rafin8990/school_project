@@ -18,6 +18,8 @@
                     <li class="bg-white text-black rounded-xl mt-2"><a href="/add-student">Customer Care</a></li>
                 </ul>
 
+            </div>
+
     <div tabindex="4" class="collapse collapse-plus bg-blue-950 bg-accent  mb-2 text-white">
             <input type="checkbox" />
             <div class="collapse-title text-2xl">

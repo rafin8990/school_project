@@ -36,6 +36,7 @@ return new class extends Migration
             $table->string('phoneNumber');
             $table->string('password');
             $table->string('role');
+            $table->string('school_code');
             $table->timestamps();
         });
     }
