@@ -10,7 +10,7 @@
             </div>
             <div class="collapse-content">
                 <ul>
-                    <li class="bg-white text-black rounded-xl "><a href="/allAdmin/{{$schoolCode}}"> All Admins</a></li>
+                    <li class="bg-white text-black rounded-xl "><a href="/allAdmin/{{$schoolCode}}">  Super Admin</a></li>
                     <li class="bg-white text-black rounded-xl mt-2"><a href="/student-list">Admin One</a></li>
                     <li class="bg-white text-black rounded-xl mt-2"><a href="/student-list">Admin Two</a></li>
                     <li class="bg-white text-black rounded-xl mt-2"><a href="/add-student">Data Entry Operator</a></li>

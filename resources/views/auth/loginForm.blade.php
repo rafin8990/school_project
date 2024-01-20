@@ -19,7 +19,11 @@
                         <input type="password" name="password" placeholder="Enter password" class="input input-bordered w-full" />
                     </div>
                     <div class="mt-5 ">
+<<<<<<< HEAD
+                        <button type="submit" class=" btn btn-accent  w-full text-black">
+=======
                         <button type="submit" class=" btn btn-accent w-full">
+>>>>>>> 6b4518f15e46f024855c1c3bebe2af84d3c109af
                             Login
                         </button>
                     </div>
