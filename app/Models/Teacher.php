@@ -32,7 +32,8 @@ class Teacher extends Model
         'mobile',
         'password',
         'nid',
-        'role'
+        'role',
+        'school_code'
     ];
     protected $table="teachers";
 }

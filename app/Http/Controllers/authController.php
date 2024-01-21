@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Admin;
 use App\Models\Student;
 use App\Models\Teacher;
+use App\Models\School_Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
@@ -25,10 +26,10 @@ class authController extends Controller
             'email' => 'required|string|email',
             'password' => 'required|string|min:4',
         ]);
-    
-        $admin = Admin::where('email', $request->input('email'))->first();
+
+        $admin = School_Admin::where('email', $request->input('email'))->first();
         $student = Student::where('email', $request->input('email'))->first();
-        $teacher=Teacher::where('email', $request->input('email'))->first();
+        $teacher = Teacher::where('email', $request->input('email'))->first();
         if ($admin) {
             if (Hash::check($request->password, $admin->password)) {
                 $request->session()->put('loginId', $admin->id);
@@ -45,7 +46,7 @@ class authController extends Controller
             } else {
                 return back()->with('fail', 'Login failed. Please check your password.');
             }
-        }else if($teacher){
+        } else if ($teacher) {
             if (Hash::check($request->password, $teacher->password)) {
                 $request->session()->put('teacherId', $teacher->id);
                 return redirect('/dashboard')->with('success', 'Login successful!');
@@ -68,34 +69,35 @@ class authController extends Controller
 
     public function store(Request $request)
     {
-
-
+        // dd($request);
         $this->validate($request, [
             'name' => 'required|string',
-            'email' => 'required|email|unique:admins',
-            'phone_number' => 'required|string|unique:admins',
-            'password' => 'required|string',
+            'email' => 'required|email',
+            'phone_number' => 'required|string',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'role'=>'required|string',
+            'password' => 'required|string|min:4',
+            'school_code'=>'required|string'
         ]);
 
+        $image = $request->file('image')->getClientOriginalName();
+        $path = 'assets/images';
+        $imagePath = $request->file('image')->move($path, $image);
 
-        $existingUser = Admin::where('email', $request->input('email'))->first();
-        $existingPhoneNumber = Admin::where('phone_number', $request->input('phone_number'))->first();
-
-
-        if ($existingUser) {
-            // Email is not unique, handle the error here
-            return back()->withInput()->withErrors(['email' => 'This email is already taken.']);
-        }
-        if ($existingPhoneNumber) {
-            // phone number is not unique, handle the error here
-            return back()->withInput()->withErrors(['phone_number' => 'This phone number is already taken.']);
+        $isExist = School_Admin::where('email', $request->input('email'))
+            ->orWhere('phone_number', $request->input('phone_number'))
+            ->exists();
+        if ($isExist) {
+            return back()->withInput()->withErrors(['email or Phone' => 'This email or phone number is already taken.']);
         }
 
-        $admin = new Admin();
+
+        $admin = new School_Admin();
         $admin->name = $request->input('name');
         $admin->email = $request->input('email');
         $admin->phone_number = $request->input('phone_number');
-        $admin->school_code=$request->input('school_code');
+        $admin->school_code = $request->input('school_code');
+        $admin->image = $image;
         $admin->password = Hash::make($request->input('password'));
         $admin->role = $request->input('role');
         $admin->save();
@@ -110,11 +112,11 @@ class authController extends Controller
             Session::pull('loginId');
             return redirect('/login');
         }
-        if(Session::has('studentId')){
+        if (Session::has('studentId')) {
             Session::pull('studentId');
             return redirect('/login');
         }
-        if(Session::has('teacherId')){
+        if (Session::has('teacherId')) {
             Session::pull('teacherId');
             return redirect('/login');
         }

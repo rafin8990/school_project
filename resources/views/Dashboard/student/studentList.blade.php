@@ -32,7 +32,7 @@
     @foreach ($students as $student)
     <div class="card w-96 bg-base-100 shadow-xl">
         <figure class="px-10 pt-10">
-            <img src="{{ asset('assets/images/' . $student->image) }}" alt="Shoes"
+            <img src="{{ asset('assets/images/' . $student->image) }}" alt="Student Picture"
                 class="rounded-xl" />
         </figure>
         <div>
@@ -60,86 +60,6 @@
     @endforeach
 
 </div>
-
-
-
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-    @foreach ($students as $student)
-    <div class="card w-96 bg-base-100 shadow-xl">
-        <figure class="px-10 pt-10">
-            <img src="{{ asset('assets/images/' . $student->image) }}" alt="Shoes"
-                class="rounded-xl" />
-        </figure>
-        <div>
-            <h2 class="text-2xl font-bold ml-5 mt-5">Name:  {{ $student->first_name }} {{ $student->last_name }}</h2>
-            <p class="text-lg font-semibold ml-5">Roll :{{ $student->student_id }} </p>
-            <p class="text-lg font-semibold ml-5">Class :{{ $student->class }} </p>
-            <p class="text-lg font-semibold ml-5">Section :{{ $student->section }} </p>
-            <div class="flex ml-5 mt-3">
-                @if($adminData)
-                <a href="{{ route('students.edit', $student->id) }}" class="mr-2"><i class="fa fa-edit"
-
-<!-- <div class="overflow-x-auto">
-    <table id="studentsTable" class="table border ">
-        <!-- head -->
-        <!-- <thead>
-            <tr>
-                <th>Roll</th>
-                <th>Name</th>
-                <th>Class</th>
-                <th>section</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody> -->
-            <!-- row 1 -->
-
-
-<!-- 
-            @foreach ($students as $student)
-            <tr>
-
-                <th>{{ $student->student_id }}</th>
-                <td>{{ $student->first_name }} {{ $student->last_name }}</td>
-                <td>{{ $student->class }}</td>
-                <td>{{ $student->section }}</td>
-                <td class="flex">
-                    <a href="{{ route('students.edit', $student->id) }}" class="mr-2"><i class="fa fa-edit"
-
-                            style="color:green;"></i></a>
-                    <a href="{{ route('students.view', $student->id) }}" class="mr-2"><i class="fa fa-eye"
-                            style="color:#12c56a;"></i></a>
-                    <form action="{{ route('students.delete', $student->id) }}" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit">
-                            <i class="fa fa-trash" aria-hidden="true" style="color:red;"></i>
-                        </button>
-                    </form>
-                @endif
-            </div>
-        </div>
-    </div>
-    @endforeach
-
-
-</div>
-
-
-
-        </tbody>
-    </table>
-</div> --> 
-<!-- 
-
-<div class="join my-10 flex justify-end ">
-    <button class="join-item btn ">Previous</button>
-    <input class="join-item btn btn-square " type="radio" name="options" aria-label="1" checked />
-    <input class="join-item btn btn-square " type="radio" name="options" aria-label="2" />
-    <input class="join-item btn btn-square" type="radio" name="options" aria-label="3" />
-    <input class="join-item btn btn-square " type="radio" name="options" aria-label="4" />
-    <button class="join-item btn ">Next</button>
-</div> -->
 @endsection
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>

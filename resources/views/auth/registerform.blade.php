@@ -1,5 +1,5 @@
-<div class=" min-h-screen lg:flex justify-between items-center ">
-    <div class="mx-5 lg:ml-52 ">
+<div class=" min-h-screen lg:flex justify-center items-center ">
+    <div class="mx-5">
         <div>
             <div>
                 <h1 class="font text-4xl my-4 lg:text-5xl font-bold text-blue-900 text-center">
@@ -11,18 +11,28 @@
             </div>
 
             <div class="">
-                <form action="{{ route('users.store') }}" method="post">
+                <form action="{{ route('users.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
 
                     <div class="mt-5">
                         <p class="py-3">Name</p>
                         <input type="text" name="name" placeholder="Enter Name" class="input input-bordered w-full " />
                     </div>
+                    <div class="mt-5">
+                        <label>Upload Image</label>
+                        <span class="text-red-500">*</span>
+                        <input type="file" name="image" class="file-input file-input-bordered file-input-accent w-full " />
+                    </div>
 
                     <div class="mt-5">
                         <p class="py-3">Email</p>
                         <input type="email" name="email" placeholder="Enter Email"
                             class="input input-bordered w-full " />
+                    </div>
+                    <div class="mt-5">
+                        <p class="py-3">Password</p>
+                        <input type="password" name="password" placeholder="Enter password"
+                            class="input input-bordered w-full" />
                     </div>
                     <div class="mt-5">
                         <p class="py-3">Phone Number</p>
@@ -32,20 +42,12 @@
                     <div class="mt-5">
                         <p class="py-3">Select Role</p>
                         <select name="role" class="select select-bordered w-full ">
-                            <option selected>admin_one</option>
-                            <option >admin_two</option>
-                            <option>data_entry_operator</option>
-                            <option>executive</option>
-                            <option>customer_care</option>
+                            <option selected>school_admin_head</option>
+                            <option>school_admin</option>
                         </select>
                     </div>
-                    <div class="mt-5">
-                        <p class="py-3">Password</p>
-                        <input type="password" name="password" placeholder="Enter password"
-                            class="input input-bordered w-full" />
-                    </div>
-                    <div class="hidden mt-5 w-[400px]">
-
+                   
+                    <div class="hidden mt-5">
                         <input name="school_code" value="{{$schoolCode}}" type="text"
                             class="hidden input input-bordered w-full " />
                     </div>
@@ -55,24 +57,6 @@
                         </button>
                     </div>
                 </form>
-            </div>
-        </div>
-    </div>
-
-    <div class=" bg-accent min-h-screen flex justify-center items-center p-5 lg:w-1/4 ">
-        <div>
-            <h1 class="text-4xl font-bold text-white text-center">
-                Already Have An account ?
-            </h1>
-            <p class="mt-2 text-gray-700 text-center">
-                Sign In for discover new opportunities
-            </p>
-            <div class="flex justify-center">
-                <a href="/login">
-                    <button class="bg-white text-center w-28 py-2 rounded-xl mt-2">
-                        Login
-                    </button>
-                </a>
             </div>
         </div>
     </div>

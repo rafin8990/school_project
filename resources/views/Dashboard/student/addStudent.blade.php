@@ -84,8 +84,6 @@
                     <label>upload the student profile picture</label>
                     <span class="text-red-500">*</span>
                     <input name="image" type="file" class="file-input file-input-bordered file-input-accent w-full " />
-
-
                 </div>
             </div>
             {{-- Present Address --}}

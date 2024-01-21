@@ -86,6 +86,8 @@ Route::prefix('/')->group(function () {
 
 Route::get('/authoriser',[AuthoriserController::class,'authoriser']);
 Route::get('/addHeadTeacher',[AuthoriserController::class,'addHeadTeacher']);
+Route::post('/addHeadTeacher',[AuthoriserController::class,'storeHeadTeacher'])->name('HeadTeacher.store');
+
 
 
 
