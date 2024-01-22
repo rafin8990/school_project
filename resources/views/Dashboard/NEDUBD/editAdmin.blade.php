@@ -24,21 +24,21 @@
         <p class='mb-3'>Change Role</p>
         <select name="role" class="select select-bordered w-full ">
             <option selected>{{$admin->role}}</option>
-            @if($adminData && $adminData->role == 'super_admin')
+            @if($schoolAdminData && $schoolAdminData->role == 'super_admin')
             <option class="option">admin_one</option>
             @endif
-            @if($adminData && $adminData->role == 'admin_one' || $adminData->role == 'super_admin')
+            @if($schoolAdminData && $schoolAdminData->role == 'admin_one' || $schoolAdminData->role == 'super_admin')
             <option class="option">admin_two</option>
             @endif
-            @if($adminData && $adminData->role == 'admin_one' || $adminData->role == 'super_admin')
+            @if($schoolAdminData && $schoolAdminData->role == 'admin_one' || $schoolAdminData->role == 'super_admin')
             <option class="option">data_entry_operator</option>
             @endif
-            @if($adminData && $adminData->role == 'admin_one' || $adminData->role == 'admin_two' || $adminData->role
+            @if($schoolAdminData && $schoolAdminData->role == 'admin_one' || $schoolAdminData->role == 'admin_two' || $schoolAdminData->role
             ==
             'super_admin')
             <option class="option">executive</option>
             @endif
-            @if($adminData && $adminData->role == 'admin_one' || $adminData->role == 'admin_two' || $adminData->role
+            @if($schoolAdminData && $schoolAdminData->role == 'admin_one' || $schoolAdminData->role == 'admin_two' || $schoolAdminData->role
             ==
             'super_admin')
             <option class="option">customer_care</option>

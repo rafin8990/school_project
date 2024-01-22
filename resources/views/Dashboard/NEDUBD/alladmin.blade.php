@@ -38,25 +38,3 @@
 
 
 
-<!-- <form action="">
-            <select name="role" class="select select-bordered w-full ">
-              @if($adminData && $adminData->role == 'super_admin')
-              <option class="option">Make Admin one</option>
-              @endif
-              @if($adminData && $adminData->role == 'admin_one' || $adminData->role == 'super_admin')
-              <option class="option">Make Admin Two</option>
-              @endif
-              @if($adminData && $adminData->role == 'admin_one' || $adminData->role == 'admin_two' || $adminData->role
-              ==
-              'super_admin')
-              <option class="option">Make executive</option>
-              @endif
-              @if($adminData && $adminData->role == 'admin_one' || $adminData->role == 'admin_two' || $adminData->role
-              ==
-              'super_admin')
-              <option class="option">Make Customer Care</option>
-              @endif
-            </select>
-
-            <button class="btn mt-2 w-full">Submit</button>
-          </form> -->

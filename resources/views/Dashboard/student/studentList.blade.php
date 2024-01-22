@@ -41,7 +41,7 @@
             <p class="text-lg font-semibold ml-5">Class :{{ $student->class }} </p>
             <p class="text-lg font-semibold ml-5">Section :{{ $student->section }} </p>
             <div class="flex ml-5 mt-3">
-                @if($adminData)
+                @if($schoolAdminData)
                 <a href="{{ route('students.edit', $student->id) }}" class="mr-2"><i class="fa fa-edit"
                             style="color:green;"></i></a>
                     <a href="{{ route('students.view', $student->id) }}" class="mr-2"><i class="fa fa-eye"

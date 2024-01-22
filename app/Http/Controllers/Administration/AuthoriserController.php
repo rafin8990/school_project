@@ -9,7 +9,9 @@ use Illuminate\Http\Request;
 class AuthoriserController extends Controller
 {
     public function authoriser (){
-        return view("/Dashboard/administration/headTeacher");
+        $principals=Head_teacher::all();
+
+        return view("/Dashboard/administration/headTeacher", ['principals'=>$principals]);
     }
     public function addHeadTeacher (){
         return view("/Dashboard/administration/addHeadTeaher");

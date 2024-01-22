@@ -27,12 +27,13 @@ class authController extends Controller
             'password' => 'required|string|min:4',
         ]);
 
-        $admin = School_Admin::where('email', $request->input('email'))->first();
+        $admin=Admin::where('email', $request->input('email'))->first();
+        $school_admin = School_Admin::where('email', $request->input('email'))->first();
         $student = Student::where('email', $request->input('email'))->first();
         $teacher = Teacher::where('email', $request->input('email'))->first();
-        if ($admin) {
-            if (Hash::check($request->password, $admin->password)) {
-                $request->session()->put('loginId', $admin->id);
+        if ($school_admin) {
+            if (Hash::check($request->password, $school_admin->password)) {
+                $request->session()->put('loginId', $school_admin->id);
 
                 return redirect('/dashboard')->with('success', 'Login successful!');
             } else {
@@ -49,6 +50,13 @@ class authController extends Controller
         } else if ($teacher) {
             if (Hash::check($request->password, $teacher->password)) {
                 $request->session()->put('teacherId', $teacher->id);
+                return redirect('/dashboard')->with('success', 'Login successful!');
+            } else {
+                return back()->with('fail', 'Login failed. Please check your password.');
+            }
+        } else if ($admin) {
+            if (Hash::check($request->password, $admin->password)) {
+                $request->session()->put('adminId', $admin->id);
                 return redirect('/dashboard')->with('success', 'Login successful!');
             } else {
                 return back()->with('fail', 'Login failed. Please check your password.');
@@ -108,6 +116,10 @@ class authController extends Controller
 
     public function logout()
     {
+        if (Session::has('adminId')) {
+            Session::pull('adminId');
+            return redirect('/login');
+        }
         if (Session::has('loginId')) {
             Session::pull('loginId');
             return redirect('/login');
