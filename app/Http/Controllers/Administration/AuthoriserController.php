@@ -8,17 +8,19 @@ use Illuminate\Http\Request;
 
 class AuthoriserController extends Controller
 {
-    public function authoriser (){
-        $principals=Head_teacher::all();
-
-        return view("/Dashboard/administration/headTeacher", ['principals'=>$principals]);
+    public function authoriser()
+    {
+        $principals = Head_teacher::all();
+        return view("/Dashboard/administration/headTeacher", ['principals' => $principals]);
     }
-    public function addHeadTeacher (){
+    public function addHeadTeacher()
+    {
         return view("/Dashboard/administration/addHeadTeaher");
     }
 
-    public function storeHeadTeacher(Request $request){
-        
+    public function storeHeadTeacher(Request $request)
+    {
+
         $this->validate($request, [
             'name' => 'required|string',
             'designation' => 'required|string',
@@ -63,6 +65,28 @@ class AuthoriserController extends Controller
 
         return redirect('/addHeadTeacher')->with('success', 'Sucessfully created.');
 
-        
+
+    }
+
+    public function updateHeadteacher($id)
+    {
+        $headTeacher = Head_teacher::findOrFail($id);
+        return view("/Dashboard/administration/updateHeadTeacher", ['headTeacher' => $headTeacher]);
+    }
+
+    public function updatePrincipal(Request $request,$id)
+    {
+        $head_teacher=Head_teacher::findOrFail($id);
+        $head_teacher->name=$request->input('name');
+        $head_teacher->gender=$request->input('gender');
+        $head_teacher->designation=$request->input('designation');
+        $head_teacher->email=$request->input('email');
+        $head_teacher->phone_number=$request->input('phone_number');
+        $head_teacher->address=$request->input('address');
+        $head_teacher->nid=$request->input('nid');
+        $head_teacher->details=$request->input('details');
+        $head_teacher->details=$request->input('details');
+        $head_teacher->save();
+        return redirect('/authoriser')->with('success', 'Head Teacher updated successfully');
     }
 }

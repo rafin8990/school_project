@@ -62,8 +62,9 @@ Route::prefix('/')->group(function () {
 
 
     // NEDUBD 
-    Route::get('/allAdmin/{schoolCode}', [AdminController::class,'allAdmin']);
-
+    Route::get('/allAdmin', [AdminController::class,'allAdmin']);
+ // NEDUBD 
+    Route::get('/allAdmin', [AdminController::class,'allAdmin']);
 
     Route::get('/allAdmin/{schoolCode}/{adminId}', [AdminController::class,'viewAdmin']);
 
@@ -87,7 +88,8 @@ Route::prefix('/')->group(function () {
 Route::get('/authoriser',[AuthoriserController::class,'authoriser']);
 Route::get('/addHeadTeacher',[AuthoriserController::class,'addHeadTeacher']);
 Route::post('/addHeadTeacher',[AuthoriserController::class,'storeHeadTeacher'])->name('HeadTeacher.store');
-
+Route::get('/updateHeadTeacher/{id}', [AuthoriserController::class, 'updateHeadteacher']);
+Route::put('/updatePrincipal/{id}',[AuthoriserController::class,"updatePrincipal"])->name('updatePrincipal');
 
 
 

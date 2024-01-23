@@ -9,10 +9,11 @@ use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
 {
-    public function allAdmin($schoolCode)
+    public function allAdmin()
     {
-        $similarAdmins = Admin::where('school_code', 'like', '%' . $schoolCode . '%')->get();
-        return view('/Dashboard/NEDUBD/alladmin', ['admins' => $similarAdmins]);
+        // $similarAdmins = Admin::where('school_code', 'like', '%' . $schoolCode . '%')->get();
+        $admins=Admin::all();
+        return view('/Dashboard/NEDUBD/alladmin', ['admins' => $admins]);
     }
 
 
