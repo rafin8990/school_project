@@ -31,8 +31,6 @@
                         <li class="bg-white text-black rounded-xl mt-2"><a href="/authoriser">Head Teacher</a></li>
                         <li class="bg-white text-black rounded-xl mt-2"><a href="/addHeadTeacher">Add Head Teacher</a>
                         </li>
-                        <li class="bg-white text-black rounded-xl mt-2"><a href="/updateHeadTeacher">Update Head
-                                Teacher</a></li>
                     </ul>
                       
                 </div>
