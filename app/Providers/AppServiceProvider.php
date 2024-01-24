@@ -31,11 +31,13 @@ class AppServiceProvider extends ServiceProvider
             $schoolAdminData = null;
             $studentData = null;
             $teacherData = null;
+            $principalData=null;
             $schoolCode = "100";
             $school_adminId = Session::get('loginId');
             $adminId=Session::get('adminId');
             $studentID = Session::get('studentId');
-            $teacherId = Session::get('studentId');
+            $teacherId = Session::get('teacherId');
+            $principalId=Session::get('principalId');
             if ($school_adminId) {
                 $schoolAdminData = School_Admin::find($school_adminId);
             }
@@ -48,11 +50,15 @@ class AppServiceProvider extends ServiceProvider
             if ($teacherData) {
                 $teacherData = Teacher::find($teacherId);
             }
+            if ($principalId) {
+                $principalData = Teacher::find($principalId);
+            }
             $view->with('schoolAdminData', $schoolAdminData)
                 ->with('adminData', $adminData)
                 ->with('studentData', $studentData)
                 ->with('schoolCode', $schoolCode)
-                ->with('teacherData', $teacherData);
+                ->with('teacherData', $teacherData)
+                ->with('principalData', $principalData);
         });
     }
 }

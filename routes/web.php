@@ -58,20 +58,18 @@ Route::prefix('/')->group(function () {
 
 
     // dashboard home 
-    Route::get('/dashboard', [dashboardController::class, 'dashboard']);
+    Route::get('/dashboard', [dashboardController::class, 'dashboard'])->middleware('all');
 
 
-    // NEDUBD 
-    Route::get('/allAdmin', [AdminController::class,'allAdmin']);
  // NEDUBD 
-    Route::get('/allAdmin', [AdminController::class,'allAdmin']);
+    Route::get('/superAdmin', [AdminController::class,'allAdmin'])->middleware('admin');
 
-    Route::get('/allAdmin/{schoolCode}/{adminId}', [AdminController::class,'viewAdmin']);
+    Route::get('/allAdmin/{adminId}', [AdminController::class,'viewAdmin']);
 
-    Route::put('/allAdmin/{school_code}/{adminId}', [AdminController::class,'updateAdmin']);
+    Route::put('/allAdmin/{adminId}', [AdminController::class,'updateAdmin']);
 
     //student routes
-    Route::get('/student-list', [studentController::class, 'studentList'])->middleware('admin');
+    Route::get('/student-list', [studentController::class, 'studentList'])->middleware('all');
     Route::get('/add-student', [studentController::class, 'addStudentForm'])->middleware('admin');
     Route::get('/get-sections/{className}', [studentController::class, 'getSections']);
     Route::get('/get-studentlist/{className}', [studentController::class, 'getClassSection']);
@@ -85,7 +83,7 @@ Route::prefix('/')->group(function () {
 
 // Administration controller 
 
-Route::get('/authoriser',[AuthoriserController::class,'authoriser']);
+Route::get('/authoriser',[AuthoriserController::class,'authoriser'])->middleware('all');
 Route::get('/addHeadTeacher',[AuthoriserController::class,'addHeadTeacher']);
 Route::post('/addHeadTeacher',[AuthoriserController::class,'storeHeadTeacher'])->name('HeadTeacher.store');
 Route::get('/updateHeadTeacher/{id}', [AuthoriserController::class, 'updateHeadteacher']);
@@ -94,12 +92,12 @@ Route::put('/updatePrincipal/{id}',[AuthoriserController::class,"updatePrincipal
 
 
     //human resource
-    Route::get('/teachers',[humanResourceController::class, 'teachers'])->name('teachers');//teacher list
+    Route::get('/teachers',[humanResourceController::class, 'teachers'])->name('teachers')->middleware('all');//teacher list
     Route::get('/addteacher',[humanResourceController::class, 'addTeachers']);//add teacher
     Route::post('/create-teacher', [humanResourceController::class, 'addteacher'])->name('teacher.add');//add teacher
     Route::get('/staffs',[humanResourceController::class, 'staff']);//add staff
     Route::post('/addstaff',[humanResourceController::class, 'addstaff'])->name('staff.add');//add staff
-    Route::get('/staff-list',[humanResourceController::class, 'staffList'])->name('staff_list');
+    Route::get('/staff-list',[humanResourceController::class, 'staffList'])->name('staff_list')->middleware('all');
     
     //update teacher
     Route::get('/teacher/{id}/edit', [humanResourceController::class, 'edit'])->name('teachers.edit');
@@ -152,7 +150,7 @@ Route::put('/updatePrincipal/{id}',[AuthoriserController::class,"updatePrincipal
     Route::delete('/invoice/{id}', [feeCollectionController::class, 'DeleteInvoice'])->name('invoice.delete');
     
     // examination 
-    Route::get('/exam-list',[examController::class, 'examList']);
+    Route::get('/exam-list',[examController::class, 'examList'])->middleware('all');
     Route::get('/mark-import',[examController::class, 'markImport']);
     Route::post('/exam-create',[examController::class, 'exam_list'])->name('exam_create');
 
@@ -165,16 +163,16 @@ Route::put('/updatePrincipal/{id}',[AuthoriserController::class,"updatePrincipal
     
     //library
     Route::get('/add-rack',[libraryController::class, 'addRack']);
-    Route::get('/book-list',[libraryController::class, 'bookList']);
+    Route::get('/book-list',[libraryController::class, 'bookList'])->middleware('all');
     Route::get('/issue-return',[libraryController::class, 'issueReturn']);
     
     // transport    
-    Route::get('/route',[transportController::class, 'route']);
-    Route::get('/vehicles',[transportController::class, 'vehicles']);
+    Route::get('/route',[transportController::class, 'route'])->middleware('all');
+    Route::get('/vehicles',[transportController::class, 'vehicles'])->middleware('all');
     
     // hostel 
     Route::get('/fees-collection',[hostelController::class, 'feesCollection']);
-    Route::get('/hostel',[hostelController::class, 'hostel']);
+    Route::get('/hostel',[hostelController::class, 'hostel'])->middleware('all');
     Route::get('/member',[hostelController::class, 'member']);
 
 

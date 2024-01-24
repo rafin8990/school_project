@@ -25,7 +25,7 @@
         <td>{{ $admin->role}} </td>
         <td>{{ $admin->email }}</td>
         <td>
-          <a href="/allAdmin/{{$schoolCode}}/{{$admin->id}}">Edit</a>
+          <a href="/allAdmin/{{$admin->id}}">Edit</a>
         </td>
       </tr>
       @endforeach

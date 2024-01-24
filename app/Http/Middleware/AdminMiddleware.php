@@ -18,10 +18,10 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Session::has('loginId')) {
-            $userId = Session::get('loginId');
+        if (Session::has('adminId')) {
+            $userId = Session::get('adminId');
             $user = Admin::find($userId);
-            if ($user &&  $user->role === 'admin_one' || $user->role === 'super_admin'|| $user->role === 'admin_two' ) {
+            if ($user &&  $user->role === 'admin_one' || $user->role === 'super_admin'|| $user->role === 'admin_two' || $user->role === 'data_entry_operator'|| $user->role === 'executive'|| $user->role === '') {
                 return $next($request); 
             }
         }

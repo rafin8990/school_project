@@ -16,7 +16,7 @@
         <li class=" text-lg"><a href={{"/notice"}}>Notice</a> </li>
         <li class=" text-lg"><a href={{"/galary"}}>Galary</a> </li>
         <li class=" text-lg"><a href={{"/admission"}}>Admission Center</a> </li>
-        @if($schoolAdminData || $studentData || $teacherData)
+        @if($schoolAdminData || $studentData || $teacherData||$adminData)
         <li class=" text-lg"><a href={{"/dashboard"}}>Dashboard</a> </li>
         @endif
       </ul>
@@ -31,7 +31,7 @@
       <li class=" text-lg"><a href={{"/notice"}}>Notice</a> </li>
       <li class=" text-lg"><a href={{"/galary"}}>Galary</a> </li>
       <li class=" text-lg"><a href={{"/admission"}}>Admission Center</a> </li>
-      @if($schoolAdminData || $studentData || $teacherData)
+      @if($schoolAdminData || $studentData || $teacherData|| $adminData)
       <li class=" text-lg"><a href={{"/dashboard"}}>Dashboard</a> </li>
       @endif
     </ul>

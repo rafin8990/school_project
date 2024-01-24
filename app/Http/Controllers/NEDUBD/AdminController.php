@@ -17,7 +17,7 @@ class AdminController extends Controller
     }
 
 
-    public function updateAdmin(Request $request, $school_code, $adminId, )
+    public function updateAdmin(Request $request, $adminId, )
     {
         $admin = Admin::findOrFail($adminId);
         $admin->name = $request->input('name');
@@ -26,10 +26,10 @@ class AdminController extends Controller
         $admin->role = $request->input('role');
         $admin->school_code = $request->input('school_code');
         $admin->save();
-        return redirect('/allAdmin/' . $school_code)->with('success', 'Admin updated successfully');
+        return redirect('/allAdmin')->with('success', 'Admin updated successfully');
     }
 
-    public function viewAdmin($school_code, $id)
+    public function viewAdmin($id)
     {
         $admin = Admin::findOrFail($id);
         return view('Dashboard/NEDUBD/editAdmin', ['admin' => $admin], );
