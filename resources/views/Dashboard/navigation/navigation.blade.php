@@ -1,7 +1,10 @@
 <div class="navbar bg-blue-950">
+<label for="my-drawer-2" class=" drawer-button lg:hidden text-white"><i class="fa-solid fa-bars"></i></label>
     <div class="flex-1">
         <a href="/" class="font text-xl ml-5 text-white">School</a>
+        
     </div>
+  
     <div class="flex-none gap-2">
 
 

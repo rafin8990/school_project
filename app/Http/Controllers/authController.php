@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use App\Models\Head_teacher;
+use App\Models\Staff;
 use App\Models\Student;
 use App\Models\Teacher;
 use App\Models\School_Admin;
@@ -27,6 +28,7 @@ class authController extends Controller
             'email' => 'required|string|email',
             'password' => 'required|string|min:4',
         ]);
+        $staff=Staff::where('email', $request->input('email'))->first();
         $principal=Head_teacher::where('email', $request->input('email'))->first();
         $admin=Admin::where('email', $request->input('email'))->first();
         $school_admin = School_Admin::where('email', $request->input('email'))->first();
@@ -66,6 +68,14 @@ class authController extends Controller
         else if ($principal) {
             if (Hash::check($request->password, $principal->password)) {
                 $request->session()->put('principalId', $principal->id);
+                return redirect('/dashboard')->with('success', 'Login successful!');
+            } else {
+                return back()->with('fail', 'Login failed. Please check your password.');
+            }
+        }
+        else if ($staff) {
+            if (Hash::check($request->password, $staff->password)) {
+                $request->session()->put('staffId', $staff->id);
                 return redirect('/dashboard')->with('success', 'Login successful!');
             } else {
                 return back()->with('fail', 'Login failed. Please check your password.');
@@ -139,6 +149,10 @@ class authController extends Controller
         }
         if (Session::has('teacherId')) {
             Session::pull('teacherId');
+            return redirect('/login');
+        }
+        if (Session::has('staffId')) {
+            Session::pull('staffId');
             return redirect('/login');
         }
     }

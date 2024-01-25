@@ -61,12 +61,28 @@ Route::prefix('/')->group(function () {
     Route::get('/dashboard', [dashboardController::class, 'dashboard'])->middleware('all');
 
 
- // NEDUBD 
-    Route::get('/superAdmin', [AdminController::class,'allAdmin'])->middleware('admin');
+    // NEDUBD 
+    Route::get('/superAdmin', [AdminController::class, 'allAdmin'])->middleware('admin');
 
-    Route::get('/allAdmin/{adminId}', [AdminController::class,'viewAdmin']);
+    Route::get('/allAdmin/{adminId}', [AdminController::class, 'viewAdmin']);
 
-    Route::put('/allAdmin/{adminId}', [AdminController::class,'updateAdmin']);
+    Route::put('/allAdmin/{adminId}', [AdminController::class, 'updateAdmin']);
+
+
+    //dashboard
+
+    //super admin
+    Route::get('/superAdmin', [adminController::class, 'allAdmin'])->middleware('super_admin');
+    //admin one
+    Route::get('/admin_one', [AdminController::class, 'admin_one']);
+    //admin two
+    Route::get('/admin_two', [AdminController::class, 'admin_two']);
+    //data entry operator
+    Route::get('/dataEntryOperator', [AdminController::class, 'dataEntryOperator']);
+    //executive
+    Route::get('/executive', [AdminController::class, 'executive']);
+    //customer care
+    Route::get('/customerCare', [AdminController::class, 'customerCare']);
 
     //student routes
     Route::get('/student-list', [studentController::class, 'studentList'])->middleware('all');
@@ -81,24 +97,24 @@ Route::prefix('/')->group(function () {
     // view student
     Route::get('/students/{id}/view', [studentController::class, 'view'])->name('students.view');
 
-// Administration controller 
+    // Administration controller 
 
-Route::get('/authoriser',[AuthoriserController::class,'authoriser'])->middleware('all');
-Route::get('/addHeadTeacher',[AuthoriserController::class,'addHeadTeacher']);
-Route::post('/addHeadTeacher',[AuthoriserController::class,'storeHeadTeacher'])->name('HeadTeacher.store');
-Route::get('/updateHeadTeacher/{id}', [AuthoriserController::class, 'updateHeadteacher']);
-Route::put('/updatePrincipal/{id}',[AuthoriserController::class,"updatePrincipal"])->name('updatePrincipal');
+    Route::get('/authoriser', [AuthoriserController::class, 'authoriser'])->middleware('all');
+    Route::get('/addHeadTeacher', [AuthoriserController::class, 'addHeadTeacher']);
+    Route::post('/addHeadTeacher', [AuthoriserController::class, 'storeHeadTeacher'])->name('HeadTeacher.store');
+    Route::get('/updateHeadTeacher/{id}', [AuthoriserController::class, 'updateHeadteacher']);
+    Route::put('/updatePrincipal/{id}', [AuthoriserController::class, "updatePrincipal"])->name('updatePrincipal');
 
 
 
     //human resource
-    Route::get('/teachers',[humanResourceController::class, 'teachers'])->name('teachers')->middleware('all');//teacher list
-    Route::get('/addteacher',[humanResourceController::class, 'addTeachers']);//add teacher
-    Route::post('/create-teacher', [humanResourceController::class, 'addteacher'])->name('teacher.add');//add teacher
-    Route::get('/staffs',[humanResourceController::class, 'staff']);//add staff
-    Route::post('/addstaff',[humanResourceController::class, 'addstaff'])->name('staff.add');//add staff
-    Route::get('/staff-list',[humanResourceController::class, 'staffList'])->name('staff_list')->middleware('all');
-    
+    Route::get('/teachers', [humanResourceController::class, 'teachers'])->name('teachers')->middleware('all'); //teacher list
+    Route::get('/addteacher', [humanResourceController::class, 'addTeachers']); //add teacher
+    Route::post('/create-teacher', [humanResourceController::class, 'addteacher'])->name('teacher.add'); //add teacher
+    Route::get('/staffs', [humanResourceController::class, 'staff']); //add staff
+    Route::post('/addstaff', [humanResourceController::class, 'addstaff'])->name('staff.add'); //add staff
+    Route::get('/staff-list', [humanResourceController::class, 'staffList'])->name('staff_list')->middleware('all');
+
     //update teacher
     Route::get('/teacher/{id}/edit', [humanResourceController::class, 'edit'])->name('teachers.edit');
     Route::put('/teacher/{id}/update', [humanResourceController::class, 'update'])->name('teachers.update');
@@ -118,12 +134,12 @@ Route::put('/updatePrincipal/{id}',[AuthoriserController::class,"updatePrincipal
 
 
     // academics 
-    Route::get('/class',[academicController::class, 'class']);
-    Route::get('/section',[academicController::class, 'section']);
-    Route::get('/subject',[academicController::class, 'subject']);
-    Route::post('/class-create',[academicController::class, 'class_post'])->name('class.classpost');
-    Route::post('/create-section',[academicController::class, 'section_post'])->name('create-section');
-    Route::post('/create-subject',[academicController::class, 'subject_post'])->name('create-subject');
+    Route::get('/class', [academicController::class, 'class']);
+    Route::get('/section', [academicController::class, 'section']);
+    Route::get('/subject', [academicController::class, 'subject']);
+    Route::post('/class-create', [academicController::class, 'class_post'])->name('class.classpost');
+    Route::post('/create-section', [academicController::class, 'section_post'])->name('create-section');
+    Route::post('/create-subject', [academicController::class, 'subject_post'])->name('create-subject');
     //update class
     Route::get('/class/{id}/edit', [academicController::class, 'classEdit'])->name('class.edit');
     Route::put('/class/{id}/update', [academicController::class, 'classupdate'])->name('class.update');
@@ -138,42 +154,42 @@ Route::put('/updatePrincipal/{id}',[AuthoriserController::class,"updatePrincipal
 
 
     // attendence 
-    Route::get('/attendence',[attendenceController::class, 'attendence']);
-    Route::get('/update-attendence',[attendenceController::class, 'updateAttendence']);
+    Route::get('/attendence', [attendenceController::class, 'attendence']);
+    Route::get('/update-attendence', [attendenceController::class, 'updateAttendence']);
     Route::post('/attendance/save', [attendenceController::class, 'saveAttendance'])->name('saveAttendance');
-    
+
     // fee collection 
-    Route::get('/invoice-list',[feeCollectionController::class, 'invoiceList']);
-    Route::get('/invoice-individual',[feeCollectionController::class, 'invoiceIndividual']);
-    Route::get('/create-invoice',[feeCollectionController::class, 'createInvoice']);
-    Route::post('/create-invoice',[feeCollectionController::class, 'invoicecreate'])->name('Invoice');
+    Route::get('/invoice-list', [feeCollectionController::class, 'invoiceList']);
+    Route::get('/invoice-individual', [feeCollectionController::class, 'invoiceIndividual']);
+    Route::get('/create-invoice', [feeCollectionController::class, 'createInvoice']);
+    Route::post('/create-invoice', [feeCollectionController::class, 'invoicecreate'])->name('Invoice');
     Route::delete('/invoice/{id}', [feeCollectionController::class, 'DeleteInvoice'])->name('invoice.delete');
-    
+
     // examination 
-    Route::get('/exam-list',[examController::class, 'examList'])->middleware('all');
-    Route::get('/mark-import',[examController::class, 'markImport']);
-    Route::post('/exam-create',[examController::class, 'exam_list'])->name('exam_create');
+    Route::get('/exam-list', [examController::class, 'examList'])->middleware('all');
+    Route::get('/mark-import', [examController::class, 'markImport']);
+    Route::post('/exam-create', [examController::class, 'exam_list'])->name('exam_create');
 
     // exam-Reports 
-    Route::get('/transcript',[examReportController::class, 'transcript']);
-    Route::get('/possion-list',[examReportController::class, 'possoinList']);
-    Route::get('/pass-list',[examReportController::class, 'passList']);
-    Route::get('/fail-list',[examReportController::class, 'failList']);
-    
-    
+    Route::get('/transcript', [examReportController::class, 'transcript']);
+    Route::get('/possion-list', [examReportController::class, 'possoinList']);
+    Route::get('/pass-list', [examReportController::class, 'passList']);
+    Route::get('/fail-list', [examReportController::class, 'failList']);
+
+
     //library
-    Route::get('/add-rack',[libraryController::class, 'addRack']);
-    Route::get('/book-list',[libraryController::class, 'bookList'])->middleware('all');
-    Route::get('/issue-return',[libraryController::class, 'issueReturn']);
-    
+    Route::get('/add-rack', [libraryController::class, 'addRack']);
+    Route::get('/book-list', [libraryController::class, 'bookList'])->middleware('all');
+    Route::get('/issue-return', [libraryController::class, 'issueReturn']);
+
     // transport    
-    Route::get('/route',[transportController::class, 'route'])->middleware('all');
-    Route::get('/vehicles',[transportController::class, 'vehicles'])->middleware('all');
-    
+    Route::get('/route', [transportController::class, 'route'])->middleware('all');
+    Route::get('/vehicles', [transportController::class, 'vehicles'])->middleware('all');
+
     // hostel 
-    Route::get('/fees-collection',[hostelController::class, 'feesCollection']);
-    Route::get('/hostel',[hostelController::class, 'hostel'])->middleware('all');
-    Route::get('/member',[hostelController::class, 'member']);
+    Route::get('/fees-collection', [hostelController::class, 'feesCollection']);
+    Route::get('/hostel', [hostelController::class, 'hostel'])->middleware('all');
+    Route::get('/member', [hostelController::class, 'member']);
 
 
 

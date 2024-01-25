@@ -10,7 +10,7 @@
             <div class="flex justify-center"><a href="/updateHeadTeacher/{{$principal->id}}"><button class="btn btn-accent">Edit Head Teacher</button></a>
             </div>
         </div>
-        <div class=" flex">
+        <div class=" md:flex">
             <div class="md:w-1/2 mx-3 my-5">
                 <img class=" rounded-lg my-5" src="{{ asset('assets/images/' . $principal->image) }}"
                     alt="Principal Image">

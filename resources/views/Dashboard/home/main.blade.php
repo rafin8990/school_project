@@ -17,9 +17,9 @@
         </div>
     </div>
 </div>
-<div>
+<!-- <div>
     @include('/Dashboard/home/allStudent')
-</div>
+</div> -->
 
 
 @endsection

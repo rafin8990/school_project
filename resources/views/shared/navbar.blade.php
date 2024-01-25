@@ -38,7 +38,7 @@
   </div>
   <div class="navbar-end">
     <div>
-      @if($schoolAdminData || $studentData || $teacherData)
+      @if($schoolAdminData || $studentData || $teacherData || $adminData || $staffData)
       <div class="flex mr-5">
         <a href={{"/logout"}} class="w-[100px] btn btn-ghost">log Out</a>
         @if($studentData)

@@ -17,6 +17,27 @@ class AdminController extends Controller
     }
 
 
+    public function admin_one(){
+        $admins=Admin::all();
+        return view('/Dashboard/NEDUBD/admin_one', ['admins' => $admins]);
+}
+    public function admin_two(){
+        $admins=Admin::all();
+        return view('/Dashboard/NEDUBD/admin_two', ['admins' => $admins]);
+}
+    public function dataEntryOperator(){
+        $admins=Admin::all();
+        return view('/Dashboard/NEDUBD/data_entry_operator', ['admins' => $admins]);
+}
+    public function executive(){
+        $admins=Admin::all();
+        return view('/Dashboard/NEDUBD/executive', ['admins' => $admins]);
+}
+    public function customerCare(){
+        $admins=Admin::all();
+        return view('/Dashboard/NEDUBD/customer_care', ['admins' => $admins]);
+}
+
     public function updateAdmin(Request $request, $adminId, )
     {
         $admin = Admin::findOrFail($adminId);

@@ -3,13 +3,11 @@
 namespace App\Http\Middleware;
 use App\Models\Admin;
 use Closure;
-
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Session;
 
-
-class AdminMiddleware
+class SuperAdminMiddleware
 {
     /**
      * Handle an incoming request.
@@ -21,7 +19,7 @@ class AdminMiddleware
         if (Session::has('adminId')) {
             $userId = Session::get('adminId');
             $user = Admin::find($userId);
-            if ($user &&  $user->role === 'admin_one' || $user->role === 'super_admin'|| $user->role === 'admin_two' || $user->role === 'data_entry_operator'|| $user->role === 'executive'|| $user->role === 'customer_care') {
+            if ($user && $user->role === 'super_admin') {
                 return $next($request); 
             }
         }

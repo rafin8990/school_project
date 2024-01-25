@@ -27,6 +27,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         View::composer('*', function ($view) {
+            $staffData=null;
             $adminData = null;
             $schoolAdminData = null;
             $studentData = null;
@@ -38,6 +39,7 @@ class AppServiceProvider extends ServiceProvider
             $studentID = Session::get('studentId');
             $teacherId = Session::get('teacherId');
             $principalId=Session::get('principalId');
+            $staffId=Session::get('staffId');
             if ($school_adminId) {
                 $schoolAdminData = School_Admin::find($school_adminId);
             }
@@ -53,12 +55,17 @@ class AppServiceProvider extends ServiceProvider
             if ($principalId) {
                 $principalData = Teacher::find($principalId);
             }
+            if ($staffData) {
+                $staffData = Teacher::find($staffId);
+            }
             $view->with('schoolAdminData', $schoolAdminData)
                 ->with('adminData', $adminData)
                 ->with('studentData', $studentData)
                 ->with('schoolCode', $schoolCode)
                 ->with('teacherData', $teacherData)
-                ->with('principalData', $principalData);
+                ->with('principalData', $principalData)
+                ->with('staffData', $staffData);
+               
         });
     }
 }

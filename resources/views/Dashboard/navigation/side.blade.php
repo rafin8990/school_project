@@ -15,21 +15,21 @@
                     <li class="bg-white text-black rounded-xl "><a href="/superAdmin"> Super Admin</a>
                     </li>
                     @endif
-                    @if($adminData->role === 'super_admin' )
-                    <li class="bg-white text-black rounded-xl mt-2"><a href="/student-list">Admin One</a></li>
+                    @if($adminData->role === 'admin_one' )
+                    <li class="bg-white text-black rounded-xl mt-2"><a href="/admin_one">Admin One</a></li>
                     @endif
-                    @if($adminData->role === 'super_admin' || $adminData->role==="admin_one" )
-                    <li class="bg-white text-black rounded-xl mt-2"><a href="/student-list">Admin Two</a></li>
+                    @if($adminData->role === 'admin_two' )
+                    <li class="bg-white text-black rounded-xl mt-2"><a href="/admin_two">Admin Two</a></li>
                     @endif
-                    @if($adminData->role === 'super_admin' || $adminData->role==="admin_one"||$adminData->role==="admin_two" )
-                    <li class="bg-white text-black rounded-xl mt-2"><a href="/add-student">Data Entry Operator</a></li>
+                    @if($adminData->role==="data_entry_operator" )
+                    <li class="bg-white text-black rounded-xl mt-2"><a href="/dataEntryOperator">Data Entry Operator</a></li>
                     @endif
-                   
-                    @if($adminData->role === 'super_admin' || $adminData->role==="admin_one"||$adminData->role==="admin_two"|| $adminData->role==="data_entry_operator" )
-                    <li class="bg-white text-black rounded-xl mt-2"><a href="/add-student">Executive</a></li>
+
+                    @if($adminData->role === 'executive' )
+                    <li class="bg-white text-black rounded-xl mt-2"><a href="/executive">Executive</a></li>
                     @endif
-                    @if($adminData->role === 'super_admin' || $adminData->role==="admin_one"||$adminData->role==="admin_two"|| $adminData->role==="data_entry_operator"||$adminData->role==="executive")
-                    <li class="bg-white text-black rounded-xl mt-2"><a href="/add-student">Customer Care</a></li>
+                    @if($adminData->role==="customer_care")
+                    <li class="bg-white text-black rounded-xl mt-2"><a href="/customerCare">Customer Care</a></li>
                     @endif
                 </ul>
 
@@ -37,6 +37,7 @@
 
         </div>
         @endif
+
 
 
         <div tabindex="4" class="collapse collapse-plus bg-blue-950 bg-accent  mb-2 text-white">
@@ -47,8 +48,11 @@
             <div class="collapse-content">
                 <ul>
                     <li class="bg-white text-black rounded-xl mt-2"><a href="/authoriser">Head Teacher</a></li>
+                    @if($adminData->role==="super_admin"||$adminData->role==="admin_one"||$adminData->role==="admin_two"||$adminData->role==="data_entry_operator")
                     <li class="bg-white text-black rounded-xl mt-2"><a href="/addHeadTeacher">Add Head Teacher</a>
                     </li>
+                    @endif
+
                 </ul>
                   
             </div>
@@ -76,12 +80,14 @@
             <div class="collapse-content">
                 <ul>
                     <li class="bg-white text-black rounded-xl"><a href="/student-list">student list</a></li>
+                    @if($adminData->role==="super_admin"||$adminData->role==="admin_one"||$adminData->role==="admin_two"||$adminData->role==="data_entry_operator"||$principalData||$schoolAdminData)
                     <li class="bg-white text-black rounded-xl mt-2"><a href="/add-student">Add Student</a></li>
+                    @endif 
                 </ul>
-                  
             </div>
         </div>
 
+        @if($staffData || $adminData)
         <div tabindex="4" class="collapse collapse-plus bg-blue-950 bg-accent  mb-2 text-white">
             <input type="checkbox" />
             <div class="collapse-title text-2xl">
@@ -95,6 +101,8 @@
                   
             </div>
         </div>
+        @endif
+        
 
         <div tabindex="4" class="collapse collapse-plus bg-blue-950 bg-accent  mb-2 text-white">
             <input type="checkbox" />
