@@ -3,7 +3,9 @@
 namespace App\Providers;
 
 use App\Models\Admin;
+use App\Models\Head_teacher;
 use App\Models\School_Admin;
+use App\Models\Staff;
 use App\Models\Student;
 use App\Models\Teacher;
 use Illuminate\Support\Facades\Session;
@@ -53,10 +55,10 @@ class AppServiceProvider extends ServiceProvider
                 $teacherData = Teacher::find($teacherId);
             }
             if ($principalId) {
-                $principalData = Teacher::find($principalId);
+                $principalData = Head_teacher::find($principalId);
             }
             if ($staffData) {
-                $staffData = Teacher::find($staffId);
+                $staffData = Staff::find($staffId);
             }
             $view->with('schoolAdminData', $schoolAdminData)
                 ->with('adminData', $adminData)

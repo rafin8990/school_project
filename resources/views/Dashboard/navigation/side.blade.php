@@ -22,7 +22,8 @@
                     <li class="bg-white text-black rounded-xl mt-2"><a href="/admin_two">Admin Two</a></li>
                     @endif
                     @if($adminData->role==="data_entry_operator" )
-                    <li class="bg-white text-black rounded-xl mt-2"><a href="/dataEntryOperator">Data Entry Operator</a></li>
+                    <li class="bg-white text-black rounded-xl mt-2"><a href="/dataEntryOperator">Data Entry Operator</a>
+                    </li>
                     @endif
 
                     @if($adminData->role === 'executive' )
@@ -39,7 +40,7 @@
         @endif
 
 
-
+@if($adminData || $schoolAdminData || $principalData || $studentData || $teacherData || $staffData)
         <div tabindex="4" class="collapse collapse-plus bg-blue-950 bg-accent  mb-2 text-white">
             <input type="checkbox" />
             <div class="collapse-title text-2xl">
@@ -48,7 +49,7 @@
             <div class="collapse-content">
                 <ul>
                     <li class="bg-white text-black rounded-xl mt-2"><a href="/authoriser">Head Teacher</a></li>
-                    @if($adminData->role==="super_admin"||$adminData->role==="admin_one"||$adminData->role==="admin_two"||$adminData->role==="data_entry_operator")
+                    @if($adminData || $schoolAdminData)
                     <li class="bg-white text-black rounded-xl mt-2"><a href="/addHeadTeacher">Add Head Teacher</a>
                     </li>
                     @endif
@@ -57,6 +58,8 @@
                   
             </div>
         </div>
+
+        @endif
 
         <div tabindex="4" class="collapse collapse-plus bg-blue-950 bg-accent  mb-2 text-white">
             <input type="checkbox" />
@@ -80,14 +83,14 @@
             <div class="collapse-content">
                 <ul>
                     <li class="bg-white text-black rounded-xl"><a href="/student-list">student list</a></li>
-                    @if($adminData->role==="super_admin"||$adminData->role==="admin_one"||$adminData->role==="admin_two"||$adminData->role==="data_entry_operator"||$principalData||$schoolAdminData)
+                    @if($adminData|| $principalData || $schoolAdminData)
                     <li class="bg-white text-black rounded-xl mt-2"><a href="/add-student">Add Student</a></li>
-                    @endif 
+                    @endif
                 </ul>
             </div>
         </div>
 
-        @if($staffData || $adminData)
+        @if($staffData || $adminData || $schoolAdminData || $principalData)
         <div tabindex="4" class="collapse collapse-plus bg-blue-950 bg-accent  mb-2 text-white">
             <input type="checkbox" />
             <div class="collapse-title text-2xl">
@@ -96,14 +99,17 @@
             <div class="collapse-content">
                 <ul>
                     <li class="bg-white text-black rounded-xl mt-2"><a href="/staff-list">Staffs</a></li>
+                    @if($adminData||$schoolAdminData||$principalData)
                     <li class="bg-white text-black rounded-xl mt-2"><a href="/staffs">Add Staff</a></li>
+                    @endif
+
                 </ul>
                   
             </div>
         </div>
         @endif
-        
 
+@if($adminData || $schoolAdminData)
         <div tabindex="4" class="collapse collapse-plus bg-blue-950 bg-accent  mb-2 text-white">
             <input type="checkbox" />
             <div class="collapse-title text-2xl">
@@ -118,6 +124,8 @@
                   
             </div>
         </div>
+        @endif
+        @if($teacherData || $adminData || $schoolAdminData)
         <div tabindex="4" class="collapse collapse-plus bg-blue-950 bg-accent  mb-2 text-white">
             <input type="checkbox" />
             <div class="collapse-title text-2xl">
@@ -130,9 +138,11 @@
                             Attendence</a>
                     </li>
                 </ul>
-                  
+
             </div>
         </div>
+        @endif
+        @if($adminData || $schoolAdminData || $principalData )
         <div tabindex="4" class="collapse collapse-plus bg-blue-950 bg-accent  mb-2 text-white">
             <input type="checkbox" />
             <div class="collapse-title text-2xl">
@@ -149,6 +159,8 @@
                   
             </div>
         </div>
+        @endif
+        @if($adminData || $schoolAdminData || $principalData || $teacherData )
         <div tabindex="4" class="collapse collapse-plus bg-blue-950 bg-accent  mb-2 text-white">
             <input type="checkbox" />
             <div class="collapse-title text-2xl">
@@ -162,6 +174,7 @@
                   
             </div>
         </div>
+        @endif
         <div tabindex="4" class="collapse collapse-plus bg-blue-950 bg-accent  mb-2 text-white">
             <input type="checkbox" />
             <div class="collapse-title text-2xl">
@@ -170,13 +183,13 @@
             <div class="collapse-content">
                 <ul>
                     <li class="bg-white text-black rounded-xl"><a href="/transcript">Transcript</a></li>
-                    <li class="bg-white text-black rounded-xl mt-2"><a href="/possion-list">Possoin List</a></li>
                     <li class="bg-white text-black rounded-xl mt-2"><a href="/pass-list">Pass List</a></li>
                     <li class="bg-white text-black rounded-xl mt-2"><a href="/fail-list">Fail List</a></li>
                 </ul>
                   
             </div>
         </div>
+        @if($adminData || $schoolAdminData || $teacherData || $studentData || $staffData )
         <div tabindex="4" class="collapse collapse-plus bg-blue-950 bg-accent  mb-2 text-white">
             <input type="checkbox" />
             <div class="collapse-title text-2xl">
@@ -185,12 +198,16 @@
             <div class="collapse-content">
                 <ul>
                     <li class="bg-white text-black rounded-xl"><a href="/book-list">Book List</a></li>
+                    @if($adminData || $schoolAdminData || $principalData)
                     <li class="bg-white text-black rounded-xl mt-2"><a href="/add-rack">Add Rack</a></li>
+                    @endif
                     <li class="bg-white text-black rounded-xl mt-2"><a href="/issue-return">Issue Return</a></li>
                 </ul>
                   
             </div>
         </div>
+        @endif
+        @if($adminData || $schoolAdminData || $teacherData || $studentData || $staffData )
         <div tabindex="4" class="collapse collapse-plus bg-blue-950 bg-accent  mb-2 text-white">
             <input type="checkbox" />
             <div class="collapse-title text-2xl">
@@ -204,6 +221,9 @@
                   
             </div>
         </div>
+        @endif
+        @if($adminData || $schoolAdminData || $teacherData || $studentData || $staffData )
+
         <div tabindex="4" class="collapse collapse-plus bg-blue-950 bg-accent  mb-2 text-white">
             <input type="checkbox" />
             <div class="collapse-title text-2xl">
@@ -212,13 +232,19 @@
             <div class="collapse-content">
                 <ul>
                     <li class="bg-white text-black rounded-xl"><a href="/hostel">Hostel</a></li>
+                    @if($adminData || $schoolAdminData || $principalData)
                     <li class="bg-white text-black rounded-xl mt-2"><a href="/member">Member</a></li>
                     <li class="bg-white text-black rounded-xl mt-2"><a href="/fees-collection">Fees Collection</a>
                     </li>
+                    @endif
+
+                    
                 </ul>
                   
             </div>
         </div>
+        @endif
+
 
     </ul>
 

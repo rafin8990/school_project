@@ -10,7 +10,8 @@ class Classes extends Model
 {
     use HasFactory,Notifiable;
     protected $fillable=[
-        'class'
+        'class',
+        'school_code'
     ];
     protected $table="classes";
     // public function sections(){

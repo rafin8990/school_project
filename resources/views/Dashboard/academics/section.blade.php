@@ -21,6 +21,10 @@
             <div class="mx-10 mt-10">
                 <input type="text" name="section" placeholder="Enter Section"class="input input-bordered w-full " />
             </div>
+            <div class="hidden mt-5">
+                <input name="school_code" value="{{$schoolCode}}" type="text"
+                    class="hidden input input-bordered w-full " />
+            </div>
             
             <div class="mt-5 mx-10 mb-10">
                 <button type="submit" class=" btn btn-accent w-full">

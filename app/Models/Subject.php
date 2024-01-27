@@ -10,7 +10,8 @@ class Subject extends Model
 {
     use HasFactory,Notifiable;
     protected $fillable=[
-        'subject'
+        'subject',
+        'school_code'
     ];
     protected $table="subjects";
 }

@@ -32,6 +32,7 @@ class academicController extends Controller
     
         $class = new Classes();
         $class->class = $request->input('class');
+        $class->school_code = $request->input('school_code');
         $class->save();
     
         return redirect('/class')->with('success', 'Sucessfully created.');
@@ -80,6 +81,7 @@ class academicController extends Controller
         $section =new Section();
         $section->class = $request->input('class');
         $section->section = $request->input('section');
+        $section->school_code = $request->input('school_code');
         $section->save();
 
         return redirect('/section')->with('success', 'Sucessfully created.');
@@ -135,6 +137,7 @@ class academicController extends Controller
     
         $subject = new Subject();
         $subject->subject = $request->input('subject');
+        $subject->school_code = $request->input('school_code');
         $subject->save();
     
         return redirect('/subject')->with('success', 'Sucessfully created.');

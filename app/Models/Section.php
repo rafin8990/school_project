@@ -11,7 +11,8 @@ class Section extends Model
     use HasFactory,Notifiable;
     protected $fillable=[
         'class',
-        'section'
+        'section',
+        'school_code'
     ];
     protected $table="sections";
 

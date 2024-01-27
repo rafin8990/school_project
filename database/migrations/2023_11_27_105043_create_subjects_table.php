@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('subjects', function (Blueprint $table) {
             $table->id();
             $table->string('subject');
+            $table->string('school_code');
             $table->timestamps();
         });
     }
