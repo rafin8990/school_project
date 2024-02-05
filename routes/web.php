@@ -85,9 +85,12 @@ Route::prefix('/')->group(function () {
     Route::get('/customerCare', [AdminController::class, 'customerCare']);
 
     //student routes
-    Route::get('/student-list', [studentController::class, 'studentList'])->middleware('all');
-    Route::get('/add-student', [studentController::class, 'addStudentForm'])->middleware('admin');
+    // Route::get('/student-list', [studentController::class, 'studentList'])->middleware('all');
+    Route::get('/student-list', [studentController::class, 'studentList']);
+
+    Route::get('/add-student', [studentController::class, 'addStudentForm']);
     Route::get('/get-sections/{className}', [studentController::class, 'getSections']);
+    
     Route::get('/get-studentlist/{className}', [studentController::class, 'getClassSection']);
     Route::post('/create-student', [studentController::class, 'addStudent'])->name('student.add');
     Route::delete('/students/{id}', [studentController::class, 'DeleteStudent'])->name('students.delete');
@@ -157,7 +160,10 @@ Route::prefix('/')->group(function () {
     Route::get('/attendence', [attendenceController::class, 'attendence']);
     Route::get('/update-attendence', [attendenceController::class, 'updateAttendence']);
     Route::post('/attendance/save', [attendenceController::class, 'saveAttendance'])->name('saveAttendance');
-
+    Route::post('/search', [attendenceController::class, 'search'])->name('search');
+    Route::post('/store_attendence', [attendenceController::class, 'attendance_store'])->name('attendence.store');
+    Route::post('/attendenceUpdate', [attendenceController::class, 'updateAttendance'])->name('update-attendance');
+    Route::put('/attendance_storeUpdate', [attendenceController::class, 'editAttendance'])->name('attendence.updateStore');
     // fee collection 
     Route::get('/invoice-list', [feeCollectionController::class, 'invoiceList']);
     Route::get('/invoice-individual', [feeCollectionController::class, 'invoiceIndividual']);
@@ -190,6 +196,7 @@ Route::prefix('/')->group(function () {
     Route::get('/fees-collection', [hostelController::class, 'feesCollection']);
     Route::get('/hostel', [hostelController::class, 'hostel'])->middleware('all');
     Route::get('/member', [hostelController::class, 'member']);
+    
 
 
 

@@ -28,12 +28,12 @@
         </button>
     </div>
 </form>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-5">
     @foreach ($students as $student)
     <div class="card w-96 bg-base-100 shadow-xl">
         <figure class="px-10 pt-10">
             <img src="{{ asset('assets/images/' . $student->image) }}" alt="Student Picture"
-                class="rounded-xl" />
+                class="rounded-xl h-[200px] w-[200px]" />
         </figure>
         <div>
             <h2 class="text-2xl font-bold ml-5 mt-5">Name:  {{ $student->first_name }} {{ $student->last_name }}</h2>

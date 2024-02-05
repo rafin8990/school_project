@@ -35,4 +35,8 @@ class Student extends Model
         'role',
     ];
     protected $table="students";
+    public function attendances()
+    {
+        return $this->hasMany('App\Models\Attendance', 'student_id');
+    }
 }
