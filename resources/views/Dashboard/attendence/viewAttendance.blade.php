@@ -22,7 +22,7 @@
                     <tbody>
                         @foreach ($students as $student)
                             <tr>
-                                <th>{{ $student->id }}</th>
+                                <th>{{ $loop->index + 1 }}</th>
                                 <td>{{ $student->student_id }}</td>
                                 <td>{{ $student->first_name }} {{ $student->last_name }}</td>
                                 <td>
@@ -56,7 +56,12 @@
 
                     </tbody>
                 </table>
-
+              <br>
+              <div class="flex justify-end md:px-32 font-bold">
+                <p>Total Student: <br>
+                present: <br>
+                Absence: </p>
+              </div>
 
                 <br>
                 <div class="flex justify-end mr-20">

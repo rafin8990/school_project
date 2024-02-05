@@ -22,7 +22,7 @@
                     <tbody>
                         @foreach ($attendances as $attendance)
                             <tr>
-                                <th>{{ $attendance->id }}</th>
+                                <th>{{ $loop->index + 1 }}</th>
                                 <td>{{ $attendance->student_id }}</td>
                                 <td>{{ $attendance->first_name }} {{ $attendance->last_name }}</td>
                                 <td>
