@@ -51,13 +51,13 @@ class AppServiceProvider extends ServiceProvider
             if ($studentID) {
                 $studentData = Student::find($studentID);
             }
-            if ($teacherData) {
+            if ($teacherId) {
                 $teacherData = Teacher::find($teacherId);
             }
             if ($principalId) {
                 $principalData = Head_teacher::find($principalId);
             }
-            if ($staffData) {
+            if ($staffId) {
                 $staffData = Staff::find($staffId);
             }
             $view->with('schoolAdminData', $schoolAdminData)

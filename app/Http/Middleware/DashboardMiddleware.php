@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use App\Models\Admin;
+use App\Models\Staff;
 use App\Models\School_Admin;
 use App\Models\Student;
 use App\Models\Teacher;
@@ -41,6 +42,14 @@ class DashboardMiddleware
         }else if(Session::has('teacherId')){
             $userId = Session::get('teacherId');
             $user = Teacher::find($userId);
+            if ($user) {
+                return $next($request); 
+            }
+        }
+        
+        else if(Session::has('staffId')){
+            $userId = Session::get('staffId');
+            $user = Staff::find($userId);
             if ($user) {
                 return $next($request); 
             }

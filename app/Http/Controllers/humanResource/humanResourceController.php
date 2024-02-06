@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\humanResource;
 
+use Illuminate\Support\Facades\Hash;
 use App\Models\Teacher;
 use App\Models\Staff;
 use App\Http\Controllers\Controller;
@@ -93,7 +94,7 @@ class humanResourceController extends Controller
         $teacher->parmanent_country = $request->input('parmanent_country');
         $teacher->parmanent_zip_code = $request->input('parmanent_zip_code');
         $teacher->email = $request->input('email');
-        $teacher->password = $request->input('password');
+        $teacher->password = Hash::make($request->input('password'));
         $teacher->mobile = $request->input('mobile');
         $teacher->nid = $request->input('nid');
         $teacher->school_code=$request->input('school_code');
@@ -242,7 +243,7 @@ class humanResourceController extends Controller
         $staff->parmanent_country = $request->input('parmanent_country');
         $staff->parmanent_zip_code = $request->input('parmanent_zip_code');
         $staff->email = $request->input('email');
-        $staff->password = $request->input('password');
+        $staff->password = Hash::make($request->input('password'));
         $staff->mobile = $request->input('mobile');
         $staff->nid = $request->input('nid');
         $staff->role = 'staff';

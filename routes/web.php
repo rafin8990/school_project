@@ -59,7 +59,7 @@ Route::prefix('/')->group(function () {
 
     // dashboard home 
     Route::get('/dashboard', [dashboardController::class, 'dashboard'])->middleware('all');
-
+   
 
     // NEDUBD 
     Route::get('/superAdmin', [AdminController::class, 'allAdmin'])->middleware('admin');
@@ -83,10 +83,16 @@ Route::prefix('/')->group(function () {
     Route::get('/executive', [AdminController::class, 'executive']);
     //customer care
     Route::get('/customerCare', [AdminController::class, 'customerCare']);
-
+    //Profile view 
+    Route::get('/profileViewAdmin/{id}', [AdminController::class, 'viewAdmin'])->name('admin.viewAdmin');
+    Route::get('/profileViewSchoolAdmin/{id}', [AdminController::class, 'viewSchoolAdmin'])->name('admin.viewSchoolAdmin');
+    Route::get('/profileViewStudent/{id}', [AdminController::class, 'viewStudent'])->name('admin.viewStudent');
+    Route::get('/profileViewTeacher/{id}', [AdminController::class, 'viewTeacher'])->name('admin.viewTeacher');
+    Route::get('/profileViewStaff/{id}', [AdminController::class, 'viewStaff'])->name('admin.viewStaff');
+    Route::get('/profileViewPrinciple/{id}', [AdminController::class, 'viewPrinciple'])->name('admin.viewPrinciple');
     //student routes
-    // Route::get('/student-list', [studentController::class, 'studentList'])->middleware('all');
-    Route::get('/student-list', [studentController::class, 'studentList']);
+    Route::get('/student-list', [studentController::class, 'studentList'])->middleware('all');
+    //Route::get('/student-list', [studentController::class, 'studentList']);
 
     Route::get('/add-student', [studentController::class, 'addStudentForm']);
     Route::get('/get-sections/{className}', [studentController::class, 'getSections']);
