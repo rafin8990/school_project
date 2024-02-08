@@ -118,7 +118,7 @@ Route::prefix('/')->group(function () {
 
 
     //human resource
-    Route::get('/teachers', [humanResourceController::class, 'teachers'])->name('teachers')->middleware('all'); //teacher list
+    Route::get('/teachers/{schoolCode}', [humanResourceController::class, 'teachers'])->name('teachers')->middleware('all'); //teacher list
     Route::get('/addteacher', [humanResourceController::class, 'addTeachers']); //add teacher
     Route::post('/create-teacher', [humanResourceController::class, 'addteacher'])->name('teacher.add'); //add teacher
     Route::get('/staffs', [humanResourceController::class, 'staff']); //add staff

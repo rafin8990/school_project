@@ -68,7 +68,7 @@
             </div>
             <div class="collapse-content">
                 <ul>
-                    <li class="bg-white text-black rounded-xl mt-2"><a href="/teachers">Teachers</a></li>
+                    <li class="bg-white text-black rounded-xl mt-2"><a href="/teachers/{{$schoolCode}}">Teachers</a></li>
                 </ul>
                   
 

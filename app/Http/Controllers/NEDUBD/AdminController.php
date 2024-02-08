@@ -10,11 +10,15 @@ use App\Models\Student;
 use App\Models\Teacher;
 use App\Models\Staff;
 use App\Models\Head_teacher;
-use Illuminate\Support\Facades\Session;
+
 
 class AdminController extends Controller
 {
 
+    public function allAdmin(){
+        $admins=Admin::all();
+        return view("Dashboard.NEDUBD.alladmin",compact("admins"));
+    }
     public function viewAdmin($id)
     {
         $admin = Admin::findOrFail($id);
