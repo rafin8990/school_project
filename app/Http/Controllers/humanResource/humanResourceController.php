@@ -11,24 +11,24 @@ use Illuminate\Http\Request;
 class humanResourceController extends Controller
 {
     // Teacher  add
-    public function teachers(Request $request,$code)
+    public function teachers(Request $request)
     {
-        
-        if($request){
+        if ($request->has('search')) {
             $search = $request->input('search');
-            $teachers = Teacher::when($search, function ($query) use ($search) {
-                $query->where('firstname', 'LIKE', '%' . $search . '%')
-                    ->orWhere('lastname', 'LIKE', '%' . $search . '%')
-                    ->orWhere('teacher_id', 'LIKE', '%' . $search . '%')
-                    ->orWhere('designation', 'LIKE', '%' . $search . '%');
-            })->get(); // Move get() outside of the when method
-            return view('/Dashboard/humanResource/teachers', ['teachers' => $teachers]);
+            $teachers = Teacher::where('school_code', $schoolCode)
+                ->where(function ($query) use ($search) {
+                    $query->where('firstname', 'LIKE', '%' . $search . '%')
+                        ->orWhere('lastname', 'LIKE', '%' . $search . '%')
+                        ->orWhere('teacher_id', 'LIKE', '%' . $search . '%')
+                        ->orWhere('designation', 'LIKE', '%' . $search . '%');
+                })->get(); // Move get() outside of the where method
+        } else {
+            $teachers = Teacher::where('school_code', $schoolCode)->get();
         }
-        else{
-            $teachers = Teacher::all();
-            return view('/Dashboard/humanResource/teachers', ['teachers' => $teachers]);
-        }
+    
+        return view('/Dashboard/humanResource/teachers', ['teachers' => $teachers]);
     }
+    
     
 
     public function addteacher(Request $request)
