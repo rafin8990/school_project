@@ -37,6 +37,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('nid');
             $table->string('role');
+            $table->string('school_code');
             $table->timestamps();
         });
     }

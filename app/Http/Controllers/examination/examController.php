@@ -29,6 +29,7 @@ class examController extends Controller
     $exam =new Exam();
     $exam->class = $request->input('class');
     $exam->exam = $request->input('exam');
+    $exam ->school_code=$request->input('school_code');
     $exam->save();
 
     return redirect('/exam-list')->with('success', 'Sucessfully created.');

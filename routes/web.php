@@ -118,7 +118,7 @@ Route::prefix('/')->group(function () {
 
 
     //human resource
-    Route::get('/teachers', [humanResourceController::class, 'teachers'])->name('teachers')->middleware('all'); //teacher list
+    Route::get('/teachers/{code}', [humanResourceController::class, 'teachers'])->name('teachers')->middleware('all'); //teacher list
     Route::get('/addteacher', [humanResourceController::class, 'addTeachers']); //add teacher
     Route::post('/create-teacher', [humanResourceController::class, 'addteacher'])->name('teacher.add'); //add teacher
     Route::get('/staffs', [humanResourceController::class, 'staff']); //add staff
@@ -164,7 +164,8 @@ Route::prefix('/')->group(function () {
 
   
    //migration
-   Route::get('/student_migartion', [migrationController::class, 'migration']);
+   Route::get('/student_migartion_table', [migrationController::class, 'migration']);
+   Route::post('/student_migartion', [migrationController::class, 'migrationCheek'])->name('search.migration');
    Route::post('/migration-student', [migrationController::class, 'migrateStudent'])->name('student.migration');
 
     // attendence 

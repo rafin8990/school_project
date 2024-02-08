@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class humanResourceController extends Controller
 {
     // Teacher  add
-    public function teachers(Request $request)
+    public function teachers(Request $request,$code)
     {
         
         if($request){
@@ -247,6 +247,7 @@ class humanResourceController extends Controller
         $staff->mobile = $request->input('mobile');
         $staff->nid = $request->input('nid');
         $staff->role = 'staff';
+        $staff ->school_code=$request->input('school_code');
         $staff->save();
 
 

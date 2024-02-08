@@ -11,7 +11,8 @@ class Exam extends Model
     use HasFactory,Notifiable;
     protected $fillable=[
         'class',
-        'exam'
+        'exam',
+        'school_code',
     ];
     protected $table="exams";
 }

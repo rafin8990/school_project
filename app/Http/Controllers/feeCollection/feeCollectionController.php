@@ -48,6 +48,7 @@ class feeCollectionController extends Controller
             $feecollection->library_fee = $request->input('library_fee');
             $feecollection->transport_fee = $request->input('transport_fee');
             $feecollection->curriculum_fee = $request->input('curriculum_fee');
+            $feecollection ->school_code=$request->input('school_code');
             $feecollection->save();
     
             return redirect('/create-invoice')->with('success', 'Sucessfully created.');

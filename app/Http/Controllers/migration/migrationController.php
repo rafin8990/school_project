@@ -11,24 +11,50 @@ use Illuminate\Http\Request;
 
 class migrationController extends Controller
 {
-    public function migration(Request $request){
+
+    public function migration(Request $request)
+    {
         if ($request) {
             $class = $request->input('class');
             $section = $request->input('section');
-            $year = $request->input('year');
-            $students = Student::when($class, function ($query) use ($class) {
-                return $query->where('class', $class);
-            })->when($section, function ($query) use ($section) {
-                return $query->where('section', $section);
-            })->when($year, function ($query) use ($year) {
-                return $query->where('year', $year);
-            })->get();
             $classes = Classes::pluck('class', 'class');
-            return view('Dashboard/migration/studentMigration', ['students' => $students], compact('classes'));
-        } else {
-            $students = Student::all();
-            $classes = Classes::pluck('class', 'class');
-            return view('Dashboard/migration/studentMigration', ['students' => $students], compact('classes'));
+            return view('/Dashboard/migration/studentMigration', compact('classes'));
+        }
+    }
+    public function migrationCheek(Request $request){
+        $class = $request->input('class');
+        $section = $request->input('section');
+       $classes = Classes::pluck('class', 'class');
+        $year = $request->input('year');
+        
+
+        // Check if attendance for the given class, section, and date exists
+        $existingData = Student::where('class', $class)
+            ->where('section', $section)
+            ->where('year', $year)
+            ->exists();
+        //dd($existingAttendance);
+        if (!$existingData) {
+         
+            return view('/Dashboard/migration/studentMigartion')->with('fail', ' NO student in this dataset');
+        } 
+        else {
+            // Attendance not taken, retrieve student list for the given class and section
+            if ($request) {
+                $class = $request->input('class');
+                $section = $request->input('section');
+                $students = Student::when($class, function ($query) use ($class) {
+                    return $query->where('class', $class);
+                })->when($section, function ($query) use ($section) {
+                    return $query->where('section', $section);
+                })->when($year, function ($query) use ($year) {
+                    return $query->where('year', $year);
+                })->get();
+                $classes = Classes::pluck('class', 'class');
+            
+                return view('/Dashboard/migration/insertMigration', ['students' => $students, 'year' => $year], compact('classes'));
+            }
+            
         }
         
     }
@@ -37,7 +63,7 @@ class migrationController extends Controller
 
     public function migrateStudent(Request $request)
     {
-
+//dd($request);
         $this->validate($request, [
             'first_name' => 'required|string',
             'last_name' => 'required|string',
@@ -69,42 +95,42 @@ class migrationController extends Controller
 
         $path = 'assets/images';
         $imagePath = $request->file('image')->move($path, $image);
-        $isExist = Student::where('email', $request->input('email'))
-            ->orWhere('phoneNumber', $request->input('phoneNumber'))
-            ->exists();
+        // $isExist = Student::where('email', $request->input('email'))
+        //     ->orWhere('phoneNumber', $request->input('phoneNumber'))
+        //     ->exists();
 
-        if ($isExist) {
-            return back()->with('fail', 'Failed. This Student already exists');
-        }
+        // if ($isExist) {
+        //     return back()->with('fail', 'Failed. This Student already exists');
+        // }
         
-        // $student = new Student();
-        // $student->first_name = $request->input('first_name');
-        // $student->last_name = $request->input('last_name');
-        // $student->birth_date = $request->input('birth_date');
-        // $student->student_id = $request->input('student_id');
-        // $student->class = $request->input('class');
-        // $student->section = $request->input('section');
-        // $student->year = $request->input('year');
-        // $student->gender = $request->input('gender');
-        // $student->image = $image;
-        // $student->present_address = $request->input('present_address');
-        // $student->present_street = $request->input('present_street');
-        // $student->present_city = $request->input('present_city');
-        // $student->present_country = $request->input('present_country');
-        // $student->present_zip_code = $request->input('present_zip_code');
-        // $student->parmanent_address = $request->input('parmanent_address');
-        // $student->parmanent_street = $request->input('parmanent_street');
-        // $student->parmanent_city = $request->input('parmanent_city');
-        // $student->parmanent_country = $request->input('parmanent_country');
-        // $student->parmanent_zip_code = $request->input('parmanent_zip_code');
-        // $student->email = $request->input('email');
-        // $student->password = Hash::make($request->input('password'));
-        // $student->phoneNumber = $request->input('phoneNumber');
-        // $student->role = 'student';
-        // $student ->school_code=$request->input('school_code');
-        // $student->save();
-        // return redirect('/add-student')->with('success', 'Sucessfully created.');
-
+        $student = new Student();
+        $student->first_name = $request->input('first_name');
+        $student->last_name = $request->input('last_name');
+        $student->birth_date = $request->input('birth_date');
+        $student->student_id = $request->input('student_id');
+        $student->class = $request->input('class');
+        $student->section = $request->input('section');
+        $student->year = $request->input('year');
+        $student->gender = $request->input('gender');
+        $student->image = $image;
+        $student->present_address = $request->input('present_address');
+        $student->present_street = $request->input('present_street');
+        $student->present_city = $request->input('present_city');
+        $student->present_country = $request->input('present_country');
+        $student->present_zip_code = $request->input('present_zip_code');
+        $student->parmanent_address = $request->input('parmanent_address');
+        $student->parmanent_street = $request->input('parmanent_street');
+        $student->parmanent_city = $request->input('parmanent_city');
+        $student->parmanent_country = $request->input('parmanent_country');
+        $student->parmanent_zip_code = $request->input('parmanent_zip_code');
+        $student->email = $request->input('email');
+        $student->password = Hash::make($request->input('password'));
+        $student->phoneNumber = $request->input('phoneNumber');
+        $student->role = 'student';
+        $student ->school_code=$request->input('school_code');
+        //$student->save();
+        //return redirect('/add-student')->with('success', 'Sucessfully created.');
+     
          foreach ($request->student_id as $student_id)
     
             $data[]=[
@@ -134,5 +160,7 @@ class migrationController extends Controller
                 "school_code"=>$request->school_code,
             ];
             Student::insert($data);
+            return view('/Dashboard/migration/insertMigration', [compact('classes')])->with('success', 'Sucessfully created.');
+        
     }
 }

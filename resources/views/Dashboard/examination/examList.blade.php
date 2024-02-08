@@ -19,6 +19,11 @@
             <div class="mx-10 mt-10">
                 <input type="text" name="exam" placeholder="Enter Exam name" class="input input-bordered w-full " />
             </div>
+            <div class="hidden mt-5 w-[400px]">
+
+              <input name="school_code" value="{{$schoolCode}}" type="text"
+                  class="hidden input input-bordered w-full " />
+          </div>
             
             <div class="mt-5 mx-10 mb-10">
                 <button class=" btn btn-accent text-white w-full">
