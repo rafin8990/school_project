@@ -17,7 +17,8 @@ class Feecollection extends Model
         'tuition_fee',
         'library_fee',
         'transport_fee',
-        'curriculum_fee'
+        'curriculum_fee',
+        'school_code',
     ];
     protected $table="feecollestions";
 }

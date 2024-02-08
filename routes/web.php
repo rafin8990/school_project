@@ -21,6 +21,7 @@ use App\Http\Controllers\examReports\examReportController;
 use App\Http\Controllers\library\libraryController;
 use App\Http\Controllers\transport\transportController;
 use App\Http\Controllers\hostel\hostelController;
+use App\Http\Controllers\migration\migrationController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -161,6 +162,10 @@ Route::prefix('/')->group(function () {
     //delete class
     Route::delete('/section/{id}', [academicController::class, 'Deletesection'])->name('section.delete');
 
+  
+   //migration
+   Route::get('/student_migartion', [migrationController::class, 'migration']);
+   Route::post('/migration-student', [migrationController::class, 'migrateStudent'])->name('student.migration');
 
     // attendence 
     Route::get('/attendence', [attendenceController::class, 'attendence']);

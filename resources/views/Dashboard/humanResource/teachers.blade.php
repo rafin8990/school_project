@@ -16,14 +16,17 @@
     </button>
 </div>
 </form>
+@if ($adminData || $schoolAdminData )
 <div class="flex justify-end mr-10 mb-5">
-      <a href="/addteacher">
-        <button class=" btn btn-accent text-white ">
-            Add teacher
-        </button></a>
-      
-    
+  <a href="/addteacher">
+    <button class=" btn btn-accent text-white ">
+        Add teacher
+    </button></a>
+  
+
 </div>
+@endif
+
 
 <div class="overflow-x-auto">
   <table class="table border">

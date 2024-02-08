@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('library_fee');            
             $table->string('transport_fee');            
             $table->string('curriculum_fee');            
+            $table->string('school_code');            
                        
 
             $table->timestamps();

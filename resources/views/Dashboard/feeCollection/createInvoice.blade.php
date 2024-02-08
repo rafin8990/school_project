@@ -69,6 +69,11 @@
             <label > Enter Monthly Extra Curriculum Fee:</label>
             <input type="text" name="curriculum_fee" placeholder="Enter monthly extra curriculum fee" class="input input-bordered w-full " value="0"/>
         </div>
+        <div class="hidden mt-5 w-[400px]">
+
+            <input name="school_code" value="{{$schoolCode}}" type="text"
+                class="hidden input input-bordered w-full " />
+        </div>
         <div class="mt-5 ">
             <button type="submit" class=" btn btn-accent btn-outline text-white w-full">
                 Create Invoice

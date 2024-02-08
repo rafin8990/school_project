@@ -125,6 +125,24 @@
             </div>
         </div>
         @endif
+
+        @if($adminData || $schoolAdminData || $principalData)
+        <div tabindex="4" class="collapse collapse-plus bg-blue-950 bg-accent  mb-2 text-white">
+            <input type="checkbox" />
+            <div class="collapse-title text-2xl">
+                <i class="fa-solid fa-bars-staggered"></i> Migration
+            </div>
+            <div class="collapse-content">
+                <ul>
+                    <li class="bg-white text-black rounded-xl mt-2"><a href="/student_migartion">Student Migrtion</a></li>
+
+                </ul>
+                  
+            </div>
+        </div>
+        @endif
+
+
         @if($teacherData || $adminData || $schoolAdminData)
         <div tabindex="4" class="collapse collapse-plus bg-blue-950 bg-accent  mb-2 text-white">
             <input type="checkbox" />
