@@ -96,7 +96,7 @@ Route::prefix('/')->group(function () {
     Route::put('/staff/{id}/update', [humanResourceController::class, 'staffupdate'])->name('staffs.update');
     //view staff
     Route::get('/staff/{id}/staffview', [humanResourceController::class, 'staffview'])->name('staffs.view');
-    //delete teacher
+    //delete staff
     Route::delete('/staff/{id}', [humanResourceController::class, 'Deletestaff'])->name('staff.delete');
 
 
