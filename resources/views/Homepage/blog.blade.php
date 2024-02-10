@@ -6,7 +6,7 @@
         <div >
             <div class="card max-w-sm bg-base-100 shadow-xl">
                 <figure class="px-10 pt-10">
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc_zHMnHLurcslRq6Wng_-qt70oEvdKyNTWg&usqp=CAU" alt="Shoes" class="rounded-xl" />
+                  <img src="https://selvamarts.edu.in/wp-content/uploads/2016/01/PrincipalPhoto.jpg" alt="principal" class="rounded-xl" />
                 </figure>
                 <div class="card-body items-center text-center">
                   <h2 class="card-title">Principle</h2>
@@ -21,7 +21,7 @@
         <div >
             <div class="card max-w-sm bg-base-100 shadow-xl">
                 <figure class="px-10 pt-10">
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc_zHMnHLurcslRq6Wng_-qt70oEvdKyNTWg&usqp=CAU" alt="Shoes" class="rounded-xl" />
+                  <img src="https://abcis.edu.bd/wp-content/uploads/2023/05/school12-711x451.jpg" alt="Assistant" class="rounded-xl" />
                 </figure>
                 <div class="card-body items-center text-center">
                   <h2 class="card-title">Assistant Head Teacher</h2>
@@ -35,7 +35,7 @@
         <div>
             <div class="card max-w-sm bg-base-100 shadow-xl">
                 <figure class="px-10 pt-10">
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc_zHMnHLurcslRq6Wng_-qt70oEvdKyNTWg&usqp=CAU" alt="Shoes" class="rounded-xl" />
+                  <img src="https://incorpuk.com/blog/content/images/2022/09/Business-Man-2-12.jpg" alt="Accounts" class="rounded-xl" />
                 </figure>
                 <div class="card-body items-center text-center">
                   <h2 class="card-title">Accounts</h2>

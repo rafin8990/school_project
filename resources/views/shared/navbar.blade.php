@@ -22,7 +22,7 @@
       </ul>
     </div>
   </div>
-  <div class="navbar-center hidden lg:flex">
+  <div class="navbar-center hidden lg:flex ml-10">
     <ul class="menu menu-horizontal px-1">
       <li class=" text-lg"><a href={{"/"}}>Home</a></li>
       <li class=" text-lg"><a href={{"/about"}}>About</a> </li>

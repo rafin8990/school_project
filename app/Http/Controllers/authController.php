@@ -95,8 +95,9 @@ class authController extends Controller
         $admin->name = $request->input('name');
         $admin->email = $request->input('email');
         $admin->phone_number = $request->input('phone_number');
+        $admin->school_code=$request->input('school_code');
         $admin->password = Hash::make($request->input('password'));
-        $admin->role = 'admin';
+        $admin->role = $request->input('role');
         $admin->save();
 
 

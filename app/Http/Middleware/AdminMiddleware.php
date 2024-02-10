@@ -21,13 +21,10 @@ class AdminMiddleware
         if (Session::has('loginId')) {
             $userId = Session::get('loginId');
             $user = Admin::find($userId);
-       
-            if ($user &&  $user->role === 'admin' ) {
+            if ($user &&  $user->role === 'admin_one' || $user->role === 'super_admin'|| $user->role === 'admin_two' ) {
                 return $next($request); 
             }
         }
-
-        
         return redirect('/')->with('fail', 'You do not have admin privileges.');
     }
 }

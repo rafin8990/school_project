@@ -2,6 +2,22 @@
     <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
     <ul class="menu p-4 w-80 min-h-full bg-blue-950 text-base-content">
 
+
+    <div tabindex="4" class="collapse collapse-plus bg-blue-950   mb-2 text-white">
+            <input type="checkbox" />
+            <div class="collapse-title text-2xl ">
+                <i class="fa-solid fa-school"></i> NEDUBD
+            </div>
+            <div class="collapse-content">
+                <ul>
+                    <li class="bg-white text-black rounded-xl "><a href="/allAdmin/{{$schoolCode}}">  Super Admin</a></li>
+                    <li class="bg-white text-black rounded-xl mt-2"><a href="/student-list">Admin One</a></li>
+                    <li class="bg-white text-black rounded-xl mt-2"><a href="/student-list">Admin Two</a></li>
+                    <li class="bg-white text-black rounded-xl mt-2"><a href="/add-student">Data Entry Operator</a></li>
+                    <li class="bg-white text-black rounded-xl mt-2"><a href="/add-student">Executive</a></li>
+                    <li class="bg-white text-black rounded-xl mt-2"><a href="/add-student">Customer Care</a></li>
+                </ul>
+
     <div tabindex="4" class="collapse collapse-plus bg-blue-950 bg-accent  mb-2 text-white">
             <input type="checkbox" />
             <div class="collapse-title text-2xl">
@@ -9,7 +25,8 @@
             </div>
             <div class="collapse-content">
                 <ul>
-                    <li class="bg-white text-black rounded-xl mt-2"><a href="/teachers">Authoriser</a></li>
+                    <li class="bg-white text-black rounded-xl mt-2"><a href="/authoriser">Head Teacher</a></li>
+                    <li class="bg-white text-black rounded-xl mt-2"><a href="/addHeadTeacher">Add Head Teacher</a></li>
                 </ul>
                   
             </div>
@@ -27,6 +44,7 @@
                     
                 </ul>
                   
+
             </div>
         </div>
 
@@ -89,7 +107,7 @@
         <div tabindex="4" class="collapse collapse-plus bg-blue-950 bg-accent  mb-2 text-white">
             <input type="checkbox" />
             <div class="collapse-title text-2xl">
-                <i class="fa-solid fa-bolt"></i> Fee Collection
+            <i class="fa-solid fa-cubes"></i> Fee Collection
             </div>
             <div class="collapse-content">
                 <ul>
