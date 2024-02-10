@@ -11,9 +11,9 @@ use Illuminate\Http\Request;
 class academicController extends Controller
 {
     // Create and view classes
-    public function class ()
+    public function class ($schoolCode)
     {
-        $classes = Classes::all();
+        $classes = Classes::where('school_code', $schoolCode)->get();
         return view('/Dashboard/academics/class',['classes' => $classes]);
     }
 
@@ -59,10 +59,10 @@ class academicController extends Controller
    
 
 //  create and view sections
-    public function section()
+    public function section($schoolCode)
     {
-        $classes = Classes::all();
-        $section = Section::all();
+        $classes = Classes::where('school_code', $schoolCode)->get();;
+        $section = Section::where('school_code', $schoolCode)->get();;
         return view('/Dashboard/academics/section',['classes' => $classes,'sections'=>$section]);
     }
 
@@ -118,9 +118,9 @@ class academicController extends Controller
     
 
 // create and view subject
-    public function subject()
+    public function subject($schoolCode)
     {
-        $subjects = Subject::all();
+        $subjects = Subject::where('school_code', $schoolCode)->get();;
         return view('/Dashboard/academics/subject',['subjects' => $subjects]);
     }
     public function subject_post(Request $request){

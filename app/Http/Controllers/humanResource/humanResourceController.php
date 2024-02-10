@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class humanResourceController extends Controller
 {
     // Teacher  add
-    public function teachers(Request $request)
+    public function teachers(Request $request,$schoolCode)
     {
         if ($request->has('search')) {
             $search = $request->input('search');
@@ -163,10 +163,10 @@ class humanResourceController extends Controller
 
         return view('/Dashboard/humanResource/staff');
     }
-    public function staffList(Request $request){
+    public function staffList(Request $request,$schoolCode){
         if($request){
             $search = $request->input('search');
-            $staffs = Staff::when($search, function ($query) use ($search) {
+            $staffs = Staff::where('school_code', $schoolCode)->when($search, function ($query) use ($search) {
                 $query->where('firstname', 'LIKE', '%' . $search . '%')
                     ->orWhere('lastname', 'LIKE', '%' . $search . '%')
                     ->orWhere('staff_id', 'LIKE', '%' . $search . '%')
@@ -175,7 +175,7 @@ class humanResourceController extends Controller
             return view('/Dashboard/humanResource/stafflist', ['staffs' => $staffs]);
         }
         else{
-            $staffs = Staff::all();
+            $staffs = Staff::where('school_code', $schoolCode)->get();
             return view('/Dashboard/humanResource/stafflist', ['staffs' => $staffs]);
         }
     }

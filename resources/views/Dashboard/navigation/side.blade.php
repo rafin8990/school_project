@@ -68,7 +68,7 @@
             </div>
             <div class="collapse-content">
                 <ul>
-                    <li class="bg-white text-black rounded-xl mt-2"><a href="/teachers">Teachers</a></li>
+                    <li class="bg-white text-black rounded-xl mt-2"><a href="/teachers/{{$schoolCode}}">Teachers</a></li>
                 </ul>
                   
 
@@ -82,7 +82,7 @@
             </div>
             <div class="collapse-content">
                 <ul>
-                    <li class="bg-white text-black rounded-xl"><a href="/student-list">student list</a></li>
+                    <li class="bg-white text-black rounded-xl"><a href="/student-list/{{$schoolCode}}">student list</a></li>
                     @if($adminData|| $principalData || $schoolAdminData)
                     <li class="bg-white text-black rounded-xl mt-2"><a href="/add-student">Add Student</a></li>
                     @endif
@@ -98,7 +98,7 @@
             </div>
             <div class="collapse-content">
                 <ul>
-                    <li class="bg-white text-black rounded-xl mt-2"><a href="/staff-list">Staffs</a></li>
+                    <li class="bg-white text-black rounded-xl mt-2"><a href="/staff-list/{{$schoolCode}}">Staffs</a></li>
                     @if($adminData||$schoolAdminData||$principalData)
                     <li class="bg-white text-black rounded-xl mt-2"><a href="/staffs">Add Staff</a></li>
                     @endif
@@ -117,9 +117,9 @@
             </div>
             <div class="collapse-content">
                 <ul>
-                    <li class="bg-white text-black rounded-xl"><a href="/class">Class</a></li>
-                    <li class="bg-white text-black rounded-xl mt-2"><a href="/section">Section</a></li>
-                    <li class="bg-white text-black rounded-xl mt-2"><a href="/subject">Subject</a></li>
+                    <li class="bg-white text-black rounded-xl"><a href="/class/{{$schoolCode}}">Class</a></li>
+                    <li class="bg-white text-black rounded-xl mt-2"><a href="/section/{{$schoolCode}}">Section</a></li>
+                    <li class="bg-white text-black rounded-xl mt-2"><a href="/subject/{{$schoolCode}}">Subject</a></li>
                 </ul>
                   
             </div>
@@ -151,8 +151,8 @@
             </div>
             <div class="collapse-content">
                 <ul>
-                    <li class="bg-white text-black rounded-xl"><a href="/attendence">Student Attenedence</a></li>
-                    <li class="bg-white text-black rounded-xl mt-2"><a href="/update-attendence">Update
+                    <li class="bg-white text-black rounded-xl"><a href="/attendence/{{$schoolCode}}">Student Attenedence</a></li>
+                    <li class="bg-white text-black rounded-xl mt-2"><a href="/update-attendence/{{$schoolCode}}">Update
                             Attendence</a>
                     </li>
                 </ul>

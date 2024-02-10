@@ -4,7 +4,7 @@
     <div>
         <h1 class="text-4xl font font-semibold text-blue-900 text-center my-5">Update attendance</h1>
     </div>
-    <form class="md:flex  my-10 justify-center" action="{{ route('update-attendance') }}" method="POST">
+    <form class="md:flex  my-10 justify-center" action="{{ route('update-attendance',$schoolCode) }}" method="POST">
         @csrf    
         <div class="mr-10">
             <select id="classSelect" name="class" class="select select-blue-900 w-full max-w-xs input input-bordered block ">

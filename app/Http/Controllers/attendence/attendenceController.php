@@ -33,7 +33,7 @@ class attendenceController extends Controller
     }
 
 
-    public function search(Request $request)
+    public function search(Request $request,$schoolCode)
     {
        
         $class = $request->input('class');
@@ -42,7 +42,7 @@ class attendenceController extends Controller
         $date = $request->input('date');
 
         // Check if attendance for the given class, section, and date exists
-        $existingAttendance = Attendance::where('class_id', $class)
+        $existingAttendance = Attendance::where('school_code', $schoolCode)->where('class_id', $class)
             ->where('section_id', $section)
             ->where('att_date', $date)
             ->exists();
@@ -57,7 +57,7 @@ class attendenceController extends Controller
             if ($request) {
                 $class = $request->input('class');
                 $section = $request->input('section');
-                $students = Student::when($class, function ($query) use ($class) {
+                $students = Student::where('school_code', $schoolCode)->when($class, function ($query) use ($class) {
                     return $query->where('class', $class);
                 })->when($section, function ($query) use ($section) {
                     return $query->where('section', $section);
@@ -108,12 +108,12 @@ public function attendance_store(Request $request)
             ];
             Attendance::insert($data);
              
-            return redirect('/attendence')->with('success', ' attendence successfully taken');
+            return redirect('/attendence/{schoolCode}')->with('success', ' attendence successfully taken');
          
        
 }
 
-public function updateAttendance(Request $request)
+public function updateAttendance(Request $request,$schoolCode)
 {
     
     $class = $request->input('class');
@@ -122,7 +122,7 @@ public function updateAttendance(Request $request)
     $date = $request->input('date');
 
     // Check if attendance for the given class, section, and date exists
-    $existingAttendance = Attendance::where('class_id', $class)
+    $existingAttendance = Attendance::where('school_code', $schoolCode)->where('class_id', $class)
         ->where('section_id', $section)
         ->where('att_date', $date)
         ->exists();
@@ -132,13 +132,13 @@ public function updateAttendance(Request $request)
         if ($request) {
             $class = $request->input('class');
             $section = $request->input('section');
-            $students = Student::when($class, function ($query) use ($class) {
+            $students = Student::where('school_code', $schoolCode)->when($class, function ($query) use ($class) {
                 return $query->where('class', $class);
             })->when($section, function ($query) use ($section) {
                 return $query->where('section', $section);
             })->get();
             $classes = Classes::pluck('class', 'class');
-            $attendances = Attendance::
+            $attendances = Attendance::where('school_code', $schoolCode)->
             where('class_id', $class)
             ->where('section_id', $section)
             ->where('att_date', $date)->get();
@@ -151,7 +151,7 @@ public function updateAttendance(Request $request)
 }
     else {
         // Attendance not taken, retrieve student list for the given class and section
-        return redirect('/attendence')->with('fail', ' attendence not taken');
+        return redirect('/attendence/{schoolCode}')->with('fail', ' attendence not taken');
         }
         
     
@@ -187,7 +187,7 @@ public function editAttendance(Request $request)
             
             
              
-            return redirect('/attendence')->with('success', ' attendence successfully updated');
+            return redirect('/attendence/{schoolCode}')->with('success', ' attendence successfully updated');
          
        
 } 

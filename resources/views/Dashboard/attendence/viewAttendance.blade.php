@@ -5,7 +5,7 @@
     <div>
         <h1 class="text-2xl text-center my-5">Take Attendence</h1>
         <div class="overflow-x-auto">
-            <form action="{{route('attendence.store')}}" method="post">
+            <form action="{{route('attendence.store',$schoolCode)}}" method="post">
                 @csrf
 
                 <table class="table table-zebra">

@@ -5,7 +5,7 @@
 <div>
     <h1 class="text-4xl font font-semibold text-accent text-center my-5">Staffs</h1>
 </div>
-<form action="{{route('staff_list')}}" method="GET" class="md:flex  my-10 justify-center">
+<form action="{{route('staff_list',$schoolCode)}}" method="GET" class="md:flex  my-10 justify-center">
   <div class="mr-10">
     <input type="text" name="search" class="input input-bordered w-full " placeholder="Search">
   </div>

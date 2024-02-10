@@ -15,13 +15,13 @@ class studentController extends Controller
     protected $schoolCode;
   
     // get student list 
-    public function studentList(Request $request)
+    public function studentList(Request $request,$schoolCode)
     {
 
         if ($request) {
             $class = $request->input('class');
             $section = $request->input('section');
-            $students = Student::when($class, function ($query) use ($class) {
+            $students = Student::where('school_code', $schoolCode)->when($class, function ($query) use ($class) {
                 return $query->where('class', $class);
             })->when($section, function ($query) use ($section) {
                 return $query->where('section', $section);
@@ -29,7 +29,8 @@ class studentController extends Controller
             $classes = Classes::pluck('class', 'class');
             return view('Dashboard/student/studentList', ['students' => $students], compact('classes'));
         } else {
-            $students = Student::all();
+            
+            $students = Student::where('school_code', $schoolCode)->get();
             $classes = Classes::pluck('class', 'class');
             return view('Dashboard/student/studentList', ['students' => $students], compact('classes'));
         }
@@ -70,6 +71,14 @@ class studentController extends Controller
 
 
         $image = $request->file('image')->getClientOriginalName();
+//         if ($request->hasFile('image')) {
+//             $request->validate([
+//                 'image' => 'file|mimes:jpeg,png,jpg,gif|max:2048',
+//             ]);
+
+
+//             $owner_image = $request->file('image')->move('images/user', $id . '_' . uniqid() . '.' . $request->file('image')->extension());
+//             }
 
         $path = 'assets/images';
         $imagePath = $request->file('image')->move($path, $image);

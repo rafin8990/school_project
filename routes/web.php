@@ -92,7 +92,7 @@ Route::prefix('/')->group(function () {
     Route::get('/profileViewStaff/{id}', [AdminController::class, 'viewStaff'])->name('admin.viewStaff');
     Route::get('/profileViewPrinciple/{id}', [AdminController::class, 'viewPrinciple'])->name('admin.viewPrinciple');
     //student routes
-    Route::get('/student-list', [studentController::class, 'studentList'])->middleware('all');
+    Route::get('/student-list/{schoolCode}', [studentController::class, 'studentList'])->middleware('all');
     //Route::get('/student-list', [studentController::class, 'studentList']);
 
     Route::get('/add-student', [studentController::class, 'addStudentForm']);
@@ -118,12 +118,12 @@ Route::prefix('/')->group(function () {
 
 
     //human resource
-    Route::get('/teachers', [humanResourceController::class, 'teachers'])->name('teachers')->middleware('all'); //teacher list
+    Route::get('/teachers/{schoolCode}', [humanResourceController::class, 'teachers'])->name('teachers')->middleware('all'); //teacher list
     Route::get('/addteacher', [humanResourceController::class, 'addTeachers']); //add teacher
     Route::post('/create-teacher', [humanResourceController::class, 'addteacher'])->name('teacher.add'); //add teacher
     Route::get('/staffs', [humanResourceController::class, 'staff']); //add staff
     Route::post('/addstaff', [humanResourceController::class, 'addstaff'])->name('staff.add'); //add staff
-    Route::get('/staff-list', [humanResourceController::class, 'staffList'])->name('staff_list')->middleware('all');
+    Route::get('/staff-list/{schoolCode}', [humanResourceController::class, 'staffList'])->name('staff_list')->middleware('all');
 
     //update teacher
     Route::get('/teacher/{id}/edit', [humanResourceController::class, 'edit'])->name('teachers.edit');
@@ -144,9 +144,9 @@ Route::prefix('/')->group(function () {
 
 
     // academics 
-    Route::get('/class', [academicController::class, 'class']);
-    Route::get('/section', [academicController::class, 'section']);
-    Route::get('/subject', [academicController::class, 'subject']);
+    Route::get('/class/{schoolCode}', [academicController::class, 'class']);
+    Route::get('/section/{schoolCode}', [academicController::class, 'section']);
+    Route::get('/subject/{schoolCode}', [academicController::class, 'subject']);
     Route::post('/class-create', [academicController::class, 'class_post'])->name('class.classpost');
     Route::post('/create-section', [academicController::class, 'section_post'])->name('create-section');
     Route::post('/create-subject', [academicController::class, 'subject_post'])->name('create-subject');
@@ -169,12 +169,12 @@ Route::prefix('/')->group(function () {
    Route::post('/migration-student', [migrationController::class, 'migrateStudent'])->name('student.migration');
 
     // attendence 
-    Route::get('/attendence', [attendenceController::class, 'attendence']);
-    Route::get('/update-attendence', [attendenceController::class, 'updateAttendence']);
+    Route::get('/attendence/{schoolCode}', [attendenceController::class, 'attendence']);
+    Route::get('/update-attendence/{schoolCode}', [attendenceController::class, 'updateAttendence']);
     Route::post('/attendance/save', [attendenceController::class, 'saveAttendance'])->name('saveAttendance');
-    Route::post('/search', [attendenceController::class, 'search'])->name('search');
+    Route::post('/search/{schoolCode}', [attendenceController::class, 'search'])->name('search');
     Route::post('/store_attendence', [attendenceController::class, 'attendance_store'])->name('attendence.store');
-    Route::post('/attendenceUpdate', [attendenceController::class, 'updateAttendance'])->name('update-attendance');
+    Route::post('/attendenceUpdate/{schoolCode}', [attendenceController::class, 'updateAttendance'])->name('update-attendance');
     Route::put('/attendance_storeUpdate', [attendenceController::class, 'editAttendance'])->name('attendence.updateStore');
     // fee collection 
     Route::get('/invoice-list', [feeCollectionController::class, 'invoiceList']);
